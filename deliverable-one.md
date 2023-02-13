@@ -82,6 +82,7 @@ I: “Which platform has the playlists you want to transfer the most?”
 Assessment: User views main part of software as “nice to have” and is significantly more interested in the idea of playing his music from different platforms all in one place.
 
 
+
 Nathan Seitz:
 
 Interview 1: 
@@ -141,3 +142,8 @@ Representative Quotes:
 “If I used the playlist translate feature, would I be able to change the name and profile image for the playlists?”
 
 Assessment: Playlist converter would be nice to have.
+=======
+Final Value Proposition and Customer Segments
+	Based on information gathered from the interview a playlist converter is a bit too narrow and a single use tool for most people. Users seemed most interested in the possibility of having a playlist composed of music that is exclusive to different platforms all in one place. A music hub that allows users to play music and make playlists from a variety of platforms seems to fit what our typical user would be most interested in.
+	Most people who use a streaming service have run into the problem of not being able to find the specific song they want on that platform when it is present on another, our software provides a simple solution by allowing users to listen to anything they want from anywhere all in one place. Our software solves a problem almost all music listeners who use streaming services face, but appeals specifically to more dedicated music fans who enjoy listening to remixes, unreleased music, and music from smaller artists that is not able to be found on large streaming platforms like Spotify and Apple Music.
+
