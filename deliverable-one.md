@@ -9,9 +9,9 @@ Initial Value Proposition and Customer Segments
 	This project will be for anyone who enjoys music digitally and cares to share their music tastes with others in the digital age of streaming services. Converting playlists between platforms right now is a hassle, and is quite labor-intensive. Our project will solve this issue.
 
 
-Interviews Summary
+## Interviews Summary
 
-Alan Hakala:
+### Alan Hakala:
 
 Interview 1:
 
@@ -83,7 +83,7 @@ Assessment: User views main part of software as “nice to have” and is signif
 
 
 
-Nathan Seitz:
+### Nathan Seitz:
 
 Interview 1: 
 
