@@ -49,7 +49,7 @@ Interview 2:
 
 Interviewee: Edwin Vela
 
-Customer Segment: Student and employed at a coffee shop, plays music on three devices regularly (Phone, Computer, and speakers at his work from another computer). 
+Customer Segment: Student and employed at a coffee shop, plays music on three devices regularly (Phone, Computer, and a work computer to play music over the speakers). 
 
 When: 2/7/2023
 
