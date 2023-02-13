@@ -251,6 +251,25 @@ Representative Quotes: (I: denotes interviewer)
 
 Assessment: Nice to have
 
+#### Isaac Faulkner:
+
+#### Interview 1:
+
+Who: Angell Arnett
+
+When: Friday, Feb 10, 2023
+
+Customer Segment: College student at NAU Yuma Nursing Program, 20 Years old.
+
+Key Insights: Angel listens to spotify on her friends account; however, personally has apple music due to family plans. Following the interview, I described the Idea and asked if she had any good ideas that you'd like to see. She believed that something you could use without leaving your music app would be the most convenient. 
+
+Representative quotes.  “When I am not listening to music, I listen on drives, when I clean, if I ever work out, walking to class and during the breaks between my classes.” 
+“Maybe like… 2 hours to 3 hours a week” (when asked how much time she thinks she spends making playlists)
+“Would I be able to download a playlist from my apple account while staying in spotify?”
+
+Assessment: Would Use, If convenient enough
+
+
 ## Final Value Proposition and Customer Segments
 
 Based on information gathered from the interview a playlist converter is a bit too narrow and a single use tool for most people. Users seemed most interested in the possibility of having a playlist composed of music that is exclusive to different platforms all in one place. A music hub that allows users to play music and make playlists from a variety of platforms seems to fit what our typical user would be most interested in.
