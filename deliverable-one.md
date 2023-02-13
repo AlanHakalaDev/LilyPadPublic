@@ -82,6 +82,67 @@ I: “Which platform has the playlists you want to transfer the most?”
 Assessment: User views main part of software as “nice to have” and is significantly more interested in the idea of playing his music from different platforms all in one place.
 
 
+
+Nathan Seitz:
+
+Interview 1: 
+
+Who: Joseph Vianello
+
+When: Wednesday, February 8, 2023
+
+Customer Segment: College student at NAU, 19 years old.
+
+Key Insights: 
+Joseph listens to mostly Spotify, but sometimes Youtube music.
+Typically Joseph listens to music through his computer or phone.
+
+Representative Quotes: 
+“Sometimes there are uploads on one platform that are two songs on a single track, because they pair together as the artist intended. On spotify, though, they usually aren’t put together and it makes listening to those songs not as enjoyable”
+“It would be most useful to be able to make playlists that take specific songs from many different platforms at once, and I can just stream that.”
+
+Assessment: Playlist converter would be nice to have.
+
+
+Interview 2: 
+
+Who: Gavin Gresser
+
+When: February 9, 2023
+
+Customer Segment: Part-time college student at community college, 20 years old.
+
+Key Insights: 
+Gavin listens to music pretty much only on his desktop computer.
+He usually uses Spotify and Youtube Music
+Gavin tends to listen to the auto-generated playlists made by the platforms he uses, rather than making his own playlists.
+
+Representative Quotes: 
+“Would I be able to download my favorite songs using this tool?”
+“I think if the platform let me listen to all my recommended songs from both platforms I’d use it more often”
+“I don’t really use the playlist feature to begin with, so converting playlists isn’t very important.”
+
+Assessment: Would not use.
+
+
+Interview 3: 
+
+Who: Dominic Drummond
+
+When: February 8, 2023
+
+Customer Segment: Part-time college student online, 20 years old.
+
+Key Insights: 
+Dominic uses mostly spotify.
+He makes a lot of playlists and likes to use the customizations provided by Spotify to make his playlists more unique.
+Dominic uses both his phone and his desktop computer to stream music.
+
+Representative Quotes:
+“If I used the playlist translate feature, would I be able to change the name and profile image for the playlists?”
+
+Assessment: Playlist converter would be nice to have.
+=======
 Final Value Proposition and Customer Segments
 	Based on information gathered from the interview a playlist converter is a bit too narrow and a single use tool for most people. Users seemed most interested in the possibility of having a playlist composed of music that is exclusive to different platforms all in one place. A music hub that allows users to play music and make playlists from a variety of platforms seems to fit what our typical user would be most interested in.
 	Most people who use a streaming service have run into the problem of not being able to find the specific song they want on that platform when it is present on another, our software provides a simple solution by allowing users to listen to anything they want from anywhere all in one place. Our software solves a problem almost all music listeners who use streaming services face, but appeals specifically to more dedicated music fans who enjoy listening to remixes, unreleased music, and music from smaller artists that is not able to be found on large streaming platforms like Spotify and Apple Music.
