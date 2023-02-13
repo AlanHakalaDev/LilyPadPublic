@@ -142,6 +142,61 @@ Representative Quotes:
 
 Assessment: Playlist converter would be nice to have.
 
+
+
+### Rino De Guzman:
+
+#### Interview 1: 
+
+Who: Rose Aco
+
+When: Friday, February 6, 2023
+
+Customer Segment: College student, 21 years old.
+
+Key Insights: 
+Rose primarily listens to music on her iPhone but also listens to music through her macbook.
+She uses Spotify exclusively on her phone but uses both spotify and Youtube on her computer, iPad, and Google home.
+She has playlists on Spotify but **not** on YouTube.
+Interviewee was not interested in the idea of transferring from spotify to youtube
+Due to the fact that there are youtube ads and there would be ads during her music session
+Interviewee claimed a “playlist transfer tool” would be nice to have if the playlist she would be transferring from YouTube to Spotify is less than 60 songs.
+If the playlist she wants to transfer from youtube to spotify is greater than 60 songs she would say that the “playlist transfer tool” would be a must have.
+Interviewee would prefer to access the tool through the computer and not the website
+
+Representative Quotes: 
+“Through what device would you like to access a playlist transfer tool?”
+“I would prefer to access the tool through my laptop or a computer on like a website or something”
+“How do you feel about a tool that would allow you to transfer your playlists from spotify to youtube?”
+“ I would not be interested, to me it is kind of pointless to transfer any of my playlists from spotify to youtube because I do not have youtube premium so if I listened to my playlist on youtube then I would have ads popping up while in spotify I can just listen without ads”
+
+Assessment: A nice to have if there are less than 60 songs in the playlist to 
+transfer. A must have if there are greater than 60 songs in the playlist to 
+transfer. 
+
+
+#### Interview 2: 
+
+Who: Calvin Sipin
+
+When: February 9, 2023
+
+Customer Segment: High School Student, 18 years old.
+
+Key Insights: 
+Calvin mostly uses Spotify and sometimes uses YouTube.
+Mostly listens to music through his phone or desktop while playing games.
+
+Representative Quotes:
+"How does a tool with the ability to transfer your playlist to and from any 
+platform sound?"
+"That definitely sounds cool but I don't think I would use it, I only see myself
+using Spotify pretty much. I don't think I would move to another platform, I have
+always been using Spotify."
+
+Assessment: Not interested
+
+
 ## Final Value Proposition and Customer Segments
 
 Based on information gathered from the interview a playlist converter is a bit too narrow and a single use tool for most people. Users seemed most interested in the possibility of having a playlist composed of music that is exclusive to different platforms all in one place. A music hub that allows users to play music and make playlists from a variety of platforms seems to fit what our typical user would be most interested in.
