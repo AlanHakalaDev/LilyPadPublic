@@ -1,10 +1,9 @@
-# CS386_Team_6_Project
-A simple web app playlist converter for Apple Music, Spotify, and YouTube Music.
+# CS386 Team 6 Deliverable 1
 
-Introduction
+## Introduction
   Our project, currently untitled, will be a website application for transferring playlists between popular music platforms. Starting with functionality for Spotify, Youtube Music, and Apple Music, our website will provide users a way to easily and quickly transfer playlists they have made on one platform to another, providing they have the necessary account permissions on both platforms. In the age of the internet, sharing music has become much less of a passive activity, as headphones and private listening devices provide songs on demand exclusively for the individual. However, sharing music with other people remains a unique way of connecting. One major problem can arise, however. With the onset of digital music streaming, finding and listening to songs on demand has never been easier, except when it comes to sharing those songs with a person who primarily listens on a different platform. Our website will allow users to bypass this obstacle quickly, easily, and for free.
 
-Initial Value Proposition and Customer Segments
+## Initial Value Proposition and Customer Segments
   The web app we are creating will allow individuals to copy their playlists from one music platform onto another. Suppose you want to share your favorite songs with a friend, but they don’t have a Spotify account like you do. Our website will allow you to change it into a playlist for another platform, like Apple Music, Youtube Music, or some other platform your friend uses.
 	This project will be for anyone who enjoys music digitally and cares to share their music tastes with others in the digital age of streaming services. Converting playlists between platforms right now is a hassle, and is quite labor-intensive. Our project will solve this issue.
 
@@ -13,7 +12,7 @@ Initial Value Proposition and Customer Segments
 
 ### Alan Hakala:
 
-Interview 1:
+#### Interview 1:
 
 Interview: Eric Vaugh
 
@@ -45,7 +44,7 @@ I: “Would the transfer of songs not on one platform to the other be the most u
 
 Assessment: At first interview was only interested on a “nice to have” level at first, became much more interested when the idea of transferring songs not on one platform to another was introduced.
 
-Interview 2:
+#### Interview 2:
 
 Interviewee: Edwin Vela
 
@@ -85,7 +84,7 @@ Assessment: User views main part of software as “nice to have” and is signif
 
 ### Nathan Seitz:
 
-Interview 1: 
+#### Interview 1: 
 
 Who: Joseph Vianello
 
@@ -104,7 +103,7 @@ Representative Quotes:
 Assessment: Playlist converter would be nice to have.
 
 
-Interview 2: 
+#### Interview 2: 
 
 Who: Gavin Gresser
 
@@ -125,7 +124,7 @@ Representative Quotes:
 Assessment: Would not use.
 
 
-Interview 3: 
+#### Interview 3: 
 
 Who: Dominic Drummond
 
@@ -143,9 +142,8 @@ Representative Quotes:
 
 Assessment: Playlist converter would be nice to have.
 
-# Final Value Proposition and Customer Segments
+## Final Value Proposition and Customer Segments
 
 Based on information gathered from the interview a playlist converter is a bit too narrow and a single use tool for most people. Users seemed most interested in the possibility of having a playlist composed of music that is exclusive to different platforms all in one place. A music hub that allows users to play music and make playlists from a variety of platforms seems to fit what our typical user would be most interested in.
 
 Most people who use a streaming service have run into the problem of not being able to find the specific song they want on that platform when it is present on another, our software provides a simple solution by allowing users to listen to anything they want from anywhere all in one place. Our software solves a problem almost all music listeners who use streaming services face, but appeals specifically to more dedicated music fans who enjoy listening to remixes, unreleased music, and music from smaller artists that is not able to be found on large streaming platforms like Spotify and Apple Music.
-
