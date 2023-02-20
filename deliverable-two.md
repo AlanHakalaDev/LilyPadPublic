@@ -91,7 +91,7 @@ The minimum viable product for this project will have the baseline functionality
   The ability to create playlists
       
   #### 2: Actor Brief Descriptions
-  2.1: Registered Users
+  Registered Users
       
   #### 3: Preconditions
   User must have an account registered to create a playlist
@@ -131,7 +131,7 @@ The minimum viable product for this project will have the baseline functionality
   The user listens to a song
 
   #### 2. Actor Description
-  2.1: Registered Users
+  Registered Users
 
   #### 3. Preconditions
   The user has logged in.
@@ -156,20 +156,22 @@ The minimum viable product for this project will have the baseline functionality
     If in step 4 the listener is listening to a playlist or has autoplay enabled, then
       1: The use case starts at step 2 with the next song in the queue.
 
-##### 6. Subflows
+#### 6. Subflows
 No Subflows for this use case.
 
-##### 7. Key Scenarios
+#### 7. Key Scenarios
 The listener presses play on the song.
 The listener selects a song to listen to.
 The listener queues a next song or enables autoplay.
 The listener selects a playlist to start listening to.
 
-##### 8. Post-Conditions
+#### 8. Post-Conditions
 The song player closes, bringing the listener back to the page they were on before.
 
-##### 9. Special Requirements
+#### 9. Special Requirements
 No Special Requirements for this use case.
+
+<img src=images/music_player.jpg width=500px>
 
 ## 7: User Stories
 
