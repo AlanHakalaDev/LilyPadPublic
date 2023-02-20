@@ -21,7 +21,7 @@ LilyPad is a website/app that provides avid music listeners with an easy way to 
 
 #### Consumer Segment
 
-People who stream digital music and use more than one platform all the time.
+People who stream digital music and use more than one platform regularly.
 
 ## 2: Stakeholders
 
