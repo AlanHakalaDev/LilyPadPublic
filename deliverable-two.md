@@ -86,27 +86,27 @@ The minimum viable product for this project will have the baseline functionality
 
 ### 6.2: Use Case Description and Interface Sketch
 
-  ##1: Brief Description
+  ## 1: Brief Description
       The ability to create playlists
       
-  ##2: Actor Brief Descriptions
-      #2.1: Registered Users
+  ## 2: Actor Brief Descriptions
+      # 2.1: Registered Users
       
-  ##3: Preconditions
+  ## 3: Preconditions
       User must have an account registered to create a playlist
   
-  ##4: Main Flow
-      #1: The user opens the website
-      #2: The user creates an account
-      #3: The user will then be able to create a playlist
+  ## 4: Main Flow
+      # 1: The user opens the website
+      # 2: The user creates an account
+      # 3: The user will then be able to create a playlist
       
-  ##5: Alternative Flow
-      #1: The user opens the website
-      #2: The user is already registered so they log in
-      #3: The user then can create a new playlist
+  ## 5: Alternative Flow
+      # 1: The user opens the website
+      # 2: The user is already registered so they log in
+      # 3: The user then can create a new playlist
       
-  ##6: Post-conditions
-      #1: The user can now shuffle through playlists that they have created
+  ## 6: Post-conditions
+      The user can now shuffle through playlists that they have created
 
 ## 7: User Stories
 
