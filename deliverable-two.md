@@ -127,6 +127,67 @@ The minimum viable product for this project will have the baseline functionality
   <img src=images/playlist_creation.jpg width=500px>
 
 
+  ### Use Case: Convert Playlists Between Platforms
+  #### 1. Description
+  The user wants to switch which platform one of their created playlists is on.
+
+  #### 2. Actor Description
+  Registered Users
+
+  #### 3. Preconditions
+  The user has logged in.
+  The user has a playlist on a non-LilyPad music streaming platform.
+  The user has linked at least two accounts.
+
+  #### 4. Main Flow
+  1: The user selects that they wish to convert a playlist.
+  2: The system opens the playlist.
+  3: The user chooses which platform they want to copy it to.
+  4: The system confirms the user has an account on that platform.
+  5: The user confirms their intent.
+  6: The system creates a new playlist on the new platform.
+  7: For each song, the system adds it to the newly created playlist.
+  8: The user sees where the new playlist was saved.
+  9: The use case ends.
+
+  #### 5. Alternative Flows
+  Alternative Flow 1:
+    If in step 4 the user does not have an account on the platform they want to convert a playlist to, then
+      1: The system prompts the user to create an account first
+      2: The use case ends
+
+  Alternative Flow 2:
+    If in step 7 the system can't find the song on the new platform, then
+      1: The system skips that song
+      2: The system continues adding the new songs
+      3: The system displays the songs that weren't added to the new playlist.
+      4: The use case proceeds as normal at step 8.
+
+  Alternative Flow 3:
+    If in step 6, the system fails to create a new playlist, then
+      1: The system will tell the user of the error
+      2: The system ends the use case.
+
+  #### 6. Subflows
+  Subflow 1:
+    In step 7, the system adds new songs to the newly created playlist:
+    1: The system searches for the song on the new platform
+    2: The system finds a best match
+    3: The system adds the song to the playlist
+    4: The system moves on to the next song back to step 1.
+
+  #### 7. Key Scenarios
+  The user has a playlist that they want to be on a different platform
+  The user wants to share a playlist with someone who only uses one platform
+
+  #### 8. Post-Conditions
+  The user's playlist that previously existed only on one platform now exists on two different platforms.
+
+  #### 9. Special Requirements
+  The user needs to have an account linked for each platform they want to involve in order for this process not to pause.
+
+  <img src=images/convert_playlists.jpg width=500px>
+
   ### Use-Case: *Creating An Account*
   #### __1: Brief Description__
   For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LillyPad
