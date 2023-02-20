@@ -96,13 +96,13 @@ The minimum viable product for this project will have the baseline functionality
   User must have an account registered to create a playlist
   
   #### 4: Main Flow
-  1: The user opens the website\n
-  2: The user creates an account\n
+  1: The user opens the website<br />
+  2: The user creates an account<br />
   3: The user will then be able to create a playlist
       
   #### 5: Alternative Flow
-  1: The user opens the website\n
-  2: The user is already registered so they log in\n
+  1: The user opens the website<br />
+  2: The user is already registered so they log in<br />
   3: The user then can create a new playlist
       
   #### 6: Post-conditions
