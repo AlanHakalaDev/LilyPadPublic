@@ -82,7 +82,7 @@ The minimum viable product for this project will have the baseline functionality
 
 ## 6.1: Use Case Diagram
 
-<img src=images/use_case_diagram.jpg width=800px>
+<img src=../images/use_case_diagram.jpg width=800px>
 
 ## 6.2: Use Case Description and Interface Sketch
 
@@ -124,7 +124,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9. Special Requirements__
   No Special Requirements for this use case.
   
-  <img src=images/playlist_creation.jpg width=500px>
+  <img src=../images/playlist_creation.jpg width=500px>
 
 
   ### Use-Case: *Convert Playlists Between Platforms*
@@ -186,7 +186,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9. Special Requirements__
   The user needs to have an account linked for each platform they want to involve in order for this process not to pause.
 
-  <img src=images/convert_playlists.jpg width=500px>
+  <img src=../images/convert_playlists.jpg width=500px>
 
   ### Use-Case: *Creating An Account*
   #### __1: Brief Description__
@@ -248,7 +248,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9: Special Requirements__
   The user must register with an email and a username that is not already registered with an account.
 
-  <img src=images/create_account.jpg width=500px>
+  <img src=../images/create_account.jpg width=500px>
 
 
   ### Use-Case: *Listening to Songs*
@@ -296,7 +296,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9. Special Requirements__
   No Special Requirements for this use case.
 
-  <img src=images/music_player.jpg width=500px>
+  <img src=../images/music_player.jpg width=500px>
   
   
   ### Use-Case: *Linking Platform Accounts*
@@ -343,7 +343,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9: Special Requirements__
   The user must already have an account with LilyPad and the music platform that they choose to connect.
   
-  <img src=images/linking_accounts.jpg width=500px>
+  <img src=../images/linking_accounts.jpg width=500px>
 
   ### Use-Case: *Searching for a Track*
   #### __1. Description__
@@ -382,7 +382,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __9. Special Requirements__
   No Special Requirements for this use case.
   
-  <img src=images/usecaseagh275.png width=500px>
+  <img src=../images/usecaseagh275.png width=500px>
 
 
 ## 7: User Stories
