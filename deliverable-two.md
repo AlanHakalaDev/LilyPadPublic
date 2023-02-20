@@ -86,43 +86,43 @@ The minimum viable product for this project will have the baseline functionality
 
 ## 6.2: Use Case Description and Interface Sketch
 
-  ### Use-Case: Creating Playlists
-  #### 1: Brief Description
+  ### Use-Case: *Creating Playlists*
+  #### __1: Brief Description__
   The ability to create playlists
       
-  #### 2: Actor Brief Descriptions
+  #### __2: Actor Brief Descriptions__
   2.1: Registered Users
       
-  #### 3: Preconditions
+  #### __3: Preconditions__
   User must have an account registered to create a playlist
   
-  #### 4: Main Flow
+  #### __4: Main Flow__
   1: The user opens the website<br />
   2: The user creates an account<br />
   3: The user will then be able to create a playlist
       
-  #### 5: Alternative Flow
+  #### __5: Alternative Flow__
   1: The user opens the website<br />
   2: The user is already registered so they log in<br />
   3: The user then can create a new playlist
       
-  #### 6: Post-conditions
+  #### __6: Post-conditions__
   The user can now shuffle through playlists that they have created
   
 <img src=images/playlist_creation.jpg width=500px>
 
 
-  ### Use-Case: Creating An Account
-  #### 1: Brief Description
+  ### Use-Case: *Creating An Account*
+  #### __1: Brief Description__
   For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LillyPad
       
-  #### 2: Actor Brief Descriptions
+  #### __2: Actor Brief Descriptions__
   2.1: Unregistered User
       
-  #### 3: Preconditions
+  #### __3: Preconditions__
   The user must provide an email address that is not already registered to an account
   
-  #### 4: Main Flow
+  #### __4: Main Flow__
   1: The use case begins when the user is unregistered and wants to create an  account<br />
   2: The user enters a username<br />
   3: The user enters their email<br />
@@ -133,43 +133,46 @@ The minimum viable product for this project will have the baseline functionality
   8: The user logins to the selected music platform<br />
   9: The use case ends
       
-  #### 5: Alternative Flow
+  #### __5: Alternative Flow__
   5.1: Non-Matching Password<br />
-       If in step 3 of the basic flow the unregistered actor does not type a matching password twice:<br />
-          1. The user will be warned that the two passwords do not match<br />
-          2. The user will not be able to move on form the create an account page without entering a matching password<br />
-          3. The use case resumes at step 4<br />
+  If in step 3 of the basic flow the unregistered actor does not type a matching password twice:<br />
+    1. The user will be warned that the two passwords do not match<br />
+    2. The user will not be able to move on form the create an account page without entering a matching password<br />
+    3. The use case resumes at step 4<br />
+
   5.2: Already Registered Email<br />
-       If in step 3 of the basic flow the unregistered actor enters an email that is already registered:<br />
-          1. The user will be warned that the email is already registered with another account<br />
-          2. The user will not be able to move on from the create an account page without entering a matching password<br />
-          3. The use case resumes at step 3<br />
+  If in step 3 of the basic flow the unregistered actor enters an email that is already registered:<br />
+    1. The user will be warned that the email is already registered with another account<br />
+    2. The user will not be able to move on from the create an account page without entering a matching password<br />
+    3. The use case resumes at step 3<br />
+
   5.3: Already Registered Username<br />
-       If in step 2 of the basic flow the unregistered actor enters a username that is already registered:<br />
-          1. The user will be warned that the email is already registered with another account<br />
-          2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account<br />
-          3. The use case resumes at step 3
+  If in step 2 of the basic flow the unregistered actor enters a username that is already registered:<br />
+    1. The user will be warned that the email is already registered with another account<br />
+    2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account<br />
+    3. The use case resumes at step 3
 
-  #### 6: Subflows
+  #### __6: Subflows__
   6.1: Login to platform that the user wants to connect<br />
-          1. The user will choose the music platform that they want to connect to LillyPad<br />
-          2. The user will login to the chose music platform<br />
-          3. The user will agree to the terms of connecting the music platform to LillyPad
+    1. The user will choose the music platform that they want to connect to LillyPad<br />
+    2. The user will login to the chose music platform<br />
+    3. The user will agree to the terms of connecting the music platform to LillyPad
 
-  #### 7: Key Scenarious
+  #### __7: Key Scenarious__
   7.1: The user enters a valid username, email and password<br />
-          1. The user must enter a valid username, email, and password in order to create an account<br />
-          2. This allows the user to move on to step 5<br />
+    1. The user must enter a valid username, email, and password in order to create an account<br />
+    2. This allows the user to move on to step 5
+
   7.2: The user agrees to term agreements<br />
-          1. The user must agree to the terms and conditions in order to use the platform<br />
+    1. The user must agree to the terms and conditions in order to use the platform<br />
   
-  #### 8: Post-Conditions
+  #### __8: Post-Conditions__
   No Post-Conditions needed
 
-  #### 9: Special Requirements
+  #### __9: Special Requirements__
   The user must register with an email and a username that is not already registered with an account.
 
-  <img src=images/UseCaseSketch.pdf width=500px>
+  <img src=images/create_account.jpg width=500px>
 
 
 ## 7: User Stories
