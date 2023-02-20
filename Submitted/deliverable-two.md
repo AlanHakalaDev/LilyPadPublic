@@ -96,7 +96,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __3: Preconditions__
   User must have an account registered to create a playlist
   
-  #### 4: Main Flow
+  #### __4: Main Flow__
   1: The user chooses a name for the playlist
   2: The system registers the name and saves the playlist
   3: The user chooses a song to add to the playlist
@@ -105,41 +105,41 @@ The minimum viable product for this project will have the baseline functionality
   6: The system saves the new additions
   7: The use case ends.
       
-  #### 5: Alternative Flow
-  Alternative Flow 1:
+  #### __5: Alternative Flow__
+  5.1: No songs added after playlist creation
     If the user doesn't add any songs after creating the playlist, then
   1: The user can add songs to the playlist from the song player.
   2: The system saves the new addition.
   3: The use case ends.
       
-  #### 6. Subflows
+  #### __6. Subflows__
   No Subflows for this use case.
 
-  #### 7. Key Scenarios
+  #### __7. Key Scenarios__
   No Key Scenarios for this use case.
 
-  #### 8. Post-Conditions
+  #### __8. Post-Conditions__
   The user can now shuffle through playlists that they have created
 
-  #### 9. Special Requirements
+  #### __9. Special Requirements__
   No Special Requirements for this use case.
   
   <img src=images/playlist_creation.jpg width=500px>
 
 
-  ### Use Case: Convert Playlists Between Platforms
-  #### 1. Description
+  ### Use-Case: *Convert Playlists Between Platforms*
+  #### __1. Description__
   The user wants to switch which platform one of their created playlists is on.
 
-  #### 2. Actor Description
-  Registered Users
+  #### __2. Actor Description__
+  2.1: Registered UserRegistered Users
 
-  #### 3. Preconditions
+  #### __3. Preconditions__
   The user has logged in.
   The user has a playlist on a non-LilyPad music streaming platform.
   The user has linked at least two accounts.
 
-  #### 4. Main Flow
+  #### __4. Main Flow__
   1: The user selects that they wish to convert a playlist.
   2: The system opens the playlist.
   3: The user chooses which platform they want to copy it to.
@@ -150,100 +150,100 @@ The minimum viable product for this project will have the baseline functionality
   8: The user sees where the new playlist was saved.
   9: The use case ends.
 
-  #### 5. Alternative Flows
-  Alternative Flow 1:
+  #### __5. Alternative Flows__
+  5.1: No account to create new playlist
     If in step 4 the user does not have an account on the platform they want to convert a playlist to, then
       1: The system prompts the user to create an account first
       2: The use case ends
 
-  Alternative Flow 2:
+  5.2: Song not on new platform
     If in step 7 the system can't find the song on the new platform, then
       1: The system skips that song
       2: The system continues adding the new songs
       3: The system displays the songs that weren't added to the new playlist.
       4: The use case proceeds as normal at step 8.
 
-  Alternative Flow 3:
+  5.3: System fails to create playlist
     If in step 6, the system fails to create a new playlist, then
       1: The system will tell the user of the error
       2: The system ends the use case.
 
-  #### 6. Subflows
-  Subflow 1:
+  #### __6. Subflows__
+ 6.1: Songs added to new playlist
     In step 7, the system adds new songs to the newly created playlist:
     1: The system searches for the song on the new platform
     2: The system finds a best match
     3: The system adds the song to the playlist
     4: The system moves on to the next song back to step 1.
 
-  #### 7. Key Scenarios
+  #### __7. Key Scenarios__
   The user has a playlist that they want to be on a different platform
   The user wants to share a playlist with someone who only uses one platform
 
-  #### 8. Post-Conditions
+  #### __8. Post-Conditions__
   The user's playlist that previously existed only on one platform now exists on two different platforms.
 
-  #### 9. Special Requirements
+  #### __9. Special Requirements__
   The user needs to have an account linked for each platform they want to involve in order for this process not to pause.
 
   <img src=images/convert_playlists.jpg width=500px>
 
   ### Use-Case: *Creating An Account*
   #### __1: Brief Description__
-  For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LillyPad
+  For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LilyPad.
       
   #### __2: Actor Brief Descriptions__
   2.1: Unregistered User
       
   #### __3: Preconditions__
-  The user must provide an email address that is not already registered to an account
+  The user must provide an email address that is not already registered to an account.
   
   #### __4: Main Flow__
-  1: The use case begins when the user is unregistered and wants to create an  account<br />
-  2: The user enters a username<br />
-  3: The user enters their email<br />
-  4: The user enters a password<br />
-  5: The user agrees to the terms and conditions<br />
-  6: The user signs up<br />
-  7: The user chooses on a music platform that they would like to connect<br />
-  8: The user logins to the selected music platform<br />
-  9: The use case ends
+  1: The use case begins when the user is unregistered and wants to create an  account.
+  2: The user enters a username.
+  3: The user enters their email.
+  4: The user enters a password.
+  5: The user agrees to the terms and conditions.
+  6: The user signs up.
+  7: The user chooses on a music platform that they would like to connect.
+  8: The user logins to the selected music platform.
+  9: The use case ends.
       
   #### __5: Alternative Flow__
-  5.1: Non-Matching Password<br />
-  If in step 3 of the basic flow the unregistered actor does not type a matching password twice:<br />
-    1. The user will be warned that the two passwords do not match<br />
-    2. The user will not be able to move on form the create an account page without entering a matching password<br />
-    3. The use case resumes at step 4<br />
+  5.1: Non-Matching Password
+  If in step 3 of the basic flow the unregistered actor does not type a matching password twice:
+    1. The user will be warned that the two passwords do not match.
+    2. The user will not be able to move on form the create an account page without entering a matching password.
+    3. The use case resumes at step 4.
 
-  5.2: Already Registered Email<br />
-  If in step 3 of the basic flow the unregistered actor enters an email that is already registered:<br />
-    1. The user will be warned that the email is already registered with another account<br />
-    2. The user will not be able to move on from the create an account page without entering a matching password<br />
-    3. The use case resumes at step 3<br />
+  5.2: Already Registered Email
+  If in step 3 of the basic flow the unregistered actor enters an email that is already registered:
+    1. The user will be warned that the email is already registered with another account.
+    2. The user will not be able to move on from the create an account page without entering a matching password.
+    3. The use case resumes at step 3.
 
-  5.3: Already Registered Username<br />
-  If in step 2 of the basic flow the unregistered actor enters a username that is already registered:<br />
-    1. The user will be warned that the email is already registered with another account<br />
-    2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account<br />
-    3. The use case resumes at step 3
+  5.3: Already Registered Username
+  If in step 2 of the basic flow the unregistered actor enters a username that is already registered:
+    1. The user will be warned that the email is already registered with another account.
+    2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account.
+    3. The use case resumes at step 3.
 
   #### __6: Subflows__
-  6.1: Login to platform that the user wants to connect<br />
-    1. The user will choose the music platform that they want to connect to LillyPad<br />
-    2. The user will login to the chose music platform<br />
-    3. The user will agree to the terms of connecting the music platform to LillyPad
+  6.1: Login to platform that the user wants to connect.
+    1. The user will choose the music platform that they want to connect to LilyPad.
+    2. The user will login to the chose music platform.
+    3. The user will agree to the terms of connecting the music platform to LilyPad.
 
   #### __7: Key Scenarious__
-  7.1: The user enters a valid username, email and password<br />
-    1. The user must enter a valid username, email, and password in order to create an account<br />
-    2. This allows the user to move on to step 5
+  7.1: The user enters a valid username, email and password.
+    1. The user must enter a valid username, email, and password in order to create an account.
+    2. This allows the user to move on to step 5.
 
-  7.2: The user agrees to term agreements<br />
-    1. The user must agree to the terms and conditions in order to use the platform<br />
+  7.2: The user agrees to term agreements.
+    1. The user must agree to the terms and conditions in order to use the platform.
   
   #### __8: Post-Conditions__
-  No Post-Conditions needed
+  The user now has an account with which to long onto the platform.
 
   #### __9: Special Requirements__
   The user must register with an email and a username that is not already registered with an account.
@@ -251,49 +251,49 @@ The minimum viable product for this project will have the baseline functionality
   <img src=images/create_account.jpg width=500px>
 
 
-  ### Use Case: Listening to Songs
-  #### 1. Description
-  The user listens to a song
+  ### Use-Case: *Listening to Songs*
+  #### __1. Description__
+  The user listens to a song.
 
-  #### 2. Actor Description
-  Registered Users
+  #### __2. Actor Description__
+  2.1: Registered User
 
-  #### 3. Preconditions
+  #### __3. Preconditions__
   The user has logged in.
 
-  #### 4. Main Flow
+  #### __4. Main Flow__
   1: The use case begins when the user selects a song to start listening to.
   2: The song starts playing.
   3: The song plays unless skipped, paused, or rewinded.
   4: The song finishes playing.
   5: The use case ends.
 
-  #### 5. Alternative Flows
-  Alternative Flow 1:
+  #### __5. Alternative Flows__
+  5.1: Song is paused by the user.
     If in steps 2-4 of the basic flow the listener selects pause, then
       1: The use case is suspended until cancelled or it starts again.
 
-  Alternative Flow 2:
+  5.2: Song is rewinded by user.
     If in steps 2-4 of the basic flow the listener selects rewind, then
       1: The use case restarts at step 2 and proceeds as normal.
 
-  Alternative Flow 3:
+  5.3: Next song starts playing.
     If in step 4 the listener is listening to a playlist or has autoplay enabled, then
       1: The use case starts at step 2 with the next song in the queue.
 
-  #### 6. Subflows
+  #### __6. Subflows__
   No Subflows for this use case.
 
-  #### 7. Key Scenarios
+  #### __7. Key Scenarios__
   The listener presses play on the song.
   The listener selects a song to listen to.
   The listener queues a next song or enables autoplay.
   The listener selects a playlist to start listening to.
 
-  #### 8. Post-Conditions
+  #### __8. Post-Conditions__
   The song player closes, bringing the listener back to the page they were on before.
 
-  #### 9. Special Requirements
+  #### __9. Special Requirements__
   No Special Requirements for this use case.
 
   <img src=images/music_player.jpg width=500px>
@@ -301,83 +301,87 @@ The minimum viable product for this project will have the baseline functionality
   
   ### Use-Case: *Linking Platform Accounts*
   #### __1: Brief Description__
-  For an individual to take full advantage of the application, they should link their various music platform accounts so that they will be able to create playlists to their liking
+  For an individual to take full advantage of the application, they should link their various music platform accounts so that they will be able to create playlists to their liking.
       
   #### __2: Actor Brief Descriptions__
   2.1: Registered User
       
   #### __3: Preconditions__
-  The user must already been registered to an account
+  The user must already been registered to an account.
   
   #### __4: Main Flow__
-  1: The user chooses a platform to log on to<br />
-  2: The user enters their email<br />
-  3: The user enters a password<br />
-  4: The user agrees to the terms and conditions<br />
-  5: The user logins to the selected music platform<br />
-  6: The use case ends
+  1: The user chooses a platform to log on to.
+  2: The user enters their email.
+  3: The user enters a password.
+  4: The user agrees to the terms and conditions.
+  5: The user logins to the selected music platform.
+  6: The use case ends.
       
   #### __5: Alternative Flow__
-  No alternative flows available for this use case.
+  5.1: User enters wrong password or email.
+    If the user enters a password or email that doesn't match, then
+      1. The system alerts the user.
+      2. Step 2 and 3 are repeated.
+      3. The system obtains a valid password and email pair.
 
   #### __6: Subflows__
-  6.1: The user views the terms and agreements document<br />
-    1. The user views the document<br />
+  6.1: The user views the terms and agreements document.
+    1. The user views the document.
     2. The user returns to any step between 2 and 4 since the terms and conditions document will always be available to view within those steps.
 
   #### __7: Key Scenarious__
-  7.1: The user enters a valid email/username and password to the chosen music platform<br />
-    1. The user must enter a valid username/email, and password in order to login to their account<br />
-    2. This allows the user to move on to step 6
+  7.1: The user enters a valid email/username and password to the chosen music platform.
+    1. The user must enter a valid username/email, and password in order to login to their account.
+    2. This allows the user to move on to step 6.
 
-  7.2: The user agrees to term agreements<br />
-    1. The user must agree to the terms and conditions in order to connect their music platform to LillyPad<br />
+  7.2: The user agrees to term agreements.
+    1. The user must agree to the terms and conditions in order to connect their music platform to LilyPad.
   
   #### __8: Post-Conditions__
-  No Post-Conditions needed
+  No Post-Conditions for this use case.
 
   #### __9: Special Requirements__
-  The user must already have an account with LillyPad and the music platform that they choose to connect.
+  The user must already have an account with LilyPad and the music platform that they choose to connect.
   
   <img src=images/linking_accounts.jpg width=500px>
 
-  ### Use Case: Searching for a track
-  #### 1. Description
+  ### Use-Case: *Searching for a Track*
+  #### __1. Description__
   The user types the name of the track they want to search into the search bar
 
-  #### 2. Actor Description
-  Registered Users
+  #### __2. Actor Description__
+  2.1: Registered Users
 
-  #### 3. Preconditions
+  #### __3. Preconditions__
   The user has logged in.
 
-  #### 4. Main Flow
+  #### __4. Main Flow__
   1: The use case begins when the user clicks on the searchbar.
   2: The types the name of the desired song into the searchbar.
   3: The software searches for songs from multiple platforms that match the user's search.
   4: The software displays the results to the user.
 
-  #### 5. Alternative Flows
-  Alternative Flow 1:
+  #### __5. Alternative Flows__
+  5.1: Misspelled query
     If in steps 1 the user does misspells their search query
       1: The software uses autocorrect to guess what the search result might have been.
 
-  Alternative Flow 3:
+  5.2: Specific results
     If in steps 4 the user wants results only from a specific platform
       1: The use case provides a filter option for platform
 
-
-  #### 6. Subflows
+  #### __6. Subflows__
   No Subflows for this use case.
 
-  #### 7. Key Scenarios
+  #### __7. Key Scenarios__
   No key scenarios for this use case.
 
-  #### 8. Post-Conditions
-  No post conditions for this use case.
+  #### __8. Post-Conditions__
+  No Post-Conditions for this use case.
 
-  #### 9. Special Requirements
+  #### __9. Special Requirements__
   No Special Requirements for this use case.
+  
   <img src=images/usecaseagh275.png width=500px>
 
 
