@@ -86,8 +86,8 @@ The minimum viable product for this project will have the baseline functionality
 
 ## 6.2: Use Case Description and Interface Sketch
 
-  ### Use-Case: Creating Playlists
-  #### 1: Brief Description
+  ### Use-Case: *Creating Playlists*
+  #### __1: Brief Description__
   The ability to create playlists
       
   #### __2: Actor Brief Descriptions__
@@ -96,7 +96,7 @@ The minimum viable product for this project will have the baseline functionality
   #### __3: Preconditions__
   User must have an account registered to create a playlist
   
-  #### __4: Main Flow__
+  #### 4: Main Flow
   1: The user chooses a name for the playlist
   2: The system registers the name and saves the playlist
   3: The user chooses a song to add to the playlist
@@ -105,29 +105,29 @@ The minimum viable product for this project will have the baseline functionality
   6: The system saves the new additions
   7: The use case ends.
       
-  #### __5: Alternative Flow__
+  #### 5: Alternative Flow
   Alternative Flow 1:
     If the user doesn't add any songs after creating the playlist, then
   1: The user can add songs to the playlist from the song player.
   2: The system saves the new addition.
   3: The use case ends.
       
-  #### __6. Subflows__
+  #### 6. Subflows
   No Subflows for this use case.
 
-  #### __7. Key Scenarios__
+  #### 7. Key Scenarios
   No Key Scenarios for this use case.
 
-  #### __8. Post-Conditions__
+  #### 8. Post-Conditions
   The user can now shuffle through playlists that they have created
 
-  #### __9. Special Requirements__
+  #### 9. Special Requirements
   No Special Requirements for this use case.
   
-<img src=images/playlist_creation.jpg width=500px>
+  <img src=images/playlist_creation.jpg width=500px>
 
 
-### Use-Case: *Creating An Account*
+  ### Use-Case: *Creating An Account*
   #### __1: Brief Description__
   For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LillyPad
       
@@ -190,24 +190,24 @@ The minimum viable product for this project will have the baseline functionality
   <img src=images/create_account.jpg width=500px>
 
 
-### Use Case: *Listening to Songs*
-  #### __1. Description__
+  ### Use Case: Listening to Songs
+  #### 1. Description
   The user listens to a song
 
-  #### __2. Actor Description__
+  #### 2. Actor Description
   Registered Users
 
-  #### __3. Preconditions__
+  #### 3. Preconditions
   The user has logged in.
 
-  #### __4. Main Flow__
+  #### 4. Main Flow
   1: The use case begins when the user selects a song to start listening to.
   2: The song starts playing.
   3: The song plays unless skipped, paused, or rewinded.
   4: The song finishes playing.
   5: The use case ends.
 
-  #### __5. Alternative Flows__
+  #### 5. Alternative Flows
   Alternative Flow 1:
     If in steps 2-4 of the basic flow the listener selects pause, then
       1: The use case is suspended until cancelled or it starts again.
@@ -220,8 +220,8 @@ The minimum viable product for this project will have the baseline functionality
     If in step 4 the listener is listening to a playlist or has autoplay enabled, then
       1: The use case starts at step 2 with the next song in the queue.
 
-#### 6. Subflows
-No Subflows for this use case.
+  #### 6. Subflows
+  No Subflows for this use case.
 
   #### 7. Key Scenarios
   The listener presses play on the song.
@@ -235,107 +235,47 @@ No Subflows for this use case.
   #### 9. Special Requirements
   No Special Requirements for this use case.
 
-<img src=images/music_player.jpg width=500px>
+  <img src=images/music_player.jpg width=500px>
 
-### Use Case: *Searching For a Track*
-  #### __1. Description__
+  ### Use Case: Searching for a track
+  #### 1. Description
   The user types the name of the track they want to search into the search bar
 
-  #### __2. Actor Description__
+  #### 2. Actor Description
   Registered Users
 
-  #### __3. Preconditions__
+  #### 3. Preconditions
   The user has logged in.
 
-  #### __4. Main Flow__
+  #### 4. Main Flow
   1: The use case begins when the user clicks on the searchbar.
   2: The types the name of the desired song into the searchbar.
   3: The software searches for songs from multiple platforms that match the user's search.
   4: The software displays the results to the user.
 
-  #### __5. Alternative Flows__
+  #### 5. Alternative Flows
   Alternative Flow 1:
     If in steps 1 the user does misspells their search query
       1: The software uses autocorrect to guess what the search result might have been.
 
-  Alternative Flow 2:
+  Alternative Flow 3:
     If in steps 4 the user wants results only from a specific platform
       1: The use case provides a filter option for platform
 
-  #### __6. Subflows__
-  No Subflows for this use case.
 
-  #### 7. __Key Scenarios__
-  No Key Scenarios for this use case.
+#### 6. Subflows
+No Subflows for this use case.
 
-  #### 8. __Post-Conditions__
-  No Post-Conditions for this use case.
+#### 7. Key Scenarios
+No key scenarios for this use case.
 
-  #### 9. __Special Requirements__
-  No Special Requirements for this use case.
+#### 8. Post-Conditions
+No post conditions for this use case.
 
-  <img src=images/usecaseagh275.png width=500px>
+#### 9. Special Requirements
+No Special Requirements for this use case.
+<img src=images/usecaseagh275.png width=500px>
 
-### Use Case: *Convert Playlists Between Platforms*
-  #### __1. Description__
-  The user wants to switch which platform one of their created playlists is on.
-
-  #### __2. Actor Description__
-  Registered Users
-
-  #### __3. Preconditions__
-  The user has logged in.
-  The user has a playlist on a non-LilyPad music streaming platform.
-  The user has linked at least two accounts.
-
-  #### __4. Main Flow__
-  1: The user selects that they wish to convert a playlist.
-  2: The system opens the playlist.
-  3: The user chooses which platform they want to copy it to.
-  4: The system confirms the user has an account on that platform.
-  5: The user confirms their intent.
-  6: The system creates a new playlist on the new platform.
-  7: For each song, the system adds it to the newly created playlist.
-  8: The user sees where the new playlist was saved.
-  9: The use case ends.
-
-  #### __5. Alternative Flows__
-  Alternative Flow 1:
-    If in step 4 the user does not have an account on the platform they want to convert a playlist to, then
-      1: The system prompts the user to create an account first
-      2: The use case ends
-
-  Alternative Flow 2:
-    If in step 7 the system can't find the song on the new platform, then
-      1: The system skips that song
-      2: The system continues adding the new songs
-      3: The system displays the songs that weren't added to the new playlist.
-      4: The use case proceeds as normal at step 8.
-
-  Alternative Flow 3:
-    If in step 6, the system fails to create a new playlist, then
-      1: The system will tell the user of the error
-      2: The system ends the use case.
-
-  #### __6. Subflows__
-  Subflow 1:
-    In step 7, the system adds new songs to the newly created playlist:
-    1: The system searches for the song on the new platform
-    2: The system finds a best match
-    3: The system adds the song to the playlist
-    4: The system moves on to the next song back to step 1.
-
-  #### __7. Key Scenarios__
-  The user has a playlist that they want to be on a different platform
-  The user wants to share a playlist with someone who only uses one platform
-
-  #### __8. Post-Conditions__
-  The user's playlist that previously existed only on one platform now exists on two different platforms.
-
-  #### __9. Special Requirements__
-  The user needs to have an account linked for each platform they want to involve in order for this process not to pause.
-
-  <img width=500px>
 
 ## 7: User Stories
 
