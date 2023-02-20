@@ -92,4 +92,10 @@ As a music listener, I want a recommended feature so I can find new songs that a
 
 As a music listener, I want a searchbar that will let me find new songs and playlists.
 
+As a listener that plays music through youtube, spotify, and apple music, I want to be able to make sure that I can start the youtube videos at a specific timestamp because some youtube music videos don't start the music right away. 
+
+As a music listener, I want to be able to favorite specific of a song that appears on multiple platforms so that I get to listen to my most favorite version.  
+
+As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
+
 ## 8: Issue Tracker
