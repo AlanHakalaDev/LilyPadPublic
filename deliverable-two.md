@@ -21,7 +21,7 @@ LilyPad is a website/app that provides avid music listeners with an easy way to 
 
 #### Consumer Segment
 
-People who stream digital music and use more than one platform all the time.
+People who stream digital music and use more than one platform regularly.
 
 ## 2: Stakeholders
 
@@ -100,10 +100,14 @@ As a music listener, I want to be able to favorite specific of a song that appea
 
 As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
 
-As a music listener, I want to be able to shuffle my playlists.
+As a music listener, I want to be able to shuffle my playlists so I can have some variety in my playlist.
 
-As a music listener, I want to be able to follow other users.
+As a music listener, I want to be able to follow other users as this will allow me to keep up with what my fellow users are listening to.
 
-As a music listener, I want to be able to convert a playlist between apps.
+As a music listener, I want to be able to convert a playlist between apps so I don't have to manually convert it.
 
-## 8: Issue Tracker
+As a music listener, I would like to be able to create a profile that stores all of my data so that it does not get reset everytime.
+
+As a music listener, I would like an autoplay feature when my playlist comes to an end so that my music does not stop.
+
+As a music listener, I want two-factor authentification for my account to be protected.
