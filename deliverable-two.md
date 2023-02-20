@@ -108,6 +108,8 @@ The minimum viable product for this project will have the baseline functionality
       
   #### 6: Post-conditions
   The user can now shuffle through playlists that they have created
+  
+<img src=images/playlist_creation.jpg width=800px>
 
 ## 7: User Stories
 
