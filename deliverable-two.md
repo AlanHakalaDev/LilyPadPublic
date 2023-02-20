@@ -49,7 +49,7 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 #### 5. Un-favorite versions of songs that you don't like as much as others
 
-#### 3. ADD_MORE_AS_NEEDED
+#### 6. Ability to shuffle or play songs in order
 
 ## 4: Non-Functional Requirements
 
@@ -79,5 +79,11 @@ The minimum viable product for this project will have the baseline functionality
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
 
 As a music listener, I want a recommended feature so I can find new songs that are similar to what I already like.
+
+As a listener that plays music through youtube, spotify, and apple music, I want to be able to make sure that I can start the youtube videos at a specific timestamp because some youtube music videos don't start the music right away. 
+
+As a music listener, I want to be able to favorite specific of a song that appears on multiple platforms so that I get to listen to my most favorite version.  
+
+As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
 
 ## 8: Issue Tracker
