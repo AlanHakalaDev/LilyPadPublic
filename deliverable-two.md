@@ -98,4 +98,10 @@ As a music listener, I want to be able to favorite specific of a song that appea
 
 As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
 
+As a music listener, I want to be able to shuffle my playlists.
+
+As a music listener, I want to be able to follow other users.
+
+As a music listener, I want to be able to convert a playlist between apps.
+
 ## 8: Issue Tracker
