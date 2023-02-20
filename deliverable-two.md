@@ -104,4 +104,6 @@ As a music listener, I want to be able to follow other users.
 
 As a music listener, I want to be able to convert a playlist between apps.
 
+As a music listener, I would like to be able to create a profile that stores all of my data.
+
 ## 8: Issue Tracker
