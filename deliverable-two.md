@@ -277,6 +277,8 @@ The minimum viable product for this project will have the baseline functionality
 
   #### __9: Special Requirements__
   The user must already have an account with LillyPad and the music platform that they choose to connect.
+  
+  <img src=images/linking_accounts.jpg width=500px>
 
   ### Use Case: Searching for a track
   #### 1. Description
@@ -304,18 +306,18 @@ The minimum viable product for this project will have the baseline functionality
       1: The use case provides a filter option for platform
 
 
-#### 6. Subflows
-No Subflows for this use case.
+  #### 6. Subflows
+  No Subflows for this use case.
 
-#### 7. Key Scenarios
-No key scenarios for this use case.
+  #### 7. Key Scenarios
+  No key scenarios for this use case.
 
-#### 8. Post-Conditions
-No post conditions for this use case.
+  #### 8. Post-Conditions
+  No post conditions for this use case.
 
-#### 9. Special Requirements
-No Special Requirements for this use case.
-<img src=images/usecaseagh275.png width=500px>
+  #### 9. Special Requirements
+  No Special Requirements for this use case.
+  <img src=images/usecaseagh275.png width=500px>
 
 
 ## 7: User Stories
