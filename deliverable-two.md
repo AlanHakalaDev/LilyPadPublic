@@ -188,7 +188,6 @@ No Special Requirements for this use case.
   2: The types the name of the desired song into the searchbar.
   3: The software searches for songs from multiple platforms that match the user's search.
   4: The software displays the results to the user.
-<img src=images/usecaseagh275.png width=500px>
 
   #### 5. Alternative Flows
   Alternative Flow 1:
@@ -211,7 +210,7 @@ No post conditions for this use case.
 
 #### 9. Special Requirements
 No Special Requirements for this use case.
-
+<img src=images/usecaseagh275.png width=500px>
 
 
 ## 7: User Stories
