@@ -82,6 +82,8 @@ The minimum viable product for this project will have the baseline functionality
 
 ### 6.1: Use Case Diagram
 
+<img src=images/use_case_diagram.jpg width=800px>
+
 ### 6.2: Use Case Description and Interface Sketch
 
 ## 7: User Stories
