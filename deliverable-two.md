@@ -55,7 +55,7 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 #### 8. Search for songs using keywords and filters
 
-#### 8. Shuffle playlists to play in order or randomly
+#### 9. Shuffle playlists to play in order or randomly
 
 ## 4: Non-Functional Requirements
 
