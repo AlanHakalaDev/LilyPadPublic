@@ -11,7 +11,7 @@ The problem with multiple different music streaming platforms causes issues with
 
 ### 1.2: Product Position Statement
 
-For listeners of music in the internet age, who don't want to deal with hopping between streaming platforms to enjoy specific tracks or songs. PROJECT_NAME is a new web app music platform that connects all of your streaming accounts together, unlike the current popular streaming platforms, our product gives you a way to listen your favorite songs, all in one place.
+For listeners of music in the internet age, who don't want to deal with hopping between streaming platforms to enjoy specific tracks or songs. PROJECT_NAME is a new web app music platform that connects all of your streaming accounts together. Unlike the current popular streaming platforms, our product gives you a way to listen to your favorite songs, all in one place.
 
 ### 1.3: Value Proposition and Customer Segment
 
@@ -21,7 +21,7 @@ PROJECT_NAME is a website/app that provides avid music listeners with an easy wa
 
 #### Consumer Segment
 
-People who stream digital music and use more than one platform all the time.
+People who stream digital music and use more than one platform regularly.
 
 ## 2: Stakeholders
 
