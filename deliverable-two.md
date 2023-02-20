@@ -125,42 +125,43 @@ The minimum viable product for this project will have the baseline functionality
   #### 4: Main Flow
   1: The use case begins when the user is unregistered and wants to create an  account<br />
   2: The user enters a username<br />
-  3: The user enters their email
-  4: The user enters a password
-  5: The user agrees to the terms and conditions
-  6: The user signs up
-  7: The user chooses on a music platform that they would like to connect
-  8: The user logins to the selected music platform
+  3: The user enters their email<br />
+  4: The user enters a password<br />
+  5: The user agrees to the terms and conditions<br />
+  6: The user signs up<br />
+  7: The user chooses on a music platform that they would like to connect<br />
+  8: The user logins to the selected music platform<br />
   9: The use case ends
       
   #### 5: Alternative Flow
-  5.1: Non-Matching Password
-       If in step 3 of the basic flow the unregistered actor does not type a matching password twice:
-          1. The user will be warned that the two passwords do not match
-          2. The user will not be able to move on form the create an account page without entering a matching password
-          3. The use case resumes at step 4
-  5.2: Already Registered Email
-       If in step 3 of the basic flow the unregistered actor enters an email that is already registered:
-          1. The user will be warned that the email is already registered with another account
-          2. The user will not be able to move on from the create an account page without entering a matching password.
-          3. The use case resumes at step 3
-  5.3: Already Registered Username
-       If in step 2 of the basic flow the unregistered actor enters a username that is already registered:
-          1. The user will be warned that the email is already registered with another account
-          2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account
+  5.1: Non-Matching Password<br />
+       If in step 3 of the basic flow the unregistered actor does not type a matching password twice:<br />
+          1. The user will be warned that the two passwords do not match<br />
+          2. The user will not be able to move on form the create an account page without entering a matching password<br />
+          3. The use case resumes at step 4<br />
+  5.2: Already Registered Email<br />
+       If in step 3 of the basic flow the unregistered actor enters an email that is already registered:<br />
+          1. The user will be warned that the email is already registered with another account<br />
+          2. The user will not be able to move on from the create an account page without entering a matching password<br />
+          3. The use case resumes at step 3<br />
+  5.3: Already Registered Username<br />
+       If in step 2 of the basic flow the unregistered actor enters a username that is already registered:<br />
+          1. The user will be warned that the email is already registered with another account<br />
+          2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account<br />
           3. The use case resumes at step 3
 
   #### 6: Subflows
-  6.1: Login to platform that the user wants to connect
-          1. The user will choose the music platform that they want to connect to LillyPad
-          2. The user will login to the chose music platform
+  6.1: Login to platform that the user wants to connect<br />
+          1. The user will choose the music platform that they want to connect to LillyPad<br />
+          2. The user will login to the chose music platform<br />
           3. The user will agree to the terms of connecting the music platform to LillyPad
 
   #### 7: Key Scenarious
-  7.1: The user enters a valid username, email and password
-          1. The user must enter a valid username, email, and password in order to create an account
-          2. This allows the user to move on to step 5
-  7.2: The user agrees to term agreements
+  7.1: The user enters a valid username, email and password<br />
+          1. The user must enter a valid username, email, and password in order to create an account<br />
+          2. This allows the user to move on to step 5<br />
+  7.2: The user agrees to term agreements<br />
+          1. The user must agree to the terms and conditions in order to use the platform<br />
   
   #### 8: Post-Conditions
   No Post-Conditions needed
