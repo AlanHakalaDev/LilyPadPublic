@@ -237,6 +237,46 @@ The minimum viable product for this project will have the baseline functionality
 
   <img src=images/music_player.jpg width=500px>
 
+  ### Use Case: Searching for a track
+  #### 1. Description
+  The user types the name of the track they want to search into the search bar
+
+  #### 2. Actor Description
+  Registered Users
+
+  #### 3. Preconditions
+  The user has logged in.
+
+  #### 4. Main Flow
+  1: The use case begins when the user clicks on the searchbar.
+  2: The types the name of the desired song into the searchbar.
+  3: The software searches for songs from multiple platforms that match the user's search.
+  4: The software displays the results to the user.
+
+  #### 5. Alternative Flows
+  Alternative Flow 1:
+    If in steps 1 the user does misspells their search query
+      1: The software uses autocorrect to guess what the search result might have been.
+
+  Alternative Flow 3:
+    If in steps 4 the user wants results only from a specific platform
+      1: The use case provides a filter option for platform
+
+
+#### 6. Subflows
+No Subflows for this use case.
+
+#### 7. Key Scenarios
+No key scenarios for this use case.
+
+#### 8. Post-Conditions
+No post conditions for this use case.
+
+#### 9. Special Requirements
+No Special Requirements for this use case.
+<img src=images/usecaseagh275.png width=500px>
+
+
 ## 7: User Stories
 
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
