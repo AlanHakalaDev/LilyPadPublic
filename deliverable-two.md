@@ -86,6 +86,48 @@ The minimum viable product for this project will have the baseline functionality
 
 ### 6.2: Use Case Description and Interface Sketch
 
+#### Use Case: Listening to Songs
+
+##### 1. Description
+
+The user selects a track and begins to listen to it.
+
+##### 2. Actor Description
+
+A user who has an account on the platform.
+
+##### 3. Preconditions
+
+The user has logged in.
+
+##### 4. Basic Flow
+
+1. The use case begins when the user selects a song to start listening to.
+
+2. The song starts playing.
+
+3. The song plays unless skipped, paused, or rewinded.
+
+4. The song finishes playing.
+
+5. The use case ends.
+
+##### 5. Alternative Flows
+
+1. If in step 2 the song is paused, then the use case ends.
+
+1. If in step 2 the sond is rewinded, then the use case restarts at step 2.
+
+##### 6. Subflows
+
+##### 7. Key Scenarios
+
+##### 8. Post-Conditions
+
+##### 9. Special Requirements
+
+#### 
+
 ## 7: User Stories
 
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
