@@ -236,6 +236,49 @@ The minimum viable product for this project will have the baseline functionality
   No Special Requirements for this use case.
 
   <img src=images/music_player.jpg width=500px>
+  
+  
+  ### Use-Case: *Linking Platform Accounts*
+  #### __1: Brief Description__
+  For an individual to take full advantage of the application, they should link their various music platform accounts so that they will be able to create playlists to their liking
+      
+  #### __2: Actor Brief Descriptions__
+  2.1: Registered User
+      
+  #### __3: Preconditions__
+  The user must already been registered to an account
+  
+  #### __4: Main Flow__
+  1: The user chooses a platform to log on to<br />
+  2: The user enters their email<br />
+  3: The user enters a password<br />
+  4: The user agrees to the terms and conditions<br />
+  5: The user logins to the selected music platform<br />
+  6: The use case ends
+      
+  #### __5: Alternative Flow__
+  No alternative flows available for this use case.
+
+  #### __6: Subflows__
+  6.1: The user views the terms and agreements document<br />
+    1. The user views the document<br />
+    2. The user returns to any step between 2 and 4 since the terms and conditions document will always be available to view within those steps.
+
+  #### __7: Key Scenarious__
+  7.1: The user enters a valid email/username and password to the chosen music platform<br />
+    1. The user must enter a valid username/email, and password in order to login to their account<br />
+    2. This allows the user to move on to step 6
+
+  7.2: The user agrees to term agreements<br />
+    1. The user must agree to the terms and conditions in order to connect their music platform to LillyPad<br />
+  
+  #### __8: Post-Conditions__
+  No Post-Conditions needed
+
+  #### __9: Special Requirements__
+  The user must already have an account with LillyPad and the music platform that they choose to connect.
+  
+  <img src=images/linking_accounts.jpg width=500px>
 
   ### Use Case: Searching for a track
   #### 1. Description
@@ -263,18 +306,18 @@ The minimum viable product for this project will have the baseline functionality
       1: The use case provides a filter option for platform
 
 
-#### 6. Subflows
-No Subflows for this use case.
+  #### 6. Subflows
+  No Subflows for this use case.
 
-#### 7. Key Scenarios
-No key scenarios for this use case.
+  #### 7. Key Scenarios
+  No key scenarios for this use case.
 
-#### 8. Post-Conditions
-No post conditions for this use case.
+  #### 8. Post-Conditions
+  No post conditions for this use case.
 
-#### 9. Special Requirements
-No Special Requirements for this use case.
-<img src=images/usecaseagh275.png width=500px>
+  #### 9. Special Requirements
+  No Special Requirements for this use case.
+  <img src=images/usecaseagh275.png width=500px>
 
 
 ## 7: User Stories
