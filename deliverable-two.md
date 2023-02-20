@@ -96,20 +96,35 @@ The minimum viable product for this project will have the baseline functionality
   #### __3: Preconditions__
   User must have an account registered to create a playlist
   
-  #### __4: Main Flow__
-  1: The user opens the website<br />
-  2: The user creates an account<br />
-  3: The user will then be able to create a playlist
+  #### 4: Main Flow
+  1: The user chooses a name for the playlist
+  2: The system registers the name and saves the playlist
+  3: The user chooses a song to add to the playlist
+  4: The system saves the song to the playlist
+  5: The user repeats step 3 until they are finished
+  6: The system saves the new additions
+  7: The use case ends.
       
-  #### __5: Alternative Flow__
-  1: The user opens the website<br />
-  2: The user is already registered so they log in<br />
-  3: The user then can create a new playlist
+  #### 5: Alternative Flow
+  Alternative Flow 1:
+    If the user doesn't add any songs after creating the playlist, then
+  1: The user can add songs to the playlist from the song player.
+  2: The system saves the new addition.
+  3: The use case ends.
       
-  #### __6: Post-conditions__
+  #### 6. Subflows
+  No Subflows for this use case.
+
+  #### 7. Key Scenarios
+  No Key Scenarios for this use case.
+
+  #### 8. Post-Conditions
   The user can now shuffle through playlists that they have created
+
+  #### 9. Special Requirements
+  No Special Requirements for this use case.
   
-<img src=images/playlist_creation.jpg width=500px>
+  <img src=images/playlist_creation.jpg width=500px>
 
 
   ### Use-Case: *Creating An Account*
@@ -174,6 +189,53 @@ The minimum viable product for this project will have the baseline functionality
 
   <img src=images/create_account.jpg width=500px>
 
+
+  ### Use Case: Listening to Songs
+  #### 1. Description
+  The user listens to a song
+
+  #### 2. Actor Description
+  Registered Users
+
+  #### 3. Preconditions
+  The user has logged in.
+
+  #### 4. Main Flow
+  1: The use case begins when the user selects a song to start listening to.
+  2: The song starts playing.
+  3: The song plays unless skipped, paused, or rewinded.
+  4: The song finishes playing.
+  5: The use case ends.
+
+  #### 5. Alternative Flows
+  Alternative Flow 1:
+    If in steps 2-4 of the basic flow the listener selects pause, then
+      1: The use case is suspended until cancelled or it starts again.
+
+  Alternative Flow 2:
+    If in steps 2-4 of the basic flow the listener selects rewind, then
+      1: The use case restarts at step 2 and proceeds as normal.
+
+  Alternative Flow 3:
+    If in step 4 the listener is listening to a playlist or has autoplay enabled, then
+      1: The use case starts at step 2 with the next song in the queue.
+
+  #### 6. Subflows
+  No Subflows for this use case.
+
+  #### 7. Key Scenarios
+  The listener presses play on the song.
+  The listener selects a song to listen to.
+  The listener queues a next song or enables autoplay.
+  The listener selects a playlist to start listening to.
+
+  #### 8. Post-Conditions
+  The song player closes, bringing the listener back to the page they were on before.
+
+  #### 9. Special Requirements
+  No Special Requirements for this use case.
+
+  <img src=images/music_player.jpg width=500px>
 
 ## 7: User Stories
 
