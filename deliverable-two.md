@@ -80,11 +80,36 @@ The minimum viable product for this project will have the baseline functionality
 
 ## 6: Use Cases
 
-### 6.1: Use Case Diagram
+## 6.1: Use Case Diagram
 
 <img src=images/use_case_diagram.jpg width=800px>
 
-### 6.2: Use Case Description and Interface Sketch
+## 6.2: Use Case Description and Interface Sketch
+
+  ### Use-Case: Creating Playlists
+  #### 1: Brief Description
+  The ability to create playlists
+      
+  #### 2: Actor Brief Descriptions
+  2.1: Registered Users
+      
+  #### 3: Preconditions
+  User must have an account registered to create a playlist
+  
+  #### 4: Main Flow
+  1: The user opens the website<br />
+  2: The user creates an account<br />
+  3: The user will then be able to create a playlist
+      
+  #### 5: Alternative Flow
+  1: The user opens the website<br />
+  2: The user is already registered so they log in<br />
+  3: The user then can create a new playlist
+      
+  #### 6: Post-conditions
+  The user can now shuffle through playlists that they have created
+  
+<img src=images/playlist_creation.jpg width=500px>
 
 #### Use Case: Listening to Songs
 
