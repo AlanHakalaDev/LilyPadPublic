@@ -127,7 +127,7 @@ The minimum viable product for this project will have the baseline functionality
   <img src=images/playlist_creation.jpg width=500px>
 
 
-  ### Use Case: *Convert Playlists Between Platforms*
+  ### Use-Case: *Convert Playlists Between Platforms*
   #### __1. Description__
   The user wants to switch which platform one of their created playlists is on.
 
@@ -251,7 +251,7 @@ The minimum viable product for this project will have the baseline functionality
   <img src=images/create_account.jpg width=500px>
 
 
-  ### Use Case: *Listening to Songs*
+  ### Use-Case: *Listening to Songs*
   #### __1. Description__
   The user listens to a song.
 
@@ -345,7 +345,7 @@ The minimum viable product for this project will have the baseline functionality
   
   <img src=images/linking_accounts.jpg width=500px>
 
-  ### Use Case: *Searching for a Track*
+  ### Use-Case: *Searching for a Track*
   #### __1. Description__
   The user types the name of the track they want to search into the search bar
 
