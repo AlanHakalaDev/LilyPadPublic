@@ -49,7 +49,13 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 #### 5. Un-favorite versions of songs that you don't like as much as others
 
-#### 3. ADD_MORE_AS_NEEDED
+#### 6. Favorite users whose music tastes are similar
+
+#### 7. Search for playlists users have made
+
+#### 8. Search for songs using keywords and filters
+
+#### 8. Shuffle playlists to play in order or randomly
 
 ## 4: Non-Functional Requirements
 
@@ -62,7 +68,11 @@ Dealing with multiple accounts for platforms that may hold sensitive information
 #### 3. Maintainability
 Since users might be using this web app for a long time in the future, the ability to maintain the site will be necessary as well. To achieve this, we will aim for readable code, and consistent comments throughout.
 
-#### 4. ADD_MORE_AS_NEEDED
+#### 4. User Friendliness
+Building a user interface that is easy to use and understand will be a must. To verify this, we will have a pool of 10 people and we will ensure at least 7 of them agree the UI is user-friendly.
+
+#### 5. Performance
+Music streaming is terrible if the song buffers or the audio quality is poor. We will ensure our platform runs well and rivals the loading times of other music streaming platforms. To verify this, we will again have a pool of 10 users, 7 of which will need to agree the loading times and audio quality compete with or exceed those that appear on other platforms.
 
 ## 5: MVP
 
@@ -79,5 +89,7 @@ The minimum viable product for this project will have the baseline functionality
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
 
 As a music listener, I want a recommended feature so I can find new songs that are similar to what I already like.
+
+As a music listener, I want a searchbar that will let me find new songs and playlists.
 
 ## 8: Issue Tracker
