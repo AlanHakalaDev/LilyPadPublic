@@ -111,6 +111,66 @@ The minimum viable product for this project will have the baseline functionality
   
 <img src=images/playlist_creation.jpg width=500px>
 
+
+  ### Use-Case: Creating An Account
+  #### 1: Brief Description
+  For an individual to interact and use the platform, the individual must first create an account. This will allow the user to have all data of playlists, songs, platforms, etc. to be saved onto the user. In order to create an account, the unregistered user must provide an email address, password, and login to whichever platforms the user chooses to connect to LillyPad
+      
+  #### 2: Actor Brief Descriptions
+  2.1: Unregistered User
+      
+  #### 3: Preconditions
+  The user must provide an email address that is not already registered to an account
+  
+  #### 4: Main Flow
+  1: The use case begins when the user is unregistered and wants to create an  account<br />
+  2: The user enters a username<br />
+  3: The user enters their email
+  4: The user enters a password
+  5: The user agrees to the terms and conditions
+  6: The user signs up
+  7: The user chooses on a music platform that they would like to connect
+  8: The user logins to the selected music platform
+  9: The use case ends
+      
+  #### 5: Alternative Flow
+  5.1: Non-Matching Password
+       If in step 3 of the basic flow the unregistered actor does not type a matching password twice:
+          1. The user will be warned that the two passwords do not match
+          2. The user will not be able to move on form the create an account page without entering a matching password
+          3. The use case resumes at step 4
+  5.2: Already Registered Email
+       If in step 3 of the basic flow the unregistered actor enters an email that is already registered:
+          1. The user will be warned that the email is already registered with another account
+          2. The user will not be able to move on from the create an account page without entering a matching password.
+          3. The use case resumes at step 3
+  5.3: Already Registered Username
+       If in step 2 of the basic flow the unregistered actor enters a username that is already registered:
+          1. The user will be warned that the email is already registered with another account
+          2. The user will not be able to move on from the create an account page without entering an email that is not already registered without an account
+          3. The use case resumes at step 3
+
+  #### 6: Subflows
+  6.1: Login to platform that the user wants to connect
+          1. The user will choose the music platform that they want to connect to LillyPad
+          2. The user will login to the chose music platform
+          3. The user will agree to the terms of connecting the music platform to LillyPad
+
+  #### 7: Key Scenarious
+  7.1: The user enters a valid username, email and password
+          1. The user must enter a valid username, email, and password in order to create an account
+          2. This allows the user to move on to step 5
+  7.2: The user agrees to term agreements
+  
+  #### 8: Post-Conditions
+  No Post-Conditions needed
+
+  #### 9: Special Requirements
+  The user must register with an email and a username that is not already registered with an account.
+
+  <img src=images/UseCaseSketch.pdf width=500px>
+
+
 ## 7: User Stories
 
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
