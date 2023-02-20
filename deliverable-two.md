@@ -86,7 +86,7 @@ The minimum viable product for this project will have the baseline functionality
 
 ## 6.2: Use Case Description and Interface Sketch
 
-  ### Use-Case: Creating Playlists
+  <p style="text-align: center;">### Use-Case: Creating Playlists</p>
   #### 1: Brief Description
   The ability to create playlists
       
