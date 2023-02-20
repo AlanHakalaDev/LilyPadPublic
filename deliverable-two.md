@@ -55,7 +55,7 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 #### 8. Search for songs using keywords and filters
 
-#### 8. Shuffle playlists to play in order or randomly
+#### 9. Shuffle playlists to play in order or randomly
 
 ## 4: Non-Functional Requirements
 
@@ -93,5 +93,17 @@ As a music listener, I want a playlist creator feature so that I can save my fav
 As a music listener, I want a recommended feature so I can find new songs that are similar to what I already like.
 
 As a music listener, I want a searchbar that will let me find new songs and playlists.
+
+As a listener that plays music through youtube, spotify, and apple music, I want to be able to make sure that I can start the youtube videos at a specific timestamp because some youtube music videos don't start the music right away. 
+
+As a music listener, I want to be able to favorite specific of a song that appears on multiple platforms so that I get to listen to my most favorite version.  
+
+As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
+
+As a music listener, I want to be able to shuffle my playlists.
+
+As a music listener, I want to be able to follow other users.
+
+As a music listener, I want to be able to convert a playlist between apps.
 
 ## 8: Issue Tracker
