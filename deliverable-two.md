@@ -86,13 +86,13 @@ The minimum viable product for this project will have the baseline functionality
 
 ### 6.2: Use Case Description and Interface Sketch
 
-  ##### 1: Brief Description
+  #### 1: Brief Description
   The ability to create playlists
       
   #### 2: Actor Brief Descriptions
   2.1: Registered Users
       
-  ##### 3: Preconditions
+  #### 3: Preconditions
   User must have an account registered to create a playlist
   
   #### 4: Main Flow
