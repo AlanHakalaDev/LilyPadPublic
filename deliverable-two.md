@@ -11,13 +11,13 @@ The problem with multiple different music streaming platforms causes issues with
 
 ### 1.2: Product Position Statement
 
-For listeners of music in the internet age, who don't want to deal with hopping between streaming platforms to enjoy specific tracks or songs. PROJECT_NAME is a new web app music platform that connects all of your streaming accounts together. Unlike the current popular streaming platforms, our product gives you a way to listen to your favorite songs, all in one place.
+For listeners of music in the internet age, who don't want to deal with hopping between streaming platforms to enjoy specific tracks or songs. LilyPad is a new web app music platform that connects all of your streaming accounts together, unlike the current popular streaming platforms, our product gives you a way to listen your favorite songs, all in one place.
 
 ### 1.3: Value Proposition and Customer Segment
 
 #### Value Proposition
 
-PROJECT_NAME is a website/app that provides avid music listeners with an easy way to link all their favorite songs and playlists, across multiple platforms, ensuring you never need to go to more than one place for your favorite music ever again. 
+LilyPad is a website/app that provides avid music listeners with an easy way to link all their favorite songs and playlists, across multiple platforms, ensuring you never need to go to more than one place for your favorite music ever again. 
 
 #### Consumer Segment
 
@@ -49,7 +49,13 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 #### 5. Un-favorite versions of songs that you don't like as much as others
 
-#### 3. ADD_MORE_AS_NEEDED
+#### 6. Favorite users whose music tastes are similar
+
+#### 7. Search for playlists users have made
+
+#### 8. Search for songs using keywords and filters
+
+#### 9. Shuffle playlists to play in order or randomly
 
 ## 4: Non-Functional Requirements
 
@@ -62,7 +68,11 @@ Dealing with multiple accounts for platforms that may hold sensitive information
 #### 3. Maintainability
 Since users might be using this web app for a long time in the future, the ability to maintain the site will be necessary as well. To achieve this, we will aim for readable code, and consistent comments throughout.
 
-#### 4. ADD_MORE_AS_NEEDED
+#### 4. User Friendliness
+Building a user interface that is easy to use and understand will be a must. To verify this, we will have a pool of 10 people and we will ensure at least 7 of them agree the UI is user-friendly.
+
+#### 5. Performance
+Music streaming is terrible if the song buffers or the audio quality is poor. We will ensure our platform runs well and rivals the loading times of other music streaming platforms. To verify this, we will again have a pool of 10 users, 7 of which will need to agree the loading times and audio quality compete with or exceed those that appear on other platforms.
 
 ## 5: MVP
 
@@ -79,5 +89,21 @@ The minimum viable product for this project will have the baseline functionality
 As a music listener, I want a playlist creator feature so that I can save my favorites in one place.
 
 As a music listener, I want a recommended feature so I can find new songs that are similar to what I already like.
+
+As a music listener, I want a searchbar that will let me find new songs and playlists.
+
+As a listener that plays music through youtube, spotify, and apple music, I want to be able to make sure that I can start the youtube videos at a specific timestamp because some youtube music videos don't start the music right away. 
+
+As a music listener, I want to be able to favorite specific of a song that appears on multiple platforms so that I get to listen to my most favorite version.  
+
+As a music listener, I want to be able to see all the different versions of a song from multiple platforms at once so I can easily choose which may be my favorite version
+
+As a music listener, I want to be able to shuffle my playlists.
+
+As a music listener, I want to be able to follow other users.
+
+As a music listener, I want to be able to convert a playlist between apps.
+
+As a music listener, I would like to be able to create a profile that stores all of my data.
 
 ## 8: Issue Tracker
