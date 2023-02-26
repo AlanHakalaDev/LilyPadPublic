@@ -1,4 +1,6 @@
 .container {
+  background-color: rgb(80, 80, 80);
+  color: rgb(70, 200, 60);
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
@@ -8,7 +10,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: rgb(120, 250, 110);
   text-decoration: none;
 }
 
@@ -58,14 +60,15 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  border-color: rgb(50, 50, 50);
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: rgb(120, 250, 110);
+  border-color: rgb(100, 200, 100);
 }
 
 .card h3 {

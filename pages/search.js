@@ -15,38 +15,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Placeholder Text
+          Search Playlists or Songs:
         </p>
-
-        <div className={styles.grid}>
-          <a href="pages\accountCreation.js" className={styles.card}>
-            <h3>Create an Account &rarr;</h3>
-            <p>Get started making playlists, listening, and finding favorites.</p>
-          </a>
-
-          <a href="pages\logIn.js" className={styles.card}>
-            <h3>Log In &rarr;</h3>
-            <p>Already have an account? Get back to the music here.</p>
-          </a>
-
-          <a
-            href="pages\search.js"
-            className={styles.card}
-          >
-            <h3>Search &rarr;</h3>
-            <p>Discover the songs available on LilyPad.</p>
-          </a>
-
-          <a
-            href="pages\playlists.js"
-            className={styles.card}
-          >
-            <h3>Playlists &rarr;</h3>
-            <p>
-              Find similar tastes by exploring other listeners' playlists.
-            </p>
-          </a>
-        </div>
       </main>
 
       <footer>
