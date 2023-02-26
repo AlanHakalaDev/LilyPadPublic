@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function logIn() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Create an account below:
+          Log in below:
         </p>
       </main>
 

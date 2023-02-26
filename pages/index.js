@@ -19,18 +19,18 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="pages\accountCreation.js" className={styles.card}>
+          <a href="account-creation" className={styles.card}>
             <h3>Create an Account &rarr;</h3>
             <p>Get started making playlists, listening, and finding favorites.</p>
           </a>
 
-          <a href="pages\logIn.js" className={styles.card}>
+          <a href="log-in" className={styles.card}>
             <h3>Log In &rarr;</h3>
             <p>Already have an account? Get back to the music here.</p>
           </a>
 
           <a
-            href="pages\search.js"
+            href="search"
             className={styles.card}
           >
             <h3>Search &rarr;</h3>
@@ -38,7 +38,7 @@ export default function Home() {
           </a>
 
           <a
-            href="pages\playlists.js"
+            href="playlists"
             className={styles.card}
           >
             <h3>Playlists &rarr;</h3>
@@ -65,7 +65,7 @@ export default function Home() {
         footer {
           width: 100%;
           height: 100px;
-          border-top: 1px solid #eaeaea;
+          border-top: 1px solid rgb(50, 50, 50);
           display: flex;
           justify-content: center;
           align-items: center;
