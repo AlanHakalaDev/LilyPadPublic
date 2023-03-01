@@ -6,8 +6,30 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^4.11.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-  }
+  },
+  "devDependencies": {
+    "prisma": "^4.11.0"
+  },
+  "name": "cs386_team_6_project",
+  "description": "A web app that allows users to link their Spotify, Youtube Music, and Apple Music accounts in order to get the best options available when it comes to streaming, favoriting, and playlist-making.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanSeitz/CS386_Team_6_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanSeitz/CS386_Team_6_Project/issues"
+  },
+  "homepage": "https://github.com/NathanSeitz/CS386_Team_6_Project#readme"
 }
