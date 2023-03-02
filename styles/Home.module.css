@@ -91,3 +91,23 @@
     flex-direction: column;
   }
 }
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchButton {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #17a836;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: rgb(50, 50, 50);
+}

@@ -1,7 +1,18 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useState } from 'react';
 
 export default function search() {
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const performSearch = () => {
+    console.log('Performing search for', query);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +28,10 @@ export default function search() {
         <p className={styles.description}>
           Search Playlists or Songs:
         </p>
+
+        <input type="text" placeholder="Search..." />
+        <button className={styles.searchButton} onClick={performSearch}>Search</button>
+
       </main>
 
       <footer>
