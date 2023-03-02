@@ -11,25 +11,25 @@ datasource db {
 }
 
 model Song {
-  id  Int @id
-  title String
-  platform String
+  id        Int        @id
+  songTitle String
+  platform  String
   playlists Playlist[]
 }
 
 model Playlist {
-  id        Int     @id @default(autoincrement())
-  title     String
+  id            Int     @id @default(autoincrement())
+  playlistTitle String
   description   String?
-  songs  Song[]
-  public Boolean @default(false)
-  creator    User?   @relation(fields: [creatorId], references: [id])
-  creatorId  Int?
+  songs         Song[]
+  public        Boolean @default(false)
+  creator       User?   @relation(fields: [creatorId], references: [id])
+  creatorId     Int?
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  username  String?
   playlists Playlist[]
 }
