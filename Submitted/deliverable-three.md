@@ -11,4 +11,4 @@ Through LilyPad, **guest users** will be able to **_listen_** to **songs** from 
 
 ## 2: UML Model
 
-<img src=../images/uml_model.jpg width=800px>
+<img src=../images/uml_model.jpg width=400px>
