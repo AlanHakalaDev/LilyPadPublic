@@ -10,10 +10,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Platform {
+  SPOTIFY
+  APPLE_MUSIC
+  YOUTUBE_MUSIC
+}
+
 model Song {
   id        Int        @id
   songTitle String
-  platform  String
+  platform  Platform
   playlists Playlist[]
 }
 
@@ -30,6 +36,21 @@ model Playlist {
 model User {
   id        Int        @id @default(autoincrement())
   email     String     @unique
-  username  String?
+  username  String     @unique
+  password  String
+  description String?
+  picture     String?
   playlists Playlist[]
+  connectedAccounts ExternalAccount[]
+}
+
+model ExternalAccount {
+  id Int  @id @default(autoincrement())
+  username String
+  email String
+  platform Platform
+  picture String
+  userId  Int
+  token String
+  connectedUser User @relation(fields: [userId], references: [id])
 }

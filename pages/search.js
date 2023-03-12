@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function search() {
-  const [query, setQuery] = useState('');
-
-  const handleSearch = (event) => {
-    setQuery(event.target.value);
-  };
-
-  const performSearch = () => {
-    console.log('Performing search for', query);
-  };
+  useEffect(() => {
+    const queryString = window.location.search;
+    if (queryString != '') {
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get('songName'))
+    //TODO: make call to testRequest and render results
+    // needs fields for title, artist, type, and, chosen sources.
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -28,10 +28,10 @@ export default function search() {
         <p className={styles.description}>
           Search Playlists or Songs:
         </p>
-
-        <input type="text" placeholder="Search..." />
-        <button className={styles.searchButton} onClick={performSearch}>Search</button>
-
+        <form action="/search">
+          <input type="text" autoComplete="off" id="songName" name="songName" placeholder="Search..." />
+          <button className={styles.searchButton}>Search</button>
+        </form>
       </main>
 
       <footer>
