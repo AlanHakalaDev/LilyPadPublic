@@ -7,7 +7,7 @@ export default function search() {
     const queryString = window.location.search;
     if (queryString != '') {
     const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.get('songName'))
+    console.log(urlParams.get('title'))
     //TODO: make call to testRequest and render results
     // needs fields for title, artist, type, and, chosen sources.
     }
@@ -29,7 +29,22 @@ export default function search() {
           Search Playlists or Songs:
         </p>
         <form action="/search">
-          <input type="text" autoComplete="off" id="songName" name="songName" placeholder="Search..." />
+          <label htmlFor="title">Name of Playlist or Song:</label><br/>
+          <input type="text" autoComplete="off" id="title" name="title" placeholder="Title..." /><br/>
+          <label htmlFor="artist">Name of Creator or Artist:</label><br/>
+          <input type="text" autoComplete="off" id="creator" name="creator" placeholder="Maker..." />
+          <p>Type of Search:</p>
+          <input type="radio" id="playlist" name="type" value="playlist"/>
+          <label htmlFor="playlist">Playlist</label><br/>
+          <input type="radio" id="track" name="type" value="track"/>
+          <label htmlFor="track">Track</label>
+          <p>Platorms to Search:</p>
+          <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
+          <label htmlFor="Spotify"> Spotify</label><br/>
+          <input type="checkbox" id="Youtube Music" name="Youtube Music" value="true"/>
+          <label htmlFor="Youtube Music"> Youtube Music</label><br/>
+          <input type="checkbox" id="Apple Music" name="Apple Music" value="true"/>
+          <label htmlFor="Apple Music"> Apple Music</label><br/><br/>
           <button className={styles.searchButton}>Search</button>
         </form>
       </main>
