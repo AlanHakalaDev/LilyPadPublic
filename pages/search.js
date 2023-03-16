@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function search() {
-  const [query, setQuery] = useState('');
-
-  const handleSearch = (event) => {
-    setQuery(event.target.value);
-  };
-
-  const performSearch = () => {
-    console.log('Performing search for', query);
-  };
+  useEffect(() => {
+    const queryString = window.location.search;
+    if (queryString != '') {
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get('title'))
+    //TODO: make call to testRequest and render results
+    // needs fields for title, artist, type, and, chosen sources.
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -28,10 +28,25 @@ export default function search() {
         <p className={styles.description}>
           Search Playlists or Songs:
         </p>
-
-        <input type="text" placeholder="Search..." />
-        <button className={styles.searchButton} onClick={performSearch}>Search</button>
-
+        <form action="/search">
+          <label htmlFor="title">Name of Playlist or Song:</label><br/>
+          <input type="text" autoComplete="off" id="title" name="title" placeholder="Title..." /><br/>
+          <label htmlFor="artist">Name of Creator or Artist:</label><br/>
+          <input type="text" autoComplete="off" id="creator" name="creator" placeholder="Maker..." />
+          <p>Type of Search:</p>
+          <input type="radio" id="playlist" name="type" value="playlist"/>
+          <label htmlFor="playlist">Playlist</label><br/>
+          <input type="radio" id="track" name="type" value="track"/>
+          <label htmlFor="track">Track</label>
+          <p>Platorms to Search:</p>
+          <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
+          <label htmlFor="Spotify"> Spotify</label><br/>
+          <input type="checkbox" id="Youtube Music" name="Youtube Music" value="true"/>
+          <label htmlFor="Youtube Music"> Youtube Music</label><br/>
+          <input type="checkbox" id="Apple Music" name="Apple Music" value="true"/>
+          <label htmlFor="Apple Music"> Apple Music</label><br/><br/>
+          <button className={styles.searchButton}>Search</button>
+        </form>
       </main>
 
       <footer>
