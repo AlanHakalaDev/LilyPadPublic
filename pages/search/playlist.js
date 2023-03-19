@@ -1,17 +1,45 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useEffect } from 'react';
 
-export default function search() {
+export default function PlaylistSearch() {
+    
   useEffect(() => {
+    
     const queryString = window.location.search;
-    if (queryString != '') {
     const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.get('title'))
-    //TODO: make call to testRequest and render results
-    // needs fields for title, artist, type, and, chosen sources.
+    console.log(queryString)
+    console.log(urlParams)
+    if (urlParams == {}) {
+      
+      const requestBody = { 
+        "track": urlParams.get('title'),
+        "artist": urlParams.get('creator'),
+        "type": "playlist",
+        "sources":["spotify","youtube"]
+      }
+      fetch('https://musicapi13.p.rapidapi.com/search', {
+            method: "POST",
+            headers: {
+              'content-type': 'application/json',
+              'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
+              'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
+            },
+            body: JSON.stringify(requestBody),
+      }).then(response => {return response.json().then(body => {
+      if (response.status === 200) {
+        console.log(body)
+        return body
+      }
+      else {
+        throw body
+      }
+    })
+    })
     }
   }, []);
+    //console.log(makeRequest('POST', requestBody))
+    //TODO: make call to testRequest and render results
+    // needs fields for title, artist, type, and, chosen sources.
 
   return (
     <div className={styles.container}>
@@ -26,27 +54,8 @@ export default function search() {
         </h1>
 
         <p className={styles.description}>
-          Search Playlists or Songs:
+          Search results for playlists with the name: $NAME created by $ARTIST
         </p>
-        <form action="/search">
-          <label htmlFor="title">Name of Playlist or Song:</label><br/>
-          <input type="text" autoComplete="off" id="title" name="title" placeholder="Title..." /><br/>
-          <label htmlFor="artist">Name of Creator or Artist:</label><br/>
-          <input type="text" autoComplete="off" id="creator" name="creator" placeholder="Maker..." />
-          <p>Type of Search:</p>
-          <input type="radio" id="playlist" name="type" value="playlist"/>
-          <label htmlFor="playlist">Playlist</label><br/>
-          <input type="radio" id="track" name="type" value="track"/>
-          <label htmlFor="track">Track</label>
-          <p>Platorms to Search:</p>
-          <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
-          <label htmlFor="Spotify"> Spotify</label><br/>
-          <input type="checkbox" id="Youtube Music" name="Youtube Music" value="true"/>
-          <label htmlFor="Youtube Music"> Youtube Music</label><br/>
-          <input type="checkbox" id="Apple Music" name="Apple Music" value="true"/>
-          <label htmlFor="Apple Music"> Apple Music</label><br/><br/>
-          <button className={styles.searchButton}>Search</button>
-        </form>
       </main>
 
       <footer>
