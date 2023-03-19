@@ -1,5 +1,8 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
+import { useEffect } from 'react';
+// TODO: Add a "new search" button to get back to search options page
+// TODO: Add functionality for additional details to be rendered.
 
 export default function TrackSearch() {
     
@@ -7,9 +10,8 @@ export default function TrackSearch() {
     
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    console.log(queryString)
-    console.log(urlParams)
-    if (urlParams == {}) {
+    if (urlParams != {}) {
+      // TODO: Add functionality for platform selections to actually work
       
       const requestBody = { 
         "track": urlParams.get('title'),
@@ -27,19 +29,48 @@ export default function TrackSearch() {
             body: JSON.stringify(requestBody),
       }).then(response => {return response.json().then(body => {
       if (response.status === 200) {
-        console.log(body)
-        return body
+        let searchTitle = document.getElementById("searchTitle")
+        searchTitle.innerHTML = "Search results for '" + `${urlParams.get('title')}` + "' by '" + `${urlParams.get('creator')}` + "':"
+        const htmlContainer = document.getElementById("tracklist")
+        const trackList = document.createDocumentFragment()
+        body.tracks.map(function(result) {
+          // TODO: Apply universal style to div element and parent element for cleaner results
+          let container = document.createElement('div')
+          let title = document.createElement('p')
+          let artist = document.createElement('p')
+          let platform = document.createElement('p')
+          let coverArt = document.createElement('img')
+          let icon = document.createElement('img')
+
+          title.innerHTML = `${result.data.name}`
+          artist.innerHTML = `${result.data.artistNames}`
+          platform.innerHTML = `${result.source}`
+          coverArt.src = `${result.data.imageUrl}`
+          coverArt.height = 200
+          coverArt.width = 200
+          // TODO: render separate icons based on platform
+          icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
+          icon.height = 200
+          icon.width = 200
+
+          container.appendChild(title)
+          container.appendChild(artist)
+          container.appendChild(platform)
+          container.appendChild(coverArt)
+          container.appendChild(icon)
+          trackList.appendChild(container)
+
+        })
+        htmlContainer.appendChild(trackList)
       }
       else {
         throw body
+        // TODO: Render error message if request falls through
       }
     })
     })
     }
   }, []);
-    //console.log(makeRequest('POST', requestBody))
-    //TODO: make call to testRequest and render results
-    // needs fields for title, artist, type, and, chosen sources.
 
   return (
     <div className={styles.container}>
@@ -53,9 +84,11 @@ export default function TrackSearch() {
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
 
-        <p className={styles.description}>
-        Search results for playlists with the name: $NAME created by $ARTIST
+        <p id="searchTitle" className={styles.description}>
+        
         </p>
+
+        <div id="tracklist"></div>
       </main>
 
       <footer>
