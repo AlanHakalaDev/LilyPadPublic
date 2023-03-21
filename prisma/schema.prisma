@@ -28,9 +28,9 @@ model Playlist {
   playlistTitle String
   description   String?
   songs         Song[]
-  public        Boolean @default(false)
-  creator       User?   @relation(fields: [creatorId], references: [id])
-  creatorId     Int?
+  isPublic        Boolean @default(false)
+  creator       User   @relation(fields: [creatorId], references: [id])
+  creatorId     Int
 }
 
 model User {
