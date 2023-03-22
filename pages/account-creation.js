@@ -38,10 +38,28 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      const response = await fetch(endpoint, options)
+      await fetch(endpoint, options)
+      .then((response) => {
+      return response.text()
+      }).then((data) => {
+        sessionStorage.setItem('userId',`${data}`);
+        //TODO: Redirect to profile page, get session details for login to remain between pages.
+        //alert(sessionStorage.getItem('userId'));
+      });
 
-      const result = await response.json()
-      alert(`Account created with username and email: ${result.data}`)
+      /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
+        console.log("content: ", content)
+        console.log("body: ", content.body)
+      })
+      const result = await response.json().then((res) => {
+
+        alert(`Account created with username and email: ${res.body}`)})*/
+      //response.then((result) => {console.log(result.json().body)})
+      
+      //const result = await response.json().then()
+      //alert(`Account created with username and email: ${result.data}`)
+      
+      //
     }
 
   return (

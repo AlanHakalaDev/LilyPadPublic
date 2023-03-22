@@ -14,7 +14,7 @@ import { PrismaClient, User } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export function addUser(user) {
+export async function addUser(user) {
   const newUser = prisma.user.create({
     data: {
         email: user.email,
@@ -46,7 +46,7 @@ export async function deleteUser(userToDelete) {
   })
 }
 
-export function listUsers() {
+export async function listUsers() {
   const userList = prisma.user.findMany()
   return userList
 }
