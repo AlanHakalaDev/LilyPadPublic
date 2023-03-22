@@ -4,12 +4,32 @@ import styles from '../styles/Home.module.css';
 export default function AccountCreation() {
     const handleSubmit = async (event) => {
       event.preventDefault()
+      const name = document.querySelector('#username').value
+      const email = document.querySelector('#email').value
+      const password = document.querySelector('#pass').value
+  
+      if (!name) {
+        alert('Please enter a name.')
+        return false
+      }
+  
+      if (!email) {
+        alert('Please enter an email.')
+        return false
+      }
+
+      if (!password) {
+        alert('Please enter a password.')
+      }
       const data = {
-        first: event.target.first.value,
-        last: event.target.last.value,
+        email: event.target.email.value,
+        username: event.target.username.value,
+        pass: event.target.pass.value,
+        description: "Hi, I'm a newcomer to LilyPad!",
+        imageFilePath: "public/icon.png",
       }
       const JSONdata = JSON.stringify(data)
-      const endpoint = '/api/form'
+      const endpoint = '/api/user'
       const options = {
         method: 'POST',
         headers: {
@@ -21,7 +41,7 @@ export default function AccountCreation() {
       const response = await fetch(endpoint, options)
 
       const result = await response.json()
-      alert(`Is this your full name: ${result.data}`)
+      alert(`Account created with username and email: ${result.data}`)
     }
 
   return (
@@ -41,13 +61,14 @@ export default function AccountCreation() {
         </p>
 
         <form onSubmit={handleSubmit}>
-        <label htmlFor="first">First Name</label>
-        <input type="text" id="first" name="first" required />
+        <label htmlFor="username">Username</label><br/>
+        <input type="text" id="username" name="username" autoComplete='off' required /><br/>
+        <label htmlFor="username">Email</label><br/>
+        <input type="text" id="email" name="email" autoComplete='off' required /><br/>
+        <label htmlFor="password">Password</label><br/>
+        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,15}"/><br/>
   
-        <label htmlFor="last">Last Name</label>
-        <input type="text" id="last" name="last" required />
-  
-        <button type="submit">Submit</button>
+        <button type="submit">Create Account</button>
       </form>
         
       </main>

@@ -14,11 +14,11 @@ import { PrismaClient, User } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export async function addUser (user) {
-  const newUser = await prisma.user.create({
+export function addUser(user) {
+  const newUser = prisma.user.create({
     data: {
         email: user.email,
-        username: user.name,
+        username: user.username,
         password: user.pass,
         description: user.description,
         picture: user.imageFilePath,
@@ -28,25 +28,25 @@ export async function addUser (user) {
 }
 
 export async function deleteUser(userToDelete) {
-  const videosToDelete = await prisma.video.findMany({
+  const playlistsToDelete = await prisma.playlist.findMany({
     where: {
       authorId: userToDelete.userId,
     }
   })
-  videosToDelete.forEach
-  const deletedVideos = await prisma.video.deleteMany({
+  playlistsToDelete.forEach
+  const deltedPlaylists = await prisma.playlist.deleteMany({
     where: {
-      authorId: userToDelete.userId,
+      creatorId: userToDelete.userId,
     }
   })
   await prisma.user.delete({
     where: {
-      userId: userToDelete.userId,
+      id: userToDelete.userId,
     }
   })
 }
 
-export async function listUsers() {
+export function listUsers() {
   const userList = prisma.user.findMany()
   return userList
 }
