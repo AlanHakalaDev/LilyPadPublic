@@ -1,7 +1,60 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function logIn() {
+export default function AccountCreation() {
+    const handleSubmit = async (event) => {
+      event.preventDefault()
+      const email = document.querySelector('#email').value
+      const password = document.querySelector('#pass').value
+  
+      if (!email) {
+        alert('Please enter an email.')
+        return false
+      }
+
+      if (!password) {
+        alert('Please enter a password.')
+      }
+      const data = {
+        email: event.target.email.value,
+        password: event.target.pass.value,
+      }
+      const JSONdata = JSON.stringify(data)
+      const endpoint = '/api/auth'
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSONdata,
+      }
+
+      await fetch(endpoint, options)
+      .then((response) => {
+      return response.text()
+      }).then((data) => {
+        sessionStorage.setItem('userId',`${data}`);
+        console.log(sessionStorage.getItem('userId'))
+        window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
+        //TODO: Redirect to profile page, get session details for login to remain between pages.
+        //alert(sessionStorage.getItem('userId'));
+      });
+
+      /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
+        console.log("content: ", content)
+        console.log("body: ", content.body)
+      })
+      const result = await response.json().then((res) => {
+
+        alert(`Account created with username and email: ${res.body}`)})*/
+      //response.then((result) => {console.log(result.json().body)})
+      
+      //const result = await response.json().then()
+      //alert(`Account created with username and email: ${result.data}`)
+      
+      //
+    }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +68,18 @@ export default function logIn() {
         </h1>
 
         <p className={styles.description}>
-          Log in below:
+          Login below:
         </p>
+
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Email</label><br/>
+        <input type="text" id="email" name="email" autoComplete='off' required /><br/>
+        <label htmlFor="password">Password</label><br/>
+        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,15}"/><br/>
+  
+        <button type="submit">Log In</button>
+      </form>
+        
       </main>
 
       <footer>

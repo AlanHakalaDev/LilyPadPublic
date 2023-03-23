@@ -35,6 +35,40 @@
   text-align: center;
 }
 
+.userBox {
+  text-align: right;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 1rem;
+  border: 1px solid rgb(50, 50, 50);
+  border-radius: 10px;
+  position: absolute;
+  left: 1%;
+  top: 2%;
+}
+
+.userBox img {
+  float: right;
+  max-width: 50px;
+  max-height: 50px;
+  margin:auto;
+}
+
+.userBox div:hover,
+.userBox div:focus,
+.userBox div:active {
+  text-decoration: underline;
+  color: rgb(120, 250, 110);
+}
+
+.userBox div {
+  color: rgb(70, 200, 60);
+  float: right;
+  padding: auto;
+  margin-left: 1rem;
+  transition: color 0.15s ease;
+}
 
 .description {
   line-height: 1.5;

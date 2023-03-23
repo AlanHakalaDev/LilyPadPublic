@@ -30,11 +30,11 @@ export async function addUser(user) {
 export async function deleteUser(userToDelete) {
   const playlistsToDelete = await prisma.playlist.findMany({
     where: {
-      authorId: userToDelete.userId,
+      creatorId: userToDelete.userId,
     }
   })
   playlistsToDelete.forEach
-  const deltedPlaylists = await prisma.playlist.deleteMany({
+  const deletedPlaylists = await prisma.playlist.deleteMany({
     where: {
       creatorId: userToDelete.userId,
     }
@@ -44,6 +44,16 @@ export async function deleteUser(userToDelete) {
       id: userToDelete.userId,
     }
   })
+}
+
+export async function getUser(userId) {
+  let foundUser = await prisma.user.findUnique({
+    where: {
+      id: userId
+    }
+  })
+  delete foundUser.password
+  return foundUser
 }
 
 export async function listUsers() {

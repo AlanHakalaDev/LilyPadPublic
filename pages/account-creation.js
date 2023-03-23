@@ -26,7 +26,7 @@ export default function AccountCreation() {
         username: event.target.username.value,
         pass: event.target.pass.value,
         description: "Hi, I'm a newcomer to LilyPad!",
-        imageFilePath: "public/icon.png",
+        imageFilePath: "/icon.png",
       }
       const JSONdata = JSON.stringify(data)
       const endpoint = '/api/user'
@@ -43,6 +43,7 @@ export default function AccountCreation() {
       return response.text()
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
+        window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
         //TODO: Redirect to profile page, get session details for login to remain between pages.
         //alert(sessionStorage.getItem('userId'));
       });

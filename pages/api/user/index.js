@@ -1,6 +1,6 @@
-import { addUser, listUsers } from "../../prisma/users.js"
+import { addUser, listUsers } from "../../../prisma/users.js"
 
-export default async function handler(req, res) {
+  export default async function handler(req, res) {
     const body = req.body
   
     if (req.method === "POST") {

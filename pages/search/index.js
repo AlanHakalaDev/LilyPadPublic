@@ -5,7 +5,29 @@ var typeSearch = '/index'
 
 
 export default function search() {
-
+  useEffect(() => {
+    const userId = JSON.parse(sessionStorage.getItem('userId'))
+    if (typeof(userId) === 'undefined') {
+      window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
+    }
+    const endpoint = `/api/user/${userId}`
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+  
+    fetch(endpoint, options)
+    .then((response) => {
+    return response.json()
+    }).then((data) => {
+      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
+      document.getElementById("emailDisplay").innerHTML = `${data.email}`
+      document.getElementById("profilePic").src = `${data.picture}`
+    });
+  
+    }, [])
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +36,13 @@ export default function search() {
       </Head>
 
       <main>
+      <a  href="profileEdit" className={styles.userBox}>
+        <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
+        <div>
+        <p id='usernameDisplay'>Username</p>
+        <p id='emailDisplay'>Email</p>
+        </div>
+        </a>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
