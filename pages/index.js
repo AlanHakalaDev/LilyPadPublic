@@ -19,12 +19,12 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="account-creation" className={styles.card}>
+          <a id="createAccount" href="account-creation" className={styles.card}>
             <h3>Create an Account &rarr;</h3>
             <p>Get started making playlists, listening, and finding favorites.</p>
           </a>
 
-          <a href="log-in" className={styles.card}>
+          <a href="login" className={styles.card}>
             <h3>Log In &rarr;</h3>
             <p>Already have an account? Get back to the music here.</p>
           </a>

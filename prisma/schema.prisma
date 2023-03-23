@@ -17,26 +17,26 @@ enum Platform {
 }
 
 model Song {
-  id        Int        @id
+  id        String        @id
   songTitle String
   platform  Platform
   playlists Playlist[]
 }
 
 model Playlist {
-  id            Int     @id @default(autoincrement())
+  id            String     @id @default(uuid())
   playlistTitle String
   description   String?
   songs         Song[]
-  public        Boolean @default(false)
-  creator       User?   @relation(fields: [creatorId], references: [id])
-  creatorId     Int?
+  isPublic        Boolean @default(false)
+  creator       User   @relation(fields: [creatorId], references: [id])
+  creatorId     String
 }
 
 model User {
-  id        Int        @id @default(autoincrement())
+  id        String     @id @default(uuid())
   email     String     @unique
-  username  String     @unique
+  username  String
   password  String
   description String?
   picture     String?
@@ -50,7 +50,7 @@ model ExternalAccount {
   email String
   platform Platform
   picture String
-  userId  Int
+  userId  String
   token String
   connectedUser User @relation(fields: [userId], references: [id])
 }

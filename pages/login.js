@@ -1,18 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-//const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
     const handleSubmit = async (event) => {
       event.preventDefault()
-      const name = document.querySelector('#username').value
       const email = document.querySelector('#email').value
       const password = document.querySelector('#pass').value
-  
-      if (!name) {
-        alert('Please enter a name.')
-        return false
-      }
   
       if (!email) {
         alert('Please enter an email.')
@@ -24,12 +17,10 @@ export default function AccountCreation() {
       }
       const data = {
         email: event.target.email.value,
-        username: event.target.username.value,
-        pass: event.target.pass.value,
-        description: "Hi, I'm a newcomer to LilyPad!",
-        imageFilePath: "/icon.png",
+        password: event.target.pass.value,
       }
       const JSONdata = JSON.stringify(data)
+      const endpoint = '/api/auth'
       const options = {
         method: 'POST',
         headers: {
@@ -38,11 +29,12 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(`localhost:3000/api/user`, options)
+      await fetch(endpoint, options)
       .then((response) => {
       return response.text()
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
+        console.log(sessionStorage.getItem('userId'))
         window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
         //TODO: Redirect to profile page, get session details for login to remain between pages.
         //alert(sessionStorage.getItem('userId'));
@@ -76,18 +68,16 @@ export default function AccountCreation() {
         </h1>
 
         <p className={styles.description}>
-          Create an account below:
+          Login below:
         </p>
 
         <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label><br/>
-        <input type="text" id="username" name="username" autoComplete='off' required /><br/>
         <label htmlFor="username">Email</label><br/>
         <input type="text" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
-        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
+        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,15}"/><br/>
   
-        <button id="submit" type="submit">Create Account</button>
+        <button type="submit">Log In</button>
       </form>
         
       </main>
