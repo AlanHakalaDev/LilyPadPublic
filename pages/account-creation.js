@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+//const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
     const handleSubmit = async (event) => {
@@ -29,7 +30,6 @@ export default function AccountCreation() {
         imageFilePath: "/icon.png",
       }
       const JSONdata = JSON.stringify(data)
-      const endpoint = '/api/user'
       const options = {
         method: 'POST',
         headers: {
@@ -38,7 +38,7 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(endpoint, options)
+      await fetch(`localhost:3000/api/user`, options)
       .then((response) => {
       return response.text()
       }).then((data) => {
@@ -85,9 +85,9 @@ export default function AccountCreation() {
         <label htmlFor="username">Email</label><br/>
         <input type="text" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
-        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,15}"/><br/>
+        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
-        <button type="submit">Create Account</button>
+        <button id="submit" type="submit">Create Account</button>
       </form>
         
       </main>

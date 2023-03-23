@@ -16,7 +16,6 @@ export default function playlists() {
     .then((response) => {
     return response.json()
     }).then((data) => {
-      document.getElementById("welcome").innerHTML = "Welcome, " + `${data.username}`
       document.getElementById("usernameDisplay").innerHTML = `${data.username}`
       document.getElementById("emailDisplay").innerHTML = `${data.email}`
       document.getElementById("profilePic").src = `${data.picture}`

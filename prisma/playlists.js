@@ -13,7 +13,7 @@ const prisma = new PrismaClient()
 } */
 
 export async function addPlaylist( playlistData ) {
-    const newPlaylist = await prisma.video.create({
+    const newPlaylist = await prisma.playlist.create({
       data: {
         playlistTitle: playlistData.title,
         description: playlistData.description,
