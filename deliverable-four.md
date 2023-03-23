@@ -49,6 +49,8 @@ We chose the GNU General Public License v3.0 for our code. Open source is import
 
 ## 8: Readme File
 
+LINK README, LICENSE, CODE OF CONDUCT.
+
 ## 9: Look & Feel
 
 ## 10: Lessons Learned

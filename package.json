@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@prisma/client": "^4.11.0",
@@ -14,6 +15,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "cypress": "^12.8.1",
     "prisma": "^4.11.0"
   },
   "name": "cs386_team_6_project",
