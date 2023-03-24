@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function AccountCreation() {
+export default function Login() {
     const handleSubmit = async (event) => {
       event.preventDefault()
       const email = document.querySelector('#email').value
@@ -31,13 +31,15 @@ export default function AccountCreation() {
 
       await fetch(endpoint, options)
       .then((response) => {
-      return response.text()
+        if (response.status === 200) {
+          return response.text()
+        }
+        else {throw response.text()}
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
-        console.log(sessionStorage.getItem('userId'))
         window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
-        //TODO: Redirect to profile page, get session details for login to remain between pages.
-        //alert(sessionStorage.getItem('userId'));
+      }).catch((data) => {
+        alert(data.data)
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
@@ -72,12 +74,13 @@ export default function AccountCreation() {
         </p>
 
         <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Email</label><br/>
-        <input type="text" id="email" name="email" autoComplete='off' required /><br/>
+        <label htmlFor="email">Email</label><br/>
+        <input type="email" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
-        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,15}"/><br/>
+        <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
-        <button type="submit">Log In</button>
+        <button id="submit" type="submit">Log In</button>
+        <input id="reset" type="reset" value="Reset Fields"/>
       </form>
         
       </main>

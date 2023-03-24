@@ -38,14 +38,21 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(`localhost:3000/api/user`, options)
+      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/user', options)
       .then((response) => {
-      return response.text()
+        if (response.status === 200) {
+          return response.text()
+        }
+        else {
+          throw response.text()
+        }
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
         window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
         //TODO: Redirect to profile page, get session details for login to remain between pages.
         //alert(sessionStorage.getItem('userId'));
+      }).catch((data) => {
+          alert(data.data)
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
@@ -82,12 +89,13 @@ export default function AccountCreation() {
         <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label><br/>
         <input type="text" id="username" name="username" autoComplete='off' required /><br/>
-        <label htmlFor="username">Email</label><br/>
-        <input type="text" id="email" name="email" autoComplete='off' required /><br/>
+        <label htmlFor="email">Email</label><br/>
+        <input type="email" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
         <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
         <button id="submit" type="submit">Create Account</button>
+        <input id="reset" type="reset" value="Reset Fields"/>
       </form>
         
       </main>

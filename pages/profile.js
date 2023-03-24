@@ -51,6 +51,7 @@ export default function Profile() {
           <a
             href="search"
             className={styles.card}
+            id="searchSongs"
           >
             <h3>Search &rarr;</h3>
             <p>Discover the songs available on LilyPad.</p>
@@ -59,6 +60,7 @@ export default function Profile() {
           <a
             href="playlists"
             className={styles.card}
+            id="searchPlaylists"
           >
             <h3>Playlists &rarr;</h3>
             <p>

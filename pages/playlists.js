@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function playlists() {
+export default function Playlists() {
   useEffect(() => {
     const userId = JSON.parse(sessionStorage.getItem('userId'))
     const endpoint = `/api/user/${userId}`

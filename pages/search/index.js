@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 var typeSearch = '/index'
 
 
-export default function search() {
+export default function Search() {
   useEffect(() => {
     const userId = JSON.parse(sessionStorage.getItem('userId'))
     if (typeof(userId) === 'undefined') {
@@ -63,11 +63,11 @@ export default function search() {
           <p>Platorms to Search:</p>
           <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
           <label htmlFor="Spotify"> Spotify</label><br/>
-          <input type="checkbox" id="Youtube Music" name="Youtube Music" value="true"/>
-          <label htmlFor="Youtube Music"> Youtube Music</label><br/>
-          <input type="checkbox" id="Apple Music" name="Apple Music" value="true"/>
-          <label htmlFor="Apple Music"> Apple Music</label><br/><br/>
-          <input type="submit" className={styles.searchButton}/>
+          <input type="checkbox" id="YoutubeMusic" name="YoutubeMusic" value="true"/>
+          <label htmlFor="YoutubeMusic"> Youtube Music</label><br/>
+          <input type="checkbox" id="AppleMusic" name="AppleMusic" value="true"/>
+          <label htmlFor="AppleMusic"> Apple Music</label><br/><br/>
+          <input type="submit" id="submit" className={styles.searchButton}/>
         </form>
       </main>
 

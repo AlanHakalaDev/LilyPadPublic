@@ -24,12 +24,13 @@ export default function Home() {
             <p>Get started making playlists, listening, and finding favorites.</p>
           </a>
 
-          <a href="login" className={styles.card}>
+          <a id="logIn" href="login" className={styles.card}>
             <h3>Log In &rarr;</h3>
             <p>Already have an account? Get back to the music here.</p>
           </a>
 
           <a
+            id="startSearch"
             href="search"
             className={styles.card}
           >
@@ -38,6 +39,7 @@ export default function Home() {
           </a>
 
           <a
+            id="browsePlaylists"
             href="playlists"
             className={styles.card}
           >
