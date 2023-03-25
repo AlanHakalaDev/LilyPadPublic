@@ -67,6 +67,11 @@ export default function TrackSearch() {
           saveButton.innerHTML = "Save"
           saveButton.addEventListener("click", function(e) {
             console.log("You saved song: " + `${result.data.name}` + " from: " + `${result.source}`);
+            localStorage.setItem('song-title', `${result.data.name}`);
+            localStorage.setItem('song-artist', `${result.data.artistNames}`);
+            localStorage.setItem('source-platform', `${result.source}`);
+            localStorage.setItem('cover-art', `${result.data.imageUrl}`);
+            window.location.href = "saveTrack";
           })
 
           title.innerHTML = `${result.data.name}`
