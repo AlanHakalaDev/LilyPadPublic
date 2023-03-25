@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
-export default function TrackSearch() {
+export default function saveTrack() {
   useEffect(() => {
     const userId = JSON.parse(sessionStorage.getItem('userId'))
     const endpoint = `/api/user/${userId}`
@@ -55,14 +55,12 @@ export default function TrackSearch() {
         body.tracks.map(function(result) {
           // TODO: Apply universal style to div element and parent element for cleaner results
           let container = document.createElement('div')
-          let saveButton = document.createElement('button')
           let title = document.createElement('p')
           let artist = document.createElement('p')
           let platform = document.createElement('p')
           let coverArt = document.createElement('img')
           let icon = document.createElement('img')
 
-          saveButton.innerHTML = "Save"
           title.innerHTML = `${result.data.name}`
           artist.innerHTML = `${result.data.artistNames}`
           platform.innerHTML = `${result.source}`
@@ -74,7 +72,6 @@ export default function TrackSearch() {
           icon.height = 200
           icon.width = 200
 
-          container.appendChild(saveButton)
           container.appendChild(title)
           container.appendChild(artist)
           container.appendChild(platform)
@@ -115,6 +112,7 @@ export default function TrackSearch() {
 
         <p id="searchTitle" className={styles.description}>
         </p>
+    
 
         <div id="tracklist"></div>
       </main>
