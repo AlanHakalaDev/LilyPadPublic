@@ -19,6 +19,7 @@ export default function Playlists() {
       document.getElementById("usernameDisplay").innerHTML = `${data.username}`
       document.getElementById("emailDisplay").innerHTML = `${data.email}`
       document.getElementById("profilePic").src = `${data.picture}`
+      document.getElementById("userBox").hidden = false
     });
   
     }, [])
@@ -30,7 +31,7 @@ export default function Playlists() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>
