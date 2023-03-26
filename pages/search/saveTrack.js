@@ -18,12 +18,13 @@ export default function saveTrack() {
     img.src = url;
     img.width = 200;
     img.height = 200;
-    img.id = "cover-art"
+    img.id = "cover-art";
 
 
-    document.body.append(img);
-    document.getElementById('song-title').textContent = "The song you chose to save was '" + songTitle + "' by " + songArtist
+    //document.body.append(img);
+    document.getElementById('song-title').textContent = "The song you chose to save was '" + songTitle + "' by " + songArtist;
     document.getElementById('source-platform').textContent = "From platform: " + sourcePlatform;
+    document.getElementById('cover-art').appendChild(img);
   })
 
   return (
@@ -34,20 +35,29 @@ export default function saveTrack() {
       </Head>
 
       <main>
-      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
-        <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
-        <div>
-        <p id='usernameDisplay'>Username</p>
-        <p id='emailDisplay'>Email</p>
-        </div>
+        <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
+          <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
+          <div>
+            <p id='usernameDisplay'>Username</p>
+            <p id='emailDisplay'>Email</p>
+          </div>
         </a>
+
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
 
         <p id="song-title"></p>
         <p id="source-platform"></p>
+        <div id="cover-art"></div>
 
+        <a
+          id="returnToSearch"
+          href="/search"
+          className={styles.searchButton}
+        >
+          <p>Search Another Song</p>
+        </a>
 
       </main>
 
