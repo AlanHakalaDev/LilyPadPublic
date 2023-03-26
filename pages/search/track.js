@@ -25,7 +25,7 @@ export default function TrackSearch() {
             method: "POST",
             headers: {
               'content-type': 'application/json',
-              'X-RapidAPI-Key': '',//`${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
+              'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
               'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
             },
             body: JSON.stringify(requestBody),
