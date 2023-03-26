@@ -2,8 +2,11 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
 import { setProfile } from '/functions/profile-display.js'
-// TODO: Add a "new search" button to get back to search options page
+// TODO (DONE): Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
+// TODO: Implement the user playlist database into the javascript and html
+    // For now, the select playlist is just a skeleton and an example of 
+    // what the functionality would look like
 
 export default function saveTrack() {
 
@@ -20,11 +23,19 @@ export default function saveTrack() {
     img.height = 200;
     img.id = "cover-art";
 
-
-    //document.body.append(img);
     document.getElementById('song-title').textContent = "The song you chose to save was '" + songTitle + "' by " + songArtist;
     document.getElementById('source-platform').textContent = "From platform: " + sourcePlatform;
     document.getElementById('cover-art').appendChild(img);
+
+    const btn = document.querySelector('#saveSongToSelectedPlaylist');
+    btn.addEventListener('click', (event) => {
+      let checkboxes = document.querySelectorAll('input[name="playlist"]:checked');
+      let values = [];
+      checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+      })
+      alert("You saved the song to: " + values);
+    })
   })
 
   return (
@@ -50,6 +61,26 @@ export default function saveTrack() {
         <p id="song-title"></p>
         <p id="source-platform"></p>
         <div id="cover-art"></div>
+
+        <p>
+          Which playlist would you like to save the song to?
+        </p>
+      
+        <label for="playlist1">
+          <input type="checkbox" name="playlist" value="Playlist 1" id="playlist1"></input>
+          Playlist 1
+        </label>
+        <label for="playlist2">
+          <input type="checkbox" name="playlist" value="Playlist 2" id="playlist2"></input>
+          Playlist 2
+        </label>
+        <label for="playlist3">
+          <input type="checkbox" name="playlist" value="Playlist 3" id="playlist3"></input>
+          Playlist 3
+        </label>
+        <p>
+          <button id="saveSongToSelectedPlaylist">Save Song</button>
+        </p>
 
         <a
           id="returnToSearch"
