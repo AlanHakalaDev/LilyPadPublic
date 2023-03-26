@@ -9,7 +9,8 @@ import { setProfile } from '/functions/profile-display.js'
 export default function TrackSearch() {
   
   useEffect(() => {
-    setProfile()
+    console.log(process.env.NEXT_PUBLIC_RAPID_API_KEY)
+    
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams != {}) {
@@ -21,6 +22,7 @@ export default function TrackSearch() {
         "type": "track",
         "sources":["spotify","youtube"]
       }
+      
       fetch('https://musicapi13.p.rapidapi.com/search', {
             method: "POST",
             headers: {
@@ -38,11 +40,12 @@ export default function TrackSearch() {
         body.tracks.map(function(result) {
           // TODO: Apply universal style to div element and parent element for cleaner results
           let container = document.createElement('div')
-          let saveButton = document.createElement('button')
-          let title = document.createElement('p')
-          let artist = document.createElement('p')
+          let title = document.createElement('h2')
+          title.class
+          let artist = document.createElement('h3')
           let platform = document.createElement('p')
           let coverArt = document.createElement('img')
+          let saveButton = document.createElement('button')
           let icon = document.createElement('img')
 
           saveButton.innerHTML = "Save"
@@ -110,7 +113,10 @@ export default function TrackSearch() {
         <p id="searchTitle" className={styles.description}>
         </p>
 
-        <div id="tracklist"></div>
+        <div className={styles.trackContainer}>
+          <div id="tracklist"></div>
+        </div>
+
       </main>
 
       <footer>
@@ -151,6 +157,11 @@ export default function TrackSearch() {
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+        .trackContainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       `}</style>
 
