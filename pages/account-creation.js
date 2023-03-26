@@ -23,7 +23,7 @@ export default function AccountCreation() {
         alert('Please enter a password.')
       }
       const data = {
-        email: event.target.email.value,
+        email: event.target.email.value.toLowerCase(),
         username: event.target.username.value,
         pass: event.target.pass.value,
         description: "Hi, I'm a newcomer to LilyPad!",

@@ -1,33 +1,13 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js'
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
 export default function saveTrack() {
   useEffect(() => {
-    const userId = JSON.parse(sessionStorage.getItem('userId'))
-    const endpoint = `/api/user/${userId}`
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-  
-    fetch(endpoint, options)
-    .then((response) => {
-    return response.json()
-    }).then((data) => {
-      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
-      document.getElementById("emailDisplay").innerHTML = `${data.email}`
-      document.getElementById("profilePic").src = `${data.picture}`
-      document.getElementById("userBox").hidden = false
-    });
-  
-    }, [])
-  useEffect(() => {
-    
+    setProfile()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams != {}) {

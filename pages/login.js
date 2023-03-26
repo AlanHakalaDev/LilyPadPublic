@@ -16,7 +16,7 @@ export default function Login() {
         alert('Please enter a password.')
       }
       const data = {
-        email: event.target.email.value,
+        email: event.target.email.value.toLowerCase(),
         password: event.target.pass.value,
       }
       const JSONdata = JSON.stringify(data)
