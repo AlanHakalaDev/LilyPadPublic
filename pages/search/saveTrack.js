@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js'
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
 export default function saveTrack() {
 
   useEffect(() => {
-  
+    setProfile()
     const songTitle = localStorage.getItem('song-title');
     const sourcePlatform = localStorage.getItem('source-platform');
     const songArtist = localStorage.getItem('song-artist');
@@ -33,7 +34,7 @@ export default function saveTrack() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>

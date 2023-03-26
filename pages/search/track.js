@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js'
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
@@ -8,27 +9,7 @@ import { useEffect } from 'react';
 export default function TrackSearch() {
   
   useEffect(() => {
-    const userId = JSON.parse(sessionStorage.getItem('userId'))
-    const endpoint = `/api/user/${userId}`
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-  
-    fetch(endpoint, options)
-    .then((response) => {
-    return response.json()
-    }).then((data) => {
-      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
-      document.getElementById("emailDisplay").innerHTML = `${data.email}`
-      document.getElementById("profilePic").src = `${data.picture}`
-    });
-  
-    }, [])
-  useEffect(() => {
-    
+    setProfile()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams != {}) {
@@ -44,7 +25,7 @@ export default function TrackSearch() {
             method: "POST",
             headers: {
               'content-type': 'application/json',
-              'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
+              'X-RapidAPI-Key': '',//`${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
               'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
             },
             body: JSON.stringify(requestBody),
@@ -115,7 +96,7 @@ export default function TrackSearch() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>

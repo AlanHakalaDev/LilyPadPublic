@@ -1,26 +1,10 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { setProfile } from '/functions/profile-display.js'
 
-export default function playlists() {
+export default function Playlists() {
   useEffect(() => {
-    const userId = JSON.parse(sessionStorage.getItem('userId'))
-    const endpoint = `/api/user/${userId}`
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-  
-    fetch(endpoint, options)
-    .then((response) => {
-    return response.json()
-    }).then((data) => {
-      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
-      document.getElementById("emailDisplay").innerHTML = `${data.email}`
-      document.getElementById("profilePic").src = `${data.picture}`
-    });
-  
+    setProfile()
     }, [])
   return (
     <div className={styles.container}>
@@ -30,7 +14,7 @@ export default function playlists() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>
