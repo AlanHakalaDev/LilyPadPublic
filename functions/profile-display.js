@@ -1,7 +1,10 @@
 export function setProfile () {
     const userId = JSON.parse(sessionStorage.getItem('userId'))
-    if (typeof(userId) === 'undefined') {
-      window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
+    if (!userId) {
+      if (document.getElementById("userBox")) {
+      document.getElementById("userBox").remove()
+      }
+      return
     }
     const endpoint = `/api/user/${userId}`
     const options = {
@@ -21,8 +24,9 @@ export function setProfile () {
       document.getElementById("profilePic").src = `${data.picture}`
       document.getElementById("userBox").hidden = false
     }).catch(() => {
-      document.getElementById("usernameDisplay").innerHTML = 'Guest User'
+      /*document.getElementById("usernameDisplay").innerHTML = 'Guest User'
       document.getElementById("emailDisplay").innerHTML = 'guest@gmail.com'
-      document.getElementById("profilePic").src = '/public/icon.png'
+      document.getElementById("profilePic").src = '/public/icon.png'*/
+      document.getElementById("userBox").remove()
     })
 }
