@@ -1,32 +1,12 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
-var typeSearch = '/index'
+import { setProfile } from '/functions/profile-display.js'
 
 
-export default function search() {
+export default function Search() {
   useEffect(() => {
-    const userId = JSON.parse(sessionStorage.getItem('userId'))
-    if (typeof(userId) === 'undefined') {
-      window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
-    }
-    const endpoint = `/api/user/${userId}`
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-  
-    fetch(endpoint, options)
-    .then((response) => {
-    return response.json()
-    }).then((data) => {
-      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
-      document.getElementById("emailDisplay").innerHTML = `${data.email}`
-      document.getElementById("profilePic").src = `${data.picture}`
-    });
-  
+    setProfile()
     }, [])
   return (
     <div className={styles.container}>
@@ -36,7 +16,7 @@ export default function search() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>
@@ -63,11 +43,11 @@ export default function search() {
           <p>Platorms to Search:</p>
           <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
           <label htmlFor="Spotify"> Spotify</label><br/>
-          <input type="checkbox" id="Youtube Music" name="Youtube Music" value="true"/>
-          <label htmlFor="Youtube Music"> Youtube Music</label><br/>
-          <input type="checkbox" id="Apple Music" name="Apple Music" value="true"/>
-          <label htmlFor="Apple Music"> Apple Music</label><br/><br/>
-          <input type="submit" className={styles.searchButton}/>
+          <input type="checkbox" id="YoutubeMusic" name="YoutubeMusic" value="true"/>
+          <label htmlFor="YoutubeMusic"> Youtube Music</label><br/>
+          <input type="checkbox" id="AppleMusic" name="AppleMusic" value="true"/>
+          <label htmlFor="AppleMusic"> Apple Music</label><br/><br/>
+          <input type="submit" id="submit" className={styles.searchButton}/>
         </form>
       </main>
 

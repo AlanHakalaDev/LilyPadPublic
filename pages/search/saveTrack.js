@@ -1,95 +1,30 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js'
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
 export default function saveTrack() {
+
   useEffect(() => {
-    const userId = JSON.parse(sessionStorage.getItem('userId'))
-    const endpoint = `/api/user/${userId}`
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-  
-    fetch(endpoint, options)
-    .then((response) => {
-    return response.json()
-    }).then((data) => {
-      document.getElementById("usernameDisplay").innerHTML = `${data.username}`
-      document.getElementById("emailDisplay").innerHTML = `${data.email}`
-      document.getElementById("profilePic").src = `${data.picture}`
-    });
-  
-    }, [])
-  useEffect(() => {
-    
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    if (urlParams != {}) {
-      // TODO: Add functionality for platform selections to actually work
-      
-      const requestBody = { 
-        "track": urlParams.get('title'),
-        "artist": urlParams.get('creator'),
-        "type": "track",
-        "sources":["spotify","youtube"]
-      }
-      fetch('https://musicapi13.p.rapidapi.com/search', {
-            method: "POST",
-            headers: {
-              'content-type': 'application/json',
-              'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
-              'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
-            },
-            body: JSON.stringify(requestBody),
-      }).then(response => {return response.json().then(body => {
-      if (response.status === 200) {
-        let searchTitle = document.getElementById("searchTitle")
-        searchTitle.innerHTML = "Search results for '" + `${urlParams.get('title')}` + "' by '" + `${urlParams.get('creator')}` + "':"
-        const htmlContainer = document.getElementById("tracklist")
-        const trackList = document.createDocumentFragment()
-        body.tracks.map(function(result) {
-          // TODO: Apply universal style to div element and parent element for cleaner results
-          let container = document.createElement('div')
-          let title = document.createElement('p')
-          let artist = document.createElement('p')
-          let platform = document.createElement('p')
-          let coverArt = document.createElement('img')
-          let icon = document.createElement('img')
+    setProfile()
+    const songTitle = localStorage.getItem('song-title');
+    const sourcePlatform = localStorage.getItem('source-platform');
+    const songArtist = localStorage.getItem('song-artist');
+    const url = localStorage.getItem('cover-art');
 
-          title.innerHTML = `${result.data.name}`
-          artist.innerHTML = `${result.data.artistNames}`
-          platform.innerHTML = `${result.source}`
-          coverArt.src = `${result.data.imageUrl}`
-          coverArt.height = 200
-          coverArt.width = 200
-          // TODO: render separate icons based on platform
-          icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
-          icon.height = 200
-          icon.width = 200
+    const img = new Image();
+    img.src = url;
+    img.width = 200;
+    img.height = 200;
+    img.id = "cover-art"
 
-          container.appendChild(title)
-          container.appendChild(artist)
-          container.appendChild(platform)
-          container.appendChild(coverArt)
-          container.appendChild(icon)
-          trackList.appendChild(container)
 
-        })
-        htmlContainer.appendChild(trackList)
-      }
-      else {
-        throw body
-        // TODO: Render error message if request falls through
-      }
-    })
-    })
-    }
-  }, []);
+    document.body.append(img);
+    document.getElementById('song-title').textContent = "The song you chose to save was '" + songTitle + "' by " + songArtist
+    document.getElementById('source-platform').textContent = "From platform: " + sourcePlatform;
+  })
 
   return (
     <div className={styles.container}>
@@ -99,7 +34,7 @@ export default function saveTrack() {
       </Head>
 
       <main>
-      <a  href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>
@@ -110,11 +45,10 @@ export default function saveTrack() {
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
 
-        <p id="searchTitle" className={styles.description}>
-        </p>
-    
+        <p id="song-title"></p>
+        <p id="source-platform"></p>
 
-        <div id="tracklist"></div>
+
       </main>
 
       <footer>
@@ -173,4 +107,4 @@ export default function saveTrack() {
       `}</style>
     </div>
   )
-}
+};
