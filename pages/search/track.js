@@ -4,7 +4,9 @@ import { useEffect } from 'react';
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
+
 export default function TrackSearch() {
+  
   useEffect(() => {
     const userId = JSON.parse(sessionStorage.getItem('userId'))
     const endpoint = `/api/user/${userId}`
@@ -63,9 +65,19 @@ export default function TrackSearch() {
           let icon = document.createElement('img')
 
           saveButton.innerHTML = "Save"
+          saveButton.addEventListener("click", function(e) {
+            console.log("You saved song: " + `${result.data.name}` + " from: " + `${result.source}`);
+            localStorage.setItem('song-title', `${result.data.name}`);
+            localStorage.setItem('song-artist', `${result.data.artistNames}`);
+            localStorage.setItem('source-platform', `${result.source}`);
+            localStorage.setItem('cover-art', `${result.data.imageUrl}`);
+            window.location.href = "saveTrack";
+          })
+
           title.innerHTML = `${result.data.name}`
           artist.innerHTML = `${result.data.artistNames}`
           platform.innerHTML = `${result.source}`
+
           coverArt.src = `${result.data.imageUrl}`
           coverArt.height = 200
           coverArt.width = 200
@@ -81,6 +93,7 @@ export default function TrackSearch() {
           container.appendChild(coverArt)
           container.appendChild(icon)
           trackList.appendChild(container)
+
 
         })
         htmlContainer.appendChild(trackList)
