@@ -40,11 +40,12 @@ export default function TrackSearch() {
         body.tracks.map(function(result) {
           // TODO: Apply universal style to div element and parent element for cleaner results
           let container = document.createElement('div')
-          let saveButton = document.createElement('button')
-          let title = document.createElement('p')
-          let artist = document.createElement('p')
+          let title = document.createElement('h2')
+          title.class
+          let artist = document.createElement('h3')
           let platform = document.createElement('p')
           let coverArt = document.createElement('img')
+          let saveButton = document.createElement('button')
           let icon = document.createElement('img')
 
           saveButton.innerHTML = "Save"
@@ -158,7 +159,7 @@ export default function TrackSearch() {
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
         .trackContainer {
-          display: grid;
+          display: flex;
           flex-wrap: wrap;
           justify-content: center;
         }
