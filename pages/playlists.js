@@ -1,11 +1,49 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import {useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
 
 export default function Playlists() {
   useEffect(() => {
     setProfile()
     }, [])
+    const handleSubmit = async (event) => {
+      event.preventDefault()
+      const playlistTitle = document.querySelector('#playlistTitle').value
+      const desc = document.querySelector('#desc').value
+
+      if (!playlistTitle) {
+        alert('Please enter a playlist title.')
+        return false
+      }
+      
+      const data = {
+        name: event.target.playlistTitle.value,
+        description: event.target.desc.value,
+        userId: JSON.parse(sessionStorage.getItem("userId")),
+      }
+      const JSONdata = JSON.stringify(data)
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSONdata,
+      }
+
+      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/playlists', options)
+      .then((response) => {
+        if (response.status === 200) {
+          return response.text()
+        }
+        else {
+          throw response.text()
+        }
+      }).catch((data) => {
+          alert(data.data)
+      });
+      }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,6 +66,18 @@ export default function Playlists() {
         <p className={styles.description}>
           Playlists:
         </p>
+
+
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="playlistTitle">Playlist Title: </label><br/>
+        <input type="text" id="playlistTitle" name="playList" autoComplete='off' required /><br/>
+        <label htmlFor="desc">description</label><br/>
+        <input type="text" id="desc" name="desc" autoComplete='off' required /><br/>
+  
+        <button id="submit" type="submit">Create Playlist</button>
+        <input id="reset" type="reset" value="Reset Fields"/>
+        </form>
+
       </main>
 
       <footer>
@@ -85,5 +135,4 @@ export default function Playlists() {
         }
       `}</style>
     </div>
-  )
-}
+  )}

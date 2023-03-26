@@ -1,5 +1,5 @@
 import { PrismaClient, Playlist } from '@prisma/client'
-
+import { getUser } from './users'
 const prisma = new PrismaClient()
 
 /**model Playlist {
@@ -13,17 +13,16 @@ const prisma = new PrismaClient()
 } */
 
 export async function createPlaylist(playlist) {
+  const playlistCreator = await getUser(playlist.userId)
   const newPlaylist = prisma.playlist.create({
     data: {
         playlistTitle: playlist.name,
         description: playlist.description,
-        creator: {
-          connect: [{id: song.userId}],
-        },
-    },
-  })
-  return newPlaylist
-}
+        creator: {connect: [{id: playlistCreator.id}]},
+      }
+})
+  return newPlaylist}
+
 
 export async function changePlaylist(playlist) {
   const changedPlaylist = prisma.playlist.update({
