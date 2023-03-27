@@ -37,7 +37,7 @@ Requirement: As a Listener, I want to be able to create a playlist so that I can
 
 Issue: [Create Playlists]((https://github.com/CS386Team6/LilyPad/issues/9))
 
-Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
+Pull request: [PR 49](https://github.com/CS386Team6/LilyPad/pull/49)
 
 Implemented by: Alan Hakala
 
@@ -53,7 +53,7 @@ Pull request: [PR 46]((https://github.com/CS386Team6/LilyPad/pull/46))
 
 Implemented by: Rino De Guzman
 
-Approved by: Rino De Guzman
+Approved by: Nathan Seitz
 
 
 ## 3: Tests
@@ -70,7 +70,7 @@ Link to file:
 Classes tested during this test: [index.js](https://github.com/CS386Team6/LilyPad/blob/main/pages/index.js), [account-creation.js](https://github.com/CS386Team6/LilyPad/blob/main/pages/account-creation.js), [profile.js](https://github.com/CS386Team6/LilyPad/blob/main/pages/profile.js), and [search/index.js](https://github.com/CS386Team6/LilyPad/blob/main/pages/search/index.js)
 
 ### 3.4: Result of Tests
-<img src="images/test_result_newuser.jpg" width=400px>
+<img src="../images/test_result_newuser.jpg" width=400px>
 
 ## 4: Adopted Technologies
 We are building a web app with Node.JS, using a Next.JS framework. We chose this framework since it was easy to set up and some members had previous experience working with it.
@@ -98,12 +98,16 @@ We chose the GNU General Public License v3.0 for our code. Open source is import
 
 ## 9: Look & Feel
 
-For the look and feel we wanted a basic approach that that leads you to the main features of our site. We chose a very mundane gray background to compliment the green allowing it to pop. We chose green as to continue with the theme of a lilypad the name of our application. We have not finished the design but we hope to add more color and user friendly integration to the user inputs. At the moment we have the basic bones of what is important, which gives it a very retro feel. However, we hope this week we will be able to implement user welcoming designs. The goal is to create a welcoming sight that is easy to navigate which has a pleasent colors that help guide the users eyes. We want users to be unrestricted by the ignorance of be used to lilypad.
+For the look and feel we wanted a basic approach that that leads you to the main features of our site. We chose a very mundane gray background to compliment the green allowing it to pop. We chose green as to continue with the theme of a lilypad the name of our application. We have not finished the design but we hope to add more color and user friendly integration to the user inputs. At the moment we have the basic bones of what is important, which gives it a very retro feel. However, we hope this week we will be able to implement user welcoming designs. The goal is to create a welcoming sight that is easy to navigate which has a pleasent colors that help guide the users eyes. We want users to be unrestricted by the ignorance of being used to lilypad. These images display future plans for the design, to be implemented in the next release.
 
-<img src="images/lilypad_create.jpg" width=400px>
-<img src="images/lilypad_login.jpg" width=400px>
+<img src="../images/lilypad_create.jpg" width=400px>
+<img src="../images/lilypad_login.jpg" width=400px>
 
 ## 10: Lessons Learned
 During the first release, one of the main things that we have learned is that there is more than meets the eye in regards to actual amounts of implementation that is required for the goals and requirements that we want to achieve. Juggling multiple technologies is a difficult task that can prevent optimal progression with the state of the project. It is also important next time around to start working on the implementation of features and requirements as soon as possible to give more time for fixing bugs. 
 
 ## 11: Demo
+
+A short video demonstrating a user adding songs to a playlist, creating a playlist, creating an account, and logging back into their account.
+
+[Video Link](https://github.com/CS386Team6/LilyPad/blob/main/videos/demo.mp4)
