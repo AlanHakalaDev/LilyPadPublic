@@ -78,7 +78,7 @@ You can create an account from the home page, start creating your own playlists,
 
 ## Running the tests
 
-TBD
+If you've run `npm install` already, opening the testing software with Cypress should work by running the command `npm run cypress`. This will bring up a window to let you select between component tests and end-to-end tests. A couple are included in the repo.
 
 ### Break down into end to end tests
 
