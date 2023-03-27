@@ -17,7 +17,7 @@ Pull request: [PR 40](https://github.com/CS386Team6/LilyPad/pull/40)
 
 Implemented by: Nathan Seitz
 
-Approved by: Alan Hakala
+Approved by: Rino De Guzman
 
 ### 2.2: Search Bar Feature
 
@@ -29,31 +29,7 @@ Pull request: [PR 39](https://github.com/CS386Team6/LilyPad/pull/39)
 
 Implemented by: Nathan Seitz
 
-Approved by: Alan Hakala
-
-### 2.3: Create Playlist Feature
-
-Requirement: As a Listener, I want to be able to create a playlist so that I can have different playlists for different genres that I listen to. 
-
-Issue: [Create Playlists]((https://github.com/CS386Team6/LilyPad/issues/9))
-
-Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
-
-Implemented by: Alan Hakala
-
-Approved by: Alan Hakala
-
-### 2.4: Save Song To Playlist
-
-Requirement: As a Listener, I want to be able to add songs into a playlist so that I can compile my favorite songs together in one place. 
-
-Issue: [Add Songs to Playlists](https://github.com/CS386Team6/LilyPad/issues/48)
-
-Pull request: [PR 46](https://github.com/CS386Team6/LilyPad/pull/46)
-
-Implemented by: Rino De Guzman
-
-Approved by: Alan Hakala
+Approved by: Rino De Guzman
 
 ### 2.X: REQUIREMENT_NAME (Duplicate as necessary)
 
@@ -109,6 +85,8 @@ We chose the GNU General Public License v3.0 for our code. Open source is import
 [CODE_OF_CONDUCT.md](https://github.com/CS386Team6/LilyPad/blob/main/CODE_OF_CONDUCT.md)
 
 ## 9: Look & Feel
+
+For the look and feel we wanted a basic approach that that leads you to the main features of our site. We chose a very mundane gray background to compliment the green allowing it to pop. We chose green as to continue with the theme of a lilypad the name of our application. We have not finished the design but we hope to add more color and user friendly integration to the user inputs. At the moment we have the basic bones of what is important, which gives it a very retro feel. However, we hope this week we will be able to implement user welcoming designs. 
 
 ## 10: Lessons Learned
 During the first release, one of the main things that we have learned is that there is more than meets the eye in regards to actual amounts of implementation that is required for the goals and requirements that we want to achieve. Juggling multiple technologies is a difficult task that can prevent optimal progression with the state of the project. It is also important next time around to start working on the implementation of features and requirements as soon as possible to give more time for fixing bugs. 
