@@ -60,7 +60,7 @@ export default function Playlists() {
       </Head>
 
       <main>
-      <a id="userBox" href="profile" className={styles.userBox}>
+      <a id="userBox" href="/profile" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>
