@@ -87,5 +87,6 @@ We chose the GNU General Public License v3.0 for our code. Open source is import
 ## 9: Look & Feel
 
 ## 10: Lessons Learned
+During the first release, one of the main things that we have learned is that there is more than meets the eye in regards to actual amounts of implementation that is required for the goals and requirements that we want to achieve. Juggling multiple technologies is a difficult task that can prevent optimal progression with the state of the project. It is also important next time around to start working on the implementation of features and requirements as soon as possible to give more time for fixing bugs. 
 
 ## 11: Demo
