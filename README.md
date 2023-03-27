@@ -80,17 +80,19 @@ You can create an account from the home page, start creating your own playlists,
 
 If you've run `npm install` already, opening the testing software with Cypress should work by running the command `npm run cypress`. This will bring up a window to let you select between component tests and end-to-end tests. A couple are included in the repo.
 
-### Break down into end to end tests
+### End-to-End Tests
 
-TBD
+Cypress's browser will provide a choice to perform end-to-end (e2e) tests or component tests. For best functionality, we have found that e2e testing ensures that the test environent doesn't break when the page redirects. Right now, there are two e2e tests implemented. One simulates the experience of a new user joining LilyPad, with creation of accounts, playlists, and searching.
+
+The other e2e test that exists already is a simulation of a returning user logging in, and then making a search with the provided feature.
 
 ### And coding style tests
 
-TBD
+The coding style tests are significantly less robust. Since Cypress's component testing only deals with a single module at a time, and many components redirect to others as part of their funcitonality, the Cypress component tests can really only effectively test input.
 
 ## Deployment
 
-You'll need a host and a server to deploy this app, but pretty much anything will do.
+You'll need a host and a server to deploy this app, but pretty much anything will do. The current deployment is done with Vercel.
 
 ## Built With
 
