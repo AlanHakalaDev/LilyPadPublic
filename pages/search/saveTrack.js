@@ -13,9 +13,10 @@ export default function saveTrack() {
   useEffect(() => {
     setProfile()
     const songTitle = localStorage.getItem('song-title');
-    const sourcePlatform = localStorage.getItem('source-platform');
+    const sourcePlatform = localStorage.getItem('source-platform').toUpperCase();
     const songArtist = localStorage.getItem('song-artist');
     const url = localStorage.getItem('cover-art');
+    const platformId = localStorage.getItem('song-id')
 
     const img = new Image();
     img.src = url;
@@ -27,6 +28,60 @@ export default function saveTrack() {
     document.getElementById('source-platform').textContent = "From platform: " + sourcePlatform;
     document.getElementById('cover-art').appendChild(img);
 
+    const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
+
+    const options = {
+        method: 'GET',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    }
+    console.log(options)
+    fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/playlists', options)
+    .then((response) => {
+        if (response.status === 200) {
+          return response.json()
+        }
+        else {
+          throw response.text()
+        }
+      }).catch((data) => {
+          alert(data.data)
+      }).then((playlistList) => {
+        const htmlContainer = document.getElementById("playlists")
+        const playlistsGroup = document.createDocumentFragment()
+        playlistList.forEach(function(playlist) {
+            if (playlist.creatorId === loggedInUserId) {
+/*        <label for="playlist1">
+          <input type="checkbox" name="playlist" value="Playlist 1" id="playlist1"></input>
+          Playlist 1
+        </label>*/
+
+                let container = document.createElement('div')
+                container.style.border = '1px solid gray'
+                container.style.borderRadius = '15px'
+                container.style.margin = '20px'        
+                let selection = document.createElement('input')
+                selection.type = "checkbox"
+                selection.name = "playlist"
+                selection.value = `${playlist.id}`
+                selection.id = `${playlist.playlistTitle}`
+                //selection.name = `${playlist.playlistTitle}`
+                let label = document.createElement('label')
+                label.innerHTML = `${playlist.playlistTitle}`
+                label.htmlFor = selection.id
+                let description = document.createElement('p')
+                description.innerHTML = `${playlist.description}`
+                container.appendChild(label)
+                container.appendChild(selection)
+                container.appendChild(description)
+                playlistsGroup.appendChild(container)
+            }
+        })
+        htmlContainer.appendChild(playlistsGroup)
+
+      });
+
     const btn = document.querySelector('#saveSongToSelectedPlaylist');
     btn.addEventListener('click', (event) => {
       let checkboxes = document.querySelectorAll('input[name="playlist"]:checked');
@@ -34,7 +89,43 @@ export default function saveTrack() {
       checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
       })
-      alert("You saved the song to: " + values);
+      const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
+
+      if (!loggedInUserId) {
+          alert ('You need to create an account to create playlists.')
+      }
+      const requestBody = {
+        song: {
+          platformId: platformId,
+          title: songTitle,
+          platform: sourcePlatform
+        },
+        playlist: {
+          ids: values,
+        }
+      }
+
+      const options = {
+          method: 'POST',
+          headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody)
+      }
+      //const JSONBody = JSON.stringify(options)
+      console.log(options)
+      fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/songs', options)
+      .then((response) => {
+          if (response.status === 200) {
+            return response.json()
+          }
+          else {
+            throw response.text()
+          }
+        })/*.catch((data) => {
+            alert(data.data)
+        })*/
+      //alert("You saved the song to: " + values);
     })
   })
 
@@ -65,23 +156,11 @@ export default function saveTrack() {
         <p>
           Which playlist would you like to save the song to?
         </p>
-      
-        <label for="playlist1">
-          <input type="checkbox" name="playlist" value="Playlist 1" id="playlist1"></input>
-          Playlist 1
-        </label>
-        <label for="playlist2">
-          <input type="checkbox" name="playlist" value="Playlist 2" id="playlist2"></input>
-          Playlist 2
-        </label>
-        <label for="playlist3">
-          <input type="checkbox" name="playlist" value="Playlist 3" id="playlist3"></input>
-          Playlist 3
-        </label>
+        <div id="playlists">
+        </div>
         <p>
           <button id="saveSongToSelectedPlaylist">Save Song</button>
         </p>
-
         <a
           id="returnToSearch"
           href="/search"

@@ -35,9 +35,11 @@ export async function changePlaylist(playlist) {
 }
 
 export async function addSongToPlaylist(playlistId, songId) {
-  const updatedPlaylist = await prisma.playlist.connect({
-    data: {
+  const updatedPlaylist = await prisma.playlist.update({
+    where: {
       id: playlistId,
+    },
+    data: {
       songs: {
         connect: {id: songId},
       },
@@ -53,9 +55,9 @@ export async function removeSongFromPlaylist(playlistId, songId) {
     },
     data: {
       songs: {
-        disconnect: { id: songId }
-      }
-    }
+        disconnect: {id: songId},
+      },
+    },
   })
   return updatedPlaylist
 }
