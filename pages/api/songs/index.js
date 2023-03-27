@@ -1,7 +1,7 @@
 import { createPlaylist, changePlaylist, addSongToPlaylist, removeSongFromPlaylist,
     deletePlaylist, getPlaylist, listPlaylists } from "/prisma/playlists.js"
 
-import {createSong, deleteSong, getSong, listSong} from "/prisma/songs.js"
+import {createSong, deleteSong, getSong, listSongs} from "/prisma/songs.js"
     
     export default async function handler(req, res) {
         const body = req.body
@@ -25,7 +25,7 @@ import {createSong, deleteSong, getSong, listSong} from "/prisma/songs.js"
         }
         if (req.method === "GET") {
           try {
-            const songList = await listSong()
+            const songList = await listSongs()
             res.status(200).json(songList)
           }
           catch {
