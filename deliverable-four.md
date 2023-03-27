@@ -41,19 +41,19 @@ Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
 
 Implemented by: Alan Hakala
 
-Approved by: Nathan Seitz
+Approved by: Rino De Guzman
 
 ### 2.4: Save Song To Playlist
 
 Requirement: As a Listener, I want to be able to add songs into a playlist so that I can compile my favorite songs together in one place. 
 
-Issue: [Add Songs to Playlists]([LINK_TO_ISSUE](https://github.com/CS386Team6/LilyPad/issues/48))
+Issue: [Add Songs to Playlists]((https://github.com/CS386Team6/LilyPad/issues/48))
 
-Pull request: [PR 46]([LINK_TO_PULL_REQUEST](https://github.com/CS386Team6/LilyPad/pull/46))
+Pull request: [PR 46]((https://github.com/CS386Team6/LilyPad/pull/46))
 
 Implemented by: Rino De Guzman
 
-Approved by: Nathan Seitz
+Approved by: Rino De Guzman
 
 
 ## 3: Tests
