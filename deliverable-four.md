@@ -41,7 +41,7 @@ Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
 
 Implemented by: Alan Hakala
 
-Approved by: Nathan Seitz
+Approved by: Rino De Guzman
 
 ### 2.4: Save Song To Playlist
 
@@ -53,7 +53,7 @@ Pull request: [PR 46](https://github.com/CS386Team6/LilyPad/pull/46)
 
 Implemented by: Rino De Guzman
 
-Approved by: Nathan Seitz
+Approved by: Rino De Guzman
 
 ### 2.X: REQUIREMENT_NAME (Duplicate as necessary)
 
