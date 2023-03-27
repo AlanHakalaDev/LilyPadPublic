@@ -71,7 +71,7 @@ Additional libraries include dotenv for integration and use of .env variables, r
 Documentation on Next.JS, Udemy courses focusing on web development, W3Schools, and Stack Overflow have all proven exceptionally helpful for learning these technologies, and overcoming errors faced during development.
 
 ## 6: Deployment
-Currently, we are hosting our website on a server, with an unrelated domain name. Until we start closing in on a finished product, LilyPad will be hosted at: [Host](WEBSITE_NAME).
+Vercel, which is a deployment framework that is built to work with Next.Js, provides an automated production server for us to share our app with the world: [https://lily-pad.vercel.app/](https://lily-pad.vercel.app/).
 
 ## 7: Licensing
 We chose the GNU General Public License v3.0 for our code. Open source is important, but there may be future releases that we wish to make and keep closed-source. Since this license specifically covers that, it is perfect for our needs.
