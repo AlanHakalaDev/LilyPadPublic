@@ -18,7 +18,9 @@ export default async function handler(req, res) {
               }
             });
           }
+          else {
           return res.status(424).json({data: "There are no accounts found. Try again later, or create an account first."})
+          }
       }
       catch(error) {
         return res.status(500).json({data: 'Something went wrong on the server.'})
