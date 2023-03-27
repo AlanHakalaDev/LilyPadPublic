@@ -115,7 +115,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Gannon Rowlan** - [gannonrowlan](https://github.com/gannonrowlan)
 * **Alan Hakala** - [AlanHakalaDev](https://github.com/AlanHakalaDev)
 * **Isaac Faulkner** - [iwf2](https://github.com/iwf2)
-* **Vanshi Vavilla** - [vv482](https://github.com/Vamshi178)
+* **Vamshi Vavilla** - [vv482](https://github.com/Vamshi178)
 
 See also the list of [contributors](https://github.com/CS386Team6/LilyPad) who participated in this project.
 
