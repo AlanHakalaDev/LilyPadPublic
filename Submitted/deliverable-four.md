@@ -111,3 +111,5 @@ During the first release, one of the main things that we have learned is that th
 A short video demonstrating a user adding songs to a playlist, creating a playlist, creating an account, and logging back into their account.
 
 [Video Link](https://github.com/CS386Team6/LilyPad/blob/main/videos/demo.mp4)
+
+[Youtube Link](https://www.youtube.com/watch?v=gIsc2sQWvEI)
