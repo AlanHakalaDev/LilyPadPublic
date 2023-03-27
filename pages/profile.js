@@ -24,7 +24,7 @@ export default function Profile() {
         </div>
         </a>
         <h1 className={styles.title}>
-          Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
+          <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad</a>
         </h1>
 
         <p className={styles.description} id="welcome" name="welcome">

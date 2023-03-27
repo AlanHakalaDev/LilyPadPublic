@@ -23,7 +23,7 @@ export default async function handler(req, res) {
           }
       }
       catch(error) {
-        return res.status(500).json({data: 'Something went wrong on the server.'})
+        return res.status(500).json({data: error})
       }
     }
     else {

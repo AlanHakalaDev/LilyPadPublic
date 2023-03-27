@@ -34,12 +34,18 @@ export default function Login() {
         if (response.status === 200) {
           return response.text()
         }
-        else {throw response.text()}
+        else throw response.status
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
         window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
-      }).catch((data) => {
-        alert(data.data)
+      }).catch((response) => {
+        if ( response === 401 ) {
+          alert("The password or email is incorrect.")
+        }
+        else {
+          alert("Something went wrong on the server.")
+        }
+
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {

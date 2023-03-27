@@ -15,7 +15,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Placeholder Text
+          All the best music platforms and sources in one place
         </p>
 
         <div className={styles.grid}>
