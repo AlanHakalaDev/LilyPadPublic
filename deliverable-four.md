@@ -31,6 +31,30 @@ Implemented by: Nathan Seitz
 
 Approved by: Rino De Guzman
 
+### 2.3: Create Playlist Feature
+
+Requirement: As a Listener, I want to be able to create a playlist so that I can have different playlists for different genres that I listen to. 
+
+Issue: [Create Playlists]((https://github.com/CS386Team6/LilyPad/issues/9))
+
+Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
+
+Implemented by: Alan Hakala
+
+Approved by: Nathan Seitz
+
+### 2.4: Save Song To Playlist
+
+Requirement: As a Listener, I want to be able to add songs into a playlist so that I can compile my favorite songs together in one place. 
+
+Issue: [Add Songs to Playlists]([LINK_TO_ISSUE](https://github.com/CS386Team6/LilyPad/issues/48))
+
+Pull request: [PR 46]([LINK_TO_PULL_REQUEST](https://github.com/CS386Team6/LilyPad/pull/46))
+
+Implemented by: Rino De Guzman
+
+Approved by: Nathan Seitz
+
 ### 2.X: REQUIREMENT_NAME (Duplicate as necessary)
 
 Requirement: As a Listener, I want ... so that I can ....
