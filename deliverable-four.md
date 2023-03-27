@@ -17,7 +17,7 @@ Pull request: [PR 40](https://github.com/CS386Team6/LilyPad/pull/40)
 
 Implemented by: Nathan Seitz
 
-Approved by: Rino De Guzman
+Approved by: Alan Hakala
 
 ### 2.2: Search Bar Feature
 
@@ -29,7 +29,7 @@ Pull request: [PR 39](https://github.com/CS386Team6/LilyPad/pull/39)
 
 Implemented by: Nathan Seitz
 
-Approved by: Rino De Guzman
+Approved by: Alan Hakala
 
 ### 2.3: Create Playlist Feature
 
@@ -41,7 +41,7 @@ Pull request: [Pull Request](LINK_TO_PULL_REQUEST)
 
 Implemented by: Alan Hakala
 
-Approved by: Rino De Guzman
+Approved by: Alan Hakala
 
 ### 2.4: Save Song To Playlist
 
@@ -53,7 +53,7 @@ Pull request: [PR 46](https://github.com/CS386Team6/LilyPad/pull/46)
 
 Implemented by: Rino De Guzman
 
-Approved by: Rino De Guzman
+Approved by: Alan Hakala
 
 ### 2.X: REQUIREMENT_NAME (Duplicate as necessary)
 
