@@ -21,11 +21,11 @@ export default async function handler(req, res) {
           return res.status(424).json({data: "There are no accounts found. Try again later, or create an account first."})
       }
       catch(error) {
-        return res.status(406).json({data: `${error}`}).end()
+        return res.status(500).json({data: 'Something went wrong on the server.'})
       }
     }
     else {
-      return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+      return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
     }
     
   }

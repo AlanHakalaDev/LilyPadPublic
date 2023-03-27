@@ -33,7 +33,7 @@ import {createSong, deleteSong, getSong, listSongs} from "/prisma/songs.js"
           }
         }
         else {
-          return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+          return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
         }
         
       }
