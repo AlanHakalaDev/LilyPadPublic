@@ -86,6 +86,9 @@ We chose the GNU General Public License v3.0 for our code. Open source is import
 
 ## 9: Look & Feel
 
+For the look and feel we wanted a basic approach that that leads you to the main features of our site. We chose a very mundane gray background to compliment the green allowing it to pop. We chose green as to continue with the theme of a lilypad the name of our application. We have not finished the design but we hope to add more color and user friendly integration to the user inputs. At the moment we have the basic bones of what is important, which gives it a very retro feel. However, we hope this week we will be able to implement user welcoming designs. The goal is to create a welcoming sight that is easy to navigate which has a pleasent colors that help guide the users eyes. We want users to be unrestricted by the ignorance of be used to lilypad.
+
 ## 10: Lessons Learned
+During the first release, one of the main things that we have learned is that there is more than meets the eye in regards to actual amounts of implementation that is required for the goals and requirements that we want to achieve. Juggling multiple technologies is a difficult task that can prevent optimal progression with the state of the project. It is also important next time around to start working on the implementation of features and requirements as soon as possible to give more time for fixing bugs. 
 
 ## 11: Demo
