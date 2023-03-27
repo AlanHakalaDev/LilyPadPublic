@@ -15,9 +15,6 @@ export async function createSong(song) {
         id: song.platformId,
         songTitle: song.title,
         platform: song.platform,
-        playlists: {
-          connect: [{id: song.playlistToAdd}],
-        },
     },
   })
   return newSong

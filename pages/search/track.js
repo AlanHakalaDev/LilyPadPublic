@@ -9,7 +9,6 @@ import { setProfile } from '/functions/profile-display.js'
 export default function TrackSearch() {
   
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_RAPID_API_KEY)
     
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -55,6 +54,7 @@ export default function TrackSearch() {
             localStorage.setItem('song-artist', `${result.data.artistNames}`);
             localStorage.setItem('source-platform', `${result.source}`);
             localStorage.setItem('cover-art', `${result.data.imageUrl}`);
+            localStorage.setItem('song-id', `${result.data.externalId}`)
             window.location.href = "saveTrack";
           })
 
@@ -63,12 +63,12 @@ export default function TrackSearch() {
           platform.innerHTML = `${result.source}`
 
           coverArt.src = `${result.data.imageUrl}`
-          coverArt.height = 200
-          coverArt.width = 200
+          coverArt.height = 100
+          coverArt.width = 100
           // TODO: render separate icons based on platform
           icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
-          icon.height = 200
-          icon.width = 200
+          icon.height = 100
+          icon.width = 100
 
           container.appendChild(saveButton)
           container.appendChild(title)

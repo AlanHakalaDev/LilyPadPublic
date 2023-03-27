@@ -13,12 +13,11 @@ const prisma = new PrismaClient()
 } */
 
 export async function createPlaylist(playlist) {
-  const playlistCreator = await getUser(playlist.userId)
   const newPlaylist = prisma.playlist.create({
     data: {
         playlistTitle: playlist.name,
         description: playlist.description,
-        creator: {connect: [{id: playlistCreator.id}]},
+        creator: {connect: {id: playlist.userId}},
       }
 })
   return newPlaylist}
@@ -36,13 +35,13 @@ export async function changePlaylist(playlist) {
 }
 
 export async function addSongToPlaylist(playlistId, songId) {
-  const updatedPlaylist = await prisma.playlist.connect({
-    data: {
+  const updatedPlaylist = await prisma.playlist.update({
+    where: {
       id: playlistId,
+    },
+    data: {
       songs: {
-        connect: [
-          {id: songId},
-        ],
+        connect: {id: songId},
       },
     },
   })
@@ -56,9 +55,9 @@ export async function removeSongFromPlaylist(playlistId, songId) {
     },
     data: {
       songs: {
-        disconnect: [{ id: songId }] 
-      }
-    }
+        disconnect: {id: songId},
+      },
+    },
   })
   return updatedPlaylist
 }
