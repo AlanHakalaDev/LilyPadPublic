@@ -23,7 +23,7 @@ import {createSong, deleteSong, getSong, listSongs} from "/prisma/songs.js"
             return res.status(500).json({data: 'Something went wrong with adding the song.'})
           }
         }
-        if (req.method === "GET") {
+        else if (req.method === "GET") {
           try {
             const songList = await listSongs()
             res.status(200).json(songList)
@@ -33,7 +33,7 @@ import {createSong, deleteSong, getSong, listSongs} from "/prisma/songs.js"
           }
         }
         else {
-          return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+          return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
         }
         
       }

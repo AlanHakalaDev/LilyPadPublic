@@ -19,11 +19,11 @@ import { addUser, listUsers } from "../../../prisma/users.js"
         
       }
       catch(error) {
-        return res.status(406).json({data: `${error}`}).end()
+        return res.status(406).json({data: `${error}`})
       }
     }
     else {
-      return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+      return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
     }
     
   }

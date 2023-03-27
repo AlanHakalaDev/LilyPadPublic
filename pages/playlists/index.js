@@ -74,7 +74,7 @@ export default function Playlists() {
       </Head>
 
       <main>
-        <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
+        <a id="userBox" hidden href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture" />
           <div>
             <p id='usernameDisplay'>Username</p>
@@ -92,7 +92,7 @@ export default function Playlists() {
         <div id="playlists"></div>
 
 
-        <a href="playlists/create"><p>Click Here To Create a New Playlist</p></a>
+        <a className={styles.card} href="playlists/create"><p>Create a New Playlist</p></a>
 
       </main>
 

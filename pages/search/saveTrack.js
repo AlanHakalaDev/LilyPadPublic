@@ -36,7 +36,6 @@ export default function saveTrack() {
         'Content-Type': 'application/json',
         },
     }
-    console.log(options)
     fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/playlists', options)
     .then((response) => {
         if (response.status === 200) {
@@ -113,7 +112,6 @@ export default function saveTrack() {
           body: JSON.stringify(requestBody)
       }
       //const JSONBody = JSON.stringify(options)
-      console.log(options)
       fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/songs', options)
       .then((response) => {
           if (response.status === 200) {
@@ -125,7 +123,8 @@ export default function saveTrack() {
         })/*.catch((data) => {
             alert(data.data)
         })*/
-      //alert("You saved the song to: " + values);
+      alert("Saved the song to: " + values);
+      window.location.href('/search')
     })
   })
 
@@ -137,7 +136,7 @@ export default function saveTrack() {
       </Head>
 
       <main>
-        <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
+        <a id="userBox" hidden href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
           <div>
             <p id='usernameDisplay'>Username</p>
