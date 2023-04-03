@@ -43,18 +43,6 @@ export default function AccountCreation() {
         if (response.status === 200) {
           return response.text()
         }
-<<<<<<< HEAD
-        else {
-          throw response.text()
-        }
-      }).then((data) => {
-        sessionStorage.setItem('userId',`${data}`);
-        window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
-        //TODO: Redirect to profile page, get session details for login to remain between pages.
-        //alert(sessionStorage.getItem('userId'));
-      }).catch((data) => {
-          alert(data.data)
-=======
         else throw response.status
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
@@ -67,7 +55,6 @@ export default function AccountCreation() {
           alert("Something went wrong on the server.")
         }
 
->>>>>>> 93043016eb34fa16791a248d4b064d67f06e09ab
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
