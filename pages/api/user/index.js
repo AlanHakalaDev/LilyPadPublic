@@ -10,20 +10,20 @@ import { addUser, listUsers } from "../../../prisma/users.js"
           if ( users != [] ) {
             users.forEach(element => {
               if ( element.email === body.email ) {
-                return res.status(406).json({data: "Account with email already exists."}).end()
+                return res.status(406).json("Account with email already exists.")
               }
             });
           }
           const createdUser = await addUser(body)
-          res.status(200).json(createdUser.id).end()
+          return res.status(200).json(createdUser.id)
         
       }
       catch(error) {
-        return res.status(406).json({data: `${error}`}).end()
+        return res.status(406).json(`${error}`)
       }
     }
     else {
-      return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+      return res.status(405).json('METHOD NOT ALLOWED')
     }
     
   }
