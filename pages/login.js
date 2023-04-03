@@ -43,6 +43,7 @@ export default function AccountCreation() {
         if (response.status === 200) {
           return response.text()
         }
+<<<<<<< HEAD
         else {
           throw response.text()
         }
@@ -53,6 +54,20 @@ export default function AccountCreation() {
         //alert(sessionStorage.getItem('userId'));
       }).catch((data) => {
           alert(data.data)
+=======
+        else throw response.status
+      }).then((data) => {
+        sessionStorage.setItem('userId',`${data}`);
+        window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
+      }).catch((response) => {
+        if ( response === 401 ) {
+          alert("The password or email is incorrect.")
+        }
+        else {
+          alert("Something went wrong on the server.")
+        }
+
+>>>>>>> 93043016eb34fa16791a248d4b064d67f06e09ab
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {

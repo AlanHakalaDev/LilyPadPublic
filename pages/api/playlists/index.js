@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         return res.status(500).json({data: 'Something went wrong with creating your playlist.'})
       }
     }
-    if (req.method === "GET") {
+    else if (req.method === "GET") {
       try {
         const playlistList = await listPlaylists()
         res.status(200).json(playlistList)
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       }
     }
     else {
-      return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+      return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
     }
     
   }

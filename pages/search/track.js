@@ -99,7 +99,7 @@ export default function TrackSearch() {
       </Head>
 
       <main>
-      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
+      <a id="userBox" hidden href="/profile" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
         <p id='usernameDisplay'>Username</p>

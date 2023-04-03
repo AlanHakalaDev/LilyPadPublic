@@ -1,26 +1,27 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
-import {useEffect } from 'react'
+import { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
 
 export default function Playlists() {
-    useEffect(() => {
+  useEffect(() => {
     setProfile()
+
 
     const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
 
     if (!loggedInUserId) {
-        alert ('You need to create an account to create playlists.')
+      alert('You need to create an account to create playlists.')
     }
     const options = {
-        method: 'GET',
-        headers: {
+      method: 'GET',
+      headers: {
         'Content-Type': 'application/json',
-        },
+      },
     }
 
-    fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/playlists', options)
-    .then((response) => {
+    fetch(`${process.env.NEXT_PUBLIC_HOST}` + '/api/playlists', options)
+      .then((response) => {
         if (response.status === 200) {
           return response.json()
         }
@@ -28,42 +29,42 @@ export default function Playlists() {
           throw response.text()
         }
       }).catch((data) => {
-          alert(data.data)
+        alert(data.data)
       }).then((playlistList) => {
         const htmlContainer = document.getElementById("playlists")
         const playlistsGroup = document.createDocumentFragment()
-        playlistList.forEach(function(playlist) {
-            if ((playlist.isPublic) || (playlist.creatorId === loggedInUserId)) {
-                let container = document.createElement('div')
-                let title = document.createElement('p')
-                let creator = document.createElement('p')
-                let description = document.createElement('p')
-                let ispublic = document.createElement('p')
-                
-                container.id = `${playlist.id}`
-                container.style.border = '1px solid gray'
-                container.style.borderRadius = '15px'
-                title.innerHTML = `${playlist.playlistTitle}`
-                creator.innerHTML = `${playlist.creatorId}`
-                description.innerHTML = `${playlist.description}`
-                if (playlist.isPublic) {
-                    ispublic.innerHTML = '(Visible to everyone on LilyPad)'
-                }
-                else {
-                    ispublic.innerHTML = '(Visible only to you)'
-                }
+        playlistList.forEach(function (playlist) {
+          if ((playlist.isPublic) || (playlist.creatorId === loggedInUserId)) {
+            let container = document.createElement('div')
+            let title = document.createElement('p')
+            let creator = document.createElement('p')
+            let description = document.createElement('p')
+            let ispublic = document.createElement('p')
 
-                container.appendChild(title)
-                container.appendChild(creator)
-                container.appendChild(description)
-                container.appendChild(ispublic)
-                playlistsGroup.appendChild(container)
+            container.id = `${playlist.id}`
+            container.style.border = '1px solid gray'
+            container.style.borderRadius = '15px'
+            title.innerHTML = `${playlist.playlistTitle}`
+            creator.innerHTML = `${playlist.creatorId}`
+            description.innerHTML = `${playlist.description}`
+            if (playlist.isPublic) {
+              ispublic.innerHTML = '(Visible to everyone on LilyPad)'
             }
+            else {
+              ispublic.innerHTML = '(Visible only to you)'
+            }
+
+            container.appendChild(title)
+            container.appendChild(creator)
+            container.appendChild(description)
+            container.appendChild(ispublic)
+            playlistsGroup.appendChild(container)
+          }
         })
         htmlContainer.appendChild(playlistsGroup)
 
       });
-    }, [])
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -73,12 +74,12 @@ export default function Playlists() {
       </Head>
 
       <main>
-      <a id="userBox" hidden href="profileEdit" className={styles.userBox}>
-        <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
-        <div>
-        <p id='usernameDisplay'>Username</p>
-        <p id='emailDisplay'>Email</p>
-        </div>
+        <a id="userBox" hidden href="/profile" className={styles.userBox}>
+          <img id="profilePic" src='/icon.png' alt="Profile Picture" />
+          <div>
+            <p id='usernameDisplay'>Username</p>
+            <p id='emailDisplay'>Email</p>
+          </div>
         </a>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
@@ -90,10 +91,13 @@ export default function Playlists() {
 
         <div id="playlists"></div>
 
+
+        <a className={styles.card} href="playlists/create"><p>Create a New Playlist</p></a>
+
       </main>
 
       <footer>
-          Powered by caffeine and late-night motivation
+        Powered by caffeine and late-night motivation
       </footer>
 
       <style jsx>{`
@@ -147,4 +151,5 @@ export default function Playlists() {
         }
       `}</style>
     </div>
-  )}
+  )
+}
