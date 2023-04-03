@@ -1,11 +1,18 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+//const endpoint = `localhost:3000/api/user`
 
-export default function Login() {
+export default function AccountCreation() {
     const handleSubmit = async (event) => {
       event.preventDefault()
+      const name = document.querySelector('#username').value
       const email = document.querySelector('#email').value
       const password = document.querySelector('#pass').value
+  
+      if (!name) {
+        alert('Please enter a name.')
+        return false
+      }
   
       if (!email) {
         alert('Please enter an email.')
@@ -17,10 +24,12 @@ export default function Login() {
       }
       const data = {
         email: event.target.email.value.toLowerCase(),
-        password: event.target.pass.value,
+        username: event.target.username.value,
+        pass: event.target.pass.value,
+        description: "Hi, I'm a newcomer to LilyPad!",
+        imageFilePath: "/icon.png",
       }
       const JSONdata = JSON.stringify(data)
-      const endpoint = '/api/auth'
       const options = {
         method: 'POST',
         headers: {
@@ -29,17 +38,21 @@ export default function Login() {
         body: JSONdata,
       }
 
-      await fetch(endpoint, options)
+      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/user', options)
       .then((response) => {
         if (response.status === 200) {
           return response.text()
         }
-        else {throw response.text()}
+        else {
+          throw response.text()
+        }
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
         window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
+        //TODO: Redirect to profile page, get session details for login to remain between pages.
+        //alert(sessionStorage.getItem('userId'));
       }).catch((data) => {
-        alert(data.data)
+          alert(data.data)
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
@@ -69,17 +82,20 @@ export default function Login() {
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
 
-        <p className={styles.description}>
-          Login below:
-        </p>
-
+        
         <form onSubmit={handleSubmit}>
+        <p className={styles.description}>
+          Create an account below:
+        </p>
+        <label htmlFor="username">Username</label><br/>
+        <input type="text" id="username" name="username" autoComplete='off' required /><br/>
         <label htmlFor="email">Email</label><br/>
         <input type="email" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
         <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
-        <button id="submit" type="submit">Log In</button>
+        <input id="submit" type="submit" value="Create Account"/><br/>
+
         <input id="reset" type="reset" value="Reset Fields"/>
       </form>
         
@@ -124,6 +140,60 @@ export default function Login() {
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
+        
+        form {
+          margin: auto;
+          width: 50%;
+          padding: 20px;	
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        label {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+          margin-bottom: 20px;
+          width: 100%;
+        }
+    
+        input[type="submit"],
+        input[type="reset"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          margin-top: 20px;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+    
+        .error {
+          color: red;
+          margin-top: 5px;
+        }
+
       `}</style>
 
       <style jsx global>{`

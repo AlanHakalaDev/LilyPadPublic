@@ -82,11 +82,11 @@ export default function AccountCreation() {
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
 
+        
+        <form onSubmit={handleSubmit}>
         <p className={styles.description}>
           Create an account below:
         </p>
-
-        <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label><br/>
         <input type="text" id="username" name="username" autoComplete='off' required /><br/>
         <label htmlFor="email">Email</label><br/>
@@ -94,7 +94,8 @@ export default function AccountCreation() {
         <label htmlFor="password">Password</label><br/>
         <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
-        <button id="submit" type="submit">Create Account</button>
+        <input id="submit" type="submit" value="Create Account"/><br/>
+
         <input id="reset" type="reset" value="Reset Fields"/>
       </form>
         
@@ -139,6 +140,60 @@ export default function AccountCreation() {
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
+        
+        form {
+          margin: auto;
+          width: 50%;
+          padding: 20px;	
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        label {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+          margin-bottom: 20px;
+          width: 100%;
+        }
+    
+        input[type="submit"],
+        input[type="reset"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          margin-top: 20px;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+    
+        .error {
+          color: red;
+          margin-top: 5px;
+        }
+
       `}</style>
 
       <style jsx global>{`
