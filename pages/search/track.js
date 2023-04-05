@@ -63,12 +63,36 @@ export default function TrackSearch() {
           platform.innerHTML = `${result.source}`
 
           coverArt.src = `${result.data.imageUrl}`
-          coverArt.height = 100
-          coverArt.width = 100
           // TODO: render separate icons based on platform
-          icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
-          icon.height = 100
           icon.width = 100
+          icon.height = 100
+          
+          switch ( result.source ) {
+            case "apple music": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              break
+            }
+            case "youtube": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/768px-Youtube_Music_icon.svg.png"
+              coverArt.height = 80
+              coverArt.width = 160
+              break
+            }
+            case "spotify": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              break
+            }
+            default: {
+              icon.src = "public/icon.png"
+              coverArt.height = 100
+              coverArt.width = 100
+            }
+
+          }
 
           container.appendChild(saveButton)
           container.appendChild(title)
