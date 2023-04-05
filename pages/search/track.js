@@ -9,17 +9,25 @@ import { setProfile } from '/functions/profile-display.js'
 export default function TrackSearch() {
   
   useEffect(() => {
-    
+    setProfile()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams != {}) {
-      // TODO: Add functionality for platform selections to actually work
-      
+      let sources = [];
+      if (urlParams.get("Spotify") === "true") {
+        sources.push("spotify")
+      }
+      if (urlParams.get("YoutubeMusic") === "true") {
+        sources.push("youtube-music")
+      }
+      if (urlParams.get("AppleMusic") === "true") {
+        sources.push("apple-music")
+      }
       const requestBody = { 
         "track": urlParams.get('title'),
         "artist": urlParams.get('creator'),
         "type": "track",
-        "sources":["spotify","youtube"]
+        "sources": sources
       }
       
       fetch('https://musicapi13.p.rapidapi.com/search', {
@@ -37,10 +45,16 @@ export default function TrackSearch() {
         const htmlContainer = document.getElementById("tracklist")
         const trackList = document.createDocumentFragment()
         body.tracks.map(function(result) {
+
           // TODO: Apply universal style to div element and parent element for cleaner results
           let container = document.createElement('div')
           let title = document.createElement('h2')
-          title.class
+          if (result.status === "error") {
+            title.innerHTML = `Search failed for ${result.source}`
+            container.appendChild(title)
+            trackList.appendChild(container)
+            return false
+          }
           let artist = document.createElement('h3')
           let platform = document.createElement('p')
           let coverArt = document.createElement('img')
@@ -60,15 +74,51 @@ export default function TrackSearch() {
 
           title.innerHTML = `${result.data.name}`
           artist.innerHTML = `${result.data.artistNames}`
-          platform.innerHTML = `${result.source}`
 
           coverArt.src = `${result.data.imageUrl}`
-          coverArt.height = 100
-          coverArt.width = 100
           // TODO: render separate icons based on platform
-          icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
-          icon.height = 100
           icon.width = 100
+          icon.height = 100
+          
+          switch ( result.source ) {
+            case "apple-music": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              platform.innerHTML = "Apple Music"
+              break
+            }
+            case "youtube-music": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/768px-Youtube_Music_icon.svg.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              platform.innerHTML = "YouTube Music"
+              break
+            }
+            case "spotify": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              platform.innerHTML = "Spotify"
+              break
+            }
+            case "youtube": {
+              icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+              icon.height = 110
+              icon.width = 160
+              coverArt.height = 80
+              coverArt.width = 190
+              platform.innerHTML = "YouTube"
+              break
+            }
+            default: {
+              icon.src = "public/icon.png"
+              coverArt.height = 100
+              coverArt.width = 100
+              platform.innerHTML = "undefined"
+            }
+
+          }
 
           container.appendChild(saveButton)
           container.appendChild(title)

@@ -5,14 +5,9 @@ import styles from '../styles/Home.module.css';
 export default function AccountCreation() {
     const handleSubmit = async (event) => {
       event.preventDefault()
-      const name = document.querySelector('#username').value
       const email = document.querySelector('#email').value
       const password = document.querySelector('#pass').value
   
-      if (!name) {
-        alert('Please enter a name.')
-        return false
-      }
   
       if (!email) {
         alert('Please enter an email.')
@@ -24,10 +19,7 @@ export default function AccountCreation() {
       }
       const data = {
         email: event.target.email.value.toLowerCase(),
-        username: event.target.username.value,
         pass: event.target.pass.value,
-        description: "Hi, I'm a newcomer to LilyPad!",
-        imageFilePath: "/icon.png",
       }
       const JSONdata = JSON.stringify(data)
       const options = {
@@ -38,23 +30,11 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/user', options)
+      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/auth', options)
       .then((response) => {
         if (response.status === 200) {
           return response.text()
         }
-<<<<<<< HEAD
-        else {
-          throw response.text()
-        }
-      }).then((data) => {
-        sessionStorage.setItem('userId',`${data}`);
-        window.location.href = `${process.env.NEXT_PUBLIC_HOST}` + "/profile";
-        //TODO: Redirect to profile page, get session details for login to remain between pages.
-        //alert(sessionStorage.getItem('userId'));
-      }).catch((data) => {
-          alert(data.data)
-=======
         else throw response.status
       }).then((data) => {
         sessionStorage.setItem('userId',`${data}`);
@@ -67,7 +47,6 @@ export default function AccountCreation() {
           alert("Something went wrong on the server.")
         }
 
->>>>>>> 93043016eb34fa16791a248d4b064d67f06e09ab
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
@@ -100,16 +79,14 @@ export default function AccountCreation() {
         
         <form onSubmit={handleSubmit}>
         <p className={styles.description}>
-          Create an account below:
+          Log In Below:
         </p>
-        <label htmlFor="username">Username</label><br/>
-        <input type="text" id="username" name="username" autoComplete='off' required /><br/>
         <label htmlFor="email">Email</label><br/>
         <input type="email" id="email" name="email" autoComplete='off' required /><br/>
         <label htmlFor="password">Password</label><br/>
         <input type="password" id="pass" name="pass" autoComplete='off' required pattern="[A-Za-z0-9]{1,30}"/><br/>
   
-        <input id="submit" type="submit" value="Create Account"/><br/>
+        <input id="submit" type="submit" value="Log In"/><br/>
 
         <input id="reset" type="reset" value="Reset Fields"/>
       </form>

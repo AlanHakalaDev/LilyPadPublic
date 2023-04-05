@@ -52,7 +52,7 @@ export default function AccountCreation() {
         //TODO: Redirect to profile page, get session details for login to remain between pages.
         //alert(sessionStorage.getItem('userId'));
       }).catch((data) => {
-          alert(data.data)
+          alert(data)
       });
 
       /**await fetch(endpoint, options).then((res) => {return res.json()}).then((content) => {
