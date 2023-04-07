@@ -13,6 +13,8 @@ The architecture of our project is somewhat standard for Next.js apps. We have a
 
 ## 3: Class Diagram
 
+<img src="images/D5_classDiagram.jpg" width=800px>
+
 ## 4: Sequence Diagram
 
 ## 5: Design Patterns
