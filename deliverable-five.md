@@ -19,7 +19,7 @@ The architecture of our project is somewhat standard for Next.js apps. We have a
 
 ## 5: Design Patterns
 The first design pattern of the two used is the Singleton. A singleton restricts the instantiation of a class to one object. In this case, we only want one object of a music player. Whenever the user clicks play, pause, or skip, it will alter the state of the object.
-<img src="images/musicPlayerUML.jpg" width=400px>
+<img src="images/musicPlayerUML.jpg" width=400px> \
 Music Player: https://github.com/CS386Team6/LilyPad/tree/main/prisma
 
 ## 6: Design Principles
