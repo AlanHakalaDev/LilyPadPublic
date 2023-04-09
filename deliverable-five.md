@@ -17,7 +17,7 @@ The architecture of our project is somewhat standard for Next.js apps. We have a
 
 ## 4: Sequence Diagram
 
-<img src="images/D5_classDiagram.jpg" width=800px>
+<img src="images/D5SqDiagram.jpg" width=800px>
 
 Use-Case Used for Sequence Diagram: Listening to Songs
 1. Description
