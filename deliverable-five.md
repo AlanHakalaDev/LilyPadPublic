@@ -17,6 +17,12 @@ The architecture of our project is somewhat standard for Next.js apps. We have a
 
 ## 4: Sequence Diagram
 
+<img src="images/D5SqDiagram.jpg" width=800px>
+
+Use-Case Used for Sequence Diagram: Listening to Songs
+1. Description
+The user listens to a song.
+
 ## 5: Design Patterns
 The first design pattern of the two used is the Singleton. A singleton restricts the instantiation of a class to one object. In this case, we only want one object of a music player. Whenever the user clicks play, pause, or skip, it will alter the state of the object.
 <img src="images/musicPlayerUML.jpg" width=400px> \
