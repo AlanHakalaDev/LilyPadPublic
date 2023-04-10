@@ -27,5 +27,15 @@ The user listens to a song.
 The first design pattern of the two used is the Singleton. A singleton restricts the instantiation of a class to one object. In this case, we only want one object of a music player. Whenever the user clicks play, pause, or skip, it will alter the state of the object.
 <img src="images/musicPlayerUML.jpg" width=400px> \
 Music Player: https://github.com/CS386Team6/LilyPad/tree/main/prisma
+The second design pattern of the two used is Strategy. In our case, the family of algorithms is the getSong method. Each method will get a song differently depending on the platform that is used.
+<img src="images/strategyUML.jpg" width=400px> \
+Music Player: https://github.com/CS386Team6/LilyPad/tree/main/prisma
+Account User: https://github.com/CS386Team6/LilyPad/blob/main/prisma/users.js
+Guest User: https://github.com/CS386Team6/LilyPad/blob/main/prisma/users.js
+Song: https://github.com/CS386Team6/LilyPad/blob/main/prisma/songs.js
+retrieveSong: https://github.com/CS386Team6/LilyPad/blob/main/prisma/songs.js
+getSpotifySong: https://github.com/CS386Team6/LilyPad/blob/main/prisma/songs.js
+getAppleMusicSong: https://github.com/CS386Team6/LilyPad/blob/main/prisma/songs.js
+getYoutubeMusicSong: https://github.com/CS386Team6/LilyPad/blob/main/prisma/songs.js
 
 ## 6: Design Principles
