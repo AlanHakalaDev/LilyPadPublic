@@ -40,8 +40,15 @@ export default function Playlists() {
             let creator = document.createElement('p')
             let description = document.createElement('p')
             let ispublic = document.createElement('p')
-
+            let opener = document.createElement("button")
             container.id = `${playlist.id}`
+            
+            opener.innerHTML = "Open Playlist"
+            opener.id = "openPlaylist"
+            document.querySelector("#openPlaylist")
+            opener.addEventListener('click', () =>{
+              window.location.href = "/playlists/" + container.id
+            })
             container.style.border = '1px solid gray'
             container.style.borderRadius = '15px'
             title.innerHTML = `${playlist.playlistTitle}`
@@ -58,6 +65,7 @@ export default function Playlists() {
             container.appendChild(creator)
             container.appendChild(description)
             container.appendChild(ispublic)
+            container.appendChild(opener)
             playlistsGroup.appendChild(container)
           }
         })
