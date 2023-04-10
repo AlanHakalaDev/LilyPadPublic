@@ -19,9 +19,37 @@ The architecture of our project is somewhat standard for Next.js apps. We have a
 
 <img src="images/D5SqDiagram.jpg" width=800px>
 
-Use-Case Used for Sequence Diagram: Listening to Songs
+Use-Case: Listening to Songs
 1. Description
 The user listens to a song.
+
+2. Actor Description
+2.1: Registered User
+
+3. Preconditions
+The user has logged in.
+
+4. Main Flow
+1: The use case begins when the user selects a song to start listening to. 2: The song starts playing. 3: The song plays unless skipped, paused, or rewinded. 4: The song finishes playing. 5: The use case ends.
+
+5. Alternative Flows
+5.1: Song is paused by the user. If in steps 2-4 of the basic flow the listener selects pause, then 1: The use case is suspended until cancelled or it starts again.
+
+5.2: Song is rewinded by user. If in steps 2-4 of the basic flow the listener selects rewind, then 1: The use case restarts at step 2 and proceeds as normal.
+
+5.3: Next song starts playing. If in step 4 the listener is listening to a playlist or has autoplay enabled, then 1: The use case starts at step 2 with the next song in the queue.
+
+6. Subflows
+No Subflows for this use case.
+
+7. Key Scenarios
+The listener presses play on the song. The listener selects a song to listen to. The listener queues a next song or enables autoplay. The listener selects a playlist to start listening to.
+
+8. Post-Conditions
+The song player closes, bringing the listener back to the page they were on before.
+
+9. Special Requirements
+No Special Requirements for this use case.
 
 ## 5: Design Patterns
 The first design pattern of the two used is the Singleton. A singleton restricts the instantiation of a class to one object. In this case, we only want one object of a music player. Whenever the user clicks play, pause, or skip, it will alter the state of the object.
