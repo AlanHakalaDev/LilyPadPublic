@@ -42,10 +42,11 @@ export default function Playlists() {
             let ispublic = document.createElement('p')
             let opener = document.createElement("button")
             container.id = `${playlist.id}`
-            
+
             opener.innerHTML = "Open Playlist"
             opener.id = "openPlaylist"
             document.querySelector("#openPlaylist")
+
             opener.addEventListener('click', () =>{
               window.location.href = "/playlists/" + container.id
             })
