@@ -60,6 +60,7 @@ export default function TrackSearch() {
           let coverArt = document.createElement('img')
           let saveButton = document.createElement('button')
           let icon = document.createElement('img')
+          let link = document.createElement('a')
 
           saveButton.innerHTML = "Save"
           saveButton.addEventListener("click", function(e) {
@@ -71,6 +72,11 @@ export default function TrackSearch() {
             localStorage.setItem('song-id', `${result.data.externalId}`)
             window.location.href = "saveTrack";
           })
+
+          link.innerHTML = "Check it out on " + `${result.source}` + '!'
+          link.href = result.data.url;
+          link.target = "_blank";
+          link.style.color = "rgb(70, 200, 60)";
 
           title.innerHTML = `${result.data.name}`
           artist.innerHTML = `${result.data.artistNames}`
@@ -88,7 +94,7 @@ export default function TrackSearch() {
               platform.innerHTML = "Apple Music"
               break
             }
-            case "youtube-music": {
+            case "youtubeMusic": {
               icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/768px-Youtube_Music_icon.svg.png"
               coverArt.height = 100
               coverArt.width = 100
@@ -123,6 +129,7 @@ export default function TrackSearch() {
           container.appendChild(saveButton)
           container.appendChild(title)
           container.appendChild(artist)
+          container.appendChild(link)
           container.appendChild(platform)
           container.appendChild(coverArt)
           container.appendChild(icon)
@@ -213,6 +220,7 @@ export default function TrackSearch() {
           flex-wrap: wrap;
           justify-content: center;
         }
+        
       `}</style>
 
       <style jsx global>{`
