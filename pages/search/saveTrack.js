@@ -124,7 +124,7 @@ export default function saveTrack() {
             alert(data.data)
         })*/
       alert("Saved the song to: " + values);
-      window.location.href('/search')
+      window.location = '/search'
     })
   })
 

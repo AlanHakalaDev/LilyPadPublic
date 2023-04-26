@@ -29,7 +29,7 @@ export default function Playlists() {
           throw response.text()
         }
       }).catch((data) => {
-        alert(data.data)
+        console.log(data.data)
       }).then((playlistList) => {
         const htmlContainer = document.getElementById("playlists")
         const playlistsGroup = document.createDocumentFragment()
