@@ -38,9 +38,11 @@ export default function TrackSearch() {
               'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
             },
             body: JSON.stringify(requestBody),
-      }).then(response => {return response.json().then(body => {
+      }).then((response) => {return response.json().then(body => {
+        console.log(body)
       if (response.status === 200) {
         let searchTitle = document.getElementById("searchTitle")
+
         searchTitle.innerHTML = "Search results for '" + `${urlParams.get('title')}` + "' by '" + `${urlParams.get('creator')}` + "':"
         const htmlContainer = document.getElementById("tracklist")
         const trackList = document.createDocumentFragment()

@@ -14,6 +14,7 @@ export async function createSong(song) {
     data: {
         id: song.platformId,
         songTitle: song.title,
+        songCreator: song.artist,
         platform: song.platform,
     },
   })

@@ -9,12 +9,10 @@ import {createSong, deleteSong, getSong, listSongs} from "/prisma/songs.js"
         if (req.method === "POST") {
           try {
             const songExists = await getSong(body.song.platformId)
-            console.log(songExists)
             if (!songExists) {
                 await createSong(body.song)
             }
             body.playlist.ids.forEach((playlistId) => {
-                console.log(songExists)
                 addSongToPlaylist(playlistId, body.song.platformId)
             });
             res.status(200).json({data: `Song added to playlists ${body.playlist}`})
