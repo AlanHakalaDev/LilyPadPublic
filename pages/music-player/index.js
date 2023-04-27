@@ -2,12 +2,6 @@ import Head from 'next/head';
 import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
-import { searchMusics } from 'node-youtube-music';
-
-
-const musics = await searchMusics('Never gonna give you up');
-
-console.log(musics)
 
 
 export default function Playlists() {
@@ -47,13 +41,6 @@ export default function Playlists() {
             let creator = document.createElement('p')
             let platform = document.createElement('p')
             container.id = `${song.id}`
-            /**model Song {
-  id        String        @id
-  songTitle String
-  songCreator String
-  platform  Platform
-  playlists Playlist[]
-} */
             
             container.style.border = '1px solid gray'
             container.style.borderRadius = '15px'
@@ -70,7 +57,30 @@ export default function Playlists() {
       })
         htmlContainer.appendChild(playlistsGroup)
         //https://www.npmjs.com/package/youtube-music-api
+        const musicPlayer = document.getElementById("music-player")
 
+        const options = {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+    
+        fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/songs/${document.getElementById("songs").firstChild.id}`, options)
+          .then((response) => {
+            if (response.status === 200) {
+              return response.json()
+            }
+            else {
+              throw response.text()
+            }
+          }).catch((data) => {
+            alert(data.data)
+          }).then((song) => {
+            musicPlayer.src = `https://www.youtube-nocookie.com/embed/${song.youtubeId}`
+          })
+
+        
       });
   }, [])
 
@@ -90,11 +100,24 @@ export default function Playlists() {
           </div>
         </a>
 
-        <p className={styles.description}>
-          Available Songs:
-        </p>
+        <div className = "flex-container">
+          <div>
+            <div height="100px">
+            <iframe id="music-player" width="0" height="0" src="https://www.youtube-nocookie.com/embed/NbtsZJXnzFY" title="YouTube video player"frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
 
-        <div id="songs"></div>
+            </iframe>
+            </div>
+          </div>
+          <div>
+            <p className={styles.description}>
+              Available Songs:
+            </p>
+
+            <div id="songs"></div>
+          </div>
+        </div>
+
+
 
       </main>
 
@@ -110,6 +133,24 @@ export default function Playlists() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+        iframe {
+
+        }
+
+        .flex-container {
+          background-color: rgb(80, 80, 80);
+          color: rgb(70, 200, 60);
+          padding: 0 0.5rem;
+          display: flex;
+        }
+
+        .flex-container > div {
+          background-color: #f1f1f1;
+          border-radius: 15px;
+          margin: 10px;
+          padding: 20px;
+          font-size: 12px;
         }
         footer {
           width: 100%;

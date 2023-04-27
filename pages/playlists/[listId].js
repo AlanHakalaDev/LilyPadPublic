@@ -16,7 +16,6 @@ export default function Playlists() {
         'Content-Type': 'application/json',
     },
     }
-    console.log(listId)
     fetch(`${process.env.NEXT_PUBLIC_HOST}` + '/api/playlists/' + listId, options)
     .then((response) => {
         if (response.status === 200) {
@@ -26,7 +25,6 @@ export default function Playlists() {
         throw response.text()
         }
     }).catch((data) =>{
-        console.log(data.data)
     }).then((playlistDesired) => {
       if(playlistDesired != null){
       const htmlContainer = document.getElementById("songs")
