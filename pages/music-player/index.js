@@ -3,6 +3,12 @@ import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
 
+import useSound from "use-sound"; // for handling the sound
+import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai"; // icons for play and pause
+import { BiSkipNext, BiSkipPrevious } from "react-icons/bi"; // icons for next and previous track
+import { IconContext } from "react-icons"; // for customizing the icons
+
+
 
 export default function Playlists() {
   useEffect(() => {
@@ -103,6 +109,54 @@ export default function Playlists() {
         <div className = "flex-container">
           <div>
             <div height="100px">
+              <div className="component">
+              <h2>Playing Now</h2>
+              <div>
+                <h3 className="songTitle">Song Name</h3>
+                <p className="songArtist">Song Artist</p>
+              </div>
+              <div>
+                <div className="time">
+                <p>
+                  {0}:{0}
+                </p>
+                <p>
+                  {4}:{20}
+                </p>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  default="0"
+                  className="timeline"
+                  onChange={(e) => {
+                    sound.seek([e.target.value]);
+                  }}
+                />
+              </div>
+              <div>
+                <button className="musicPlayerButtons" id="prevButton">
+                  <IconContext.Provider value={{ size: "3em", color: "#27AE60" }}>
+                    <BiSkipPrevious />
+                  </IconContext.Provider>
+                </button>
+                <button className="musicPlayerButtons" id="playButton">
+                  <IconContext.Provider value={{ size: "3em", color: "#27AE60" }}>
+                    <AiFillPlayCircle />
+                  </IconContext.Provider>
+                </button>
+                <button className="musicPlayerButtons" id="pauseButton">
+                  <IconContext.Provider value={{ size: "3em", color: "#27AE60" }}>
+                    <AiFillPauseCircle />
+                  </IconContext.Provider>
+                </button>
+                <button className="musicPlayerButtons" id="nextButton">
+                <IconContext.Provider value={{ size: "3em", color: "#27AE60" }}>
+                  <BiSkipNext />
+                </IconContext.Provider>
+                </button>
+              </div>
+          </div>
             <iframe id="music-player" width="0" height="0" src="https://www.youtube-nocookie.com/embed/NbtsZJXnzFY" title="YouTube video player"frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
 
             </iframe>
@@ -136,6 +190,50 @@ export default function Playlists() {
         }
         iframe {
 
+        }
+
+        .component {
+          background-color: white;
+          width: 100%;
+          max-width: 600px;
+          margin: 1em auto;
+          padding-bottom: 2em;
+          border: 3px solid black;
+          border-radius: 10px;
+          text-align: center;
+        }
+
+        .musicCover {
+          border-radius: 10%;
+        }
+        
+        .musicPlayerButtons {
+          border:
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .songTitle {
+          margin-top: -1em;
+          color: #4f4f4f;
+        }
+        
+        .time {
+          margin: 0 auto;
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+          color: #828282;
+          font-size: smaller;
+        }
+        
+        .timeline {
+          width: 80%;
+          background-color: #27ae60;
+        }
+
+        input[type="range"] {
+          background-color: #27ae60;
         }
 
         .flex-container {
