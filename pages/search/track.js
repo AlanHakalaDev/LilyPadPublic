@@ -77,6 +77,7 @@ export default function TrackSearch() {
           link.href = result.data.url;
           link.target = "_blank";
           link.style.color = "rgb(70, 200, 60)";
+          coverArt.padding = 20
 
           title.innerHTML = `${result.data.name}`
           artist.innerHTML = `${result.data.artistNames}`
