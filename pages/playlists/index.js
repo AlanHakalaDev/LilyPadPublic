@@ -101,7 +101,7 @@ export default function Playlists() {
         <div id="playlists"></div>
 
 
-        <a className={styles.card} href="playlists/create"><p>Create a New Playlist</p></a>
+        <a className={styles.card} id="createPlaylist" href="playlists/create"><p>Create a New Playlist</p></a>
 
       </main>
 
