@@ -11,12 +11,19 @@
     "dotenv": "^16.0.3",
     "next": "^13.2.4",
     "node-fetch": "^3.3.1",
+    "node-youtube-music": "^0.10.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "cypress": "^12.8.1",
     "prisma": "^4.11.0"
+  },
+  "browser": {
+    "tls": false,
+    "net": false
   },
   "name": "cs386_team_6_project",
   "description": "A web app that allows users to link their Spotify, Youtube Music, and Apple Music accounts in order to get the best options available when it comes to streaming, favoriting, and playlist-making.",

@@ -97,6 +97,7 @@ export default function saveTrack() {
         song: {
           platformId: platformId,
           title: songTitle,
+          artist: songArtist,
           platform: sourcePlatform
         },
         playlist: {
@@ -124,7 +125,7 @@ export default function saveTrack() {
             alert(data.data)
         })*/
       alert("Saved the song to: " + values);
-      window.location.href('/search')
+      window.location = `${process.env.NEXT_PUBLIC_HOST}`+'/search'
     })
   })
 
@@ -143,10 +144,6 @@ export default function saveTrack() {
             <p id='emailDisplay'>Email</p>
           </div>
         </a>
-
-        <h1 className={styles.title}>
-          Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
-        </h1>
 
         <p id="song-title"></p>
         <p id="source-platform"></p>

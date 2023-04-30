@@ -19,6 +19,7 @@ enum Platform {
 model Song {
   id        String        @id
   songTitle String
+  songCreator String?
   platform  Platform
   playlists Playlist[]
 }
