@@ -2,50 +2,32 @@ import Head from 'next/head';
 import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
+import { useRouter } from 'next/router'
 import ReactPlayer from '../../components/player';
-
-const options = {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}
 
 var firstId = "1VXMLuZkq1g"
 
 export default function Playlists() {
+    const router = useRouter()
+    const { listId } = router.query
+    const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    }}
 
-
-  useEffect(() => {
-    setProfile()
-
-
-    const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
-
-    if (!loggedInUserId) {
-      alert('You need to create an account to listen to songs.')
-    }
-
-    fetch(`${process.env.NEXT_PUBLIC_HOST}` + '/api/songs', options)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json()
+    useEffect(() => {
+        setProfile()
+    
+    
+        const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
+    
+        if (!loggedInUserId) {
+          alert('You need to create an account to listen to songs.')
         }
-        else {
-          throw response.text()
-        }
-      }).catch((data) => {
-        alert(data.data)
-      }).then((songList) => {
-        const htmlContainer = document.getElementById("songs")
-        //const songsGroup = document.createDocumentFragment()
-
-        songList.forEach(function (song) {
-
-
-
-            fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/songs/${song.id}`, options)
-            .then((response) => {
+    
+        fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/playlists/${listId}`, options)
+          .then((response) => {
             if (response.status === 200) {
               return response.json()
             }
@@ -53,62 +35,81 @@ export default function Playlists() {
               throw response.text()
             }
           }).catch((data) => {
-            console.log("rip")
-          }).then((YTSong) => {
-            let container = document.createElement('div')
-            container.className = "nextSongs"
-            container.style.border = "1px solid rgb(80, 80, 80)"
-            container.style.borderRadius = "15px"
-            container.style.padding = "5px"
-            container.style.margin = "5px"
-            container.style.fontSize = "12px"
-
-            let title = document.createElement('p')
-            container.style.padding = "0px 12px"
-
-            //let id = document.createElement('p')
-            let creator = document.createElement('p')
-            container.style.padding = "0px 12px"
-            let icon = document.createElement('img')
-            icon.height = "0%"
-            container.id = YTSong.youtubeId
-            creator.innerHTML = YTSong.artists[0].name
-            title.innerHTML = YTSong.title
-            icon.src = YTSong.thumbnailUrl
-
-            //
-            /*
-            }
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-
-            container.style.flex = ''
-            container.style.flexDirection = 'row'*/
-            container.appendChild(title)
-            //container.appendChild(id)
-            container.appendChild(creator)
-            container.appendChild(icon)
-
-            htmlContainer.appendChild(container)
-            //console.log(songsGroup)
-            //musicPlayer.src = `https://www.youtube-nocookie.com/embed/${song.youtubeId}`
+            alert(data)
+          }).then((playlist) => {
+            console.log(playlist)
+            const htmlContainer = document.getElementById("songs")
+            //const songsGroup = document.createDocumentFragment()
+    
+            playlist.songs.forEach(function (song) {
+    
+    
+    
+                fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/songs/${song.id}`, options)
+                .then((response) => {
+                if (response.status === 200) {
+                  return response.json()
+                }
+                else {
+                  throw response.text()
+                }
+              }).catch((data) => {
+                console.log("rip")
+              }).then((YTSong) => {
+                let container = document.createElement('div')
+                container.className = "nextSongs"
+                container.style.border = "1px solid rgb(80, 80, 80)"
+                container.style.borderRadius = "15px"
+                container.style.padding = "5px"
+                container.style.margin = "5px"
+                container.style.fontSize = "12px"
+    
+                let title = document.createElement('p')
+                container.style.padding = "0px 12px"
+    
+                //let id = document.createElement('p')
+                let creator = document.createElement('p')
+                container.style.padding = "0px 12px"
+                let icon = document.createElement('img')
+                icon.height = "0%"
+                container.id = YTSong.youtubeId
+                creator.innerHTML = YTSong.artists[0].name
+                title.innerHTML = YTSong.title
+                icon.src = YTSong.thumbnailUrl
+    
+                //
+                /*
+                }
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+    
+                container.style.flex = ''
+                container.style.flexDirection = 'row'*/
+                container.appendChild(title)
+                //container.appendChild(id)
+                container.appendChild(creator)
+                container.appendChild(icon)
+    
+                htmlContainer.appendChild(container)
+                //console.log(songsGroup)
+                //musicPlayer.src = `https://www.youtube-nocookie.com/embed/${song.youtubeId}`
+              })
+                
           })
-            
-      })
-        //htmlContainer.appendChild(songsGroup)
-        //https://www.npmjs.com/package/youtube-music-api
-
+            //htmlContainer.appendChild(songsGroup)
+            //https://www.npmjs.com/package/youtube-music-api
     
         
+            
+    
+            
+          });
+    
+      }, [])
 
-        
-      });
 
-  }, [])
-  
-
-  return (
+return (
     <div className={styles.container}>
       <Head>
         <title>LilyPad</title>

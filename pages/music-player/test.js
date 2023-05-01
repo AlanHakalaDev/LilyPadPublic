@@ -1,21 +1,12 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
-import ReactPlayer from '../../components/player';
-
-const options = {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}
-
-var firstId = "1VXMLuZkq1g"
-
-export default function Playlists() {
+import ReactPlayer from '/components/player.js'
 
 
+
+export default function Player() {
   useEffect(() => {
     setProfile()
 
@@ -25,86 +16,8 @@ export default function Playlists() {
     if (!loggedInUserId) {
       alert('You need to create an account to listen to songs.')
     }
-
-    fetch(`${process.env.NEXT_PUBLIC_HOST}` + '/api/songs', options)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json()
-        }
-        else {
-          throw response.text()
-        }
-      }).catch((data) => {
-        alert(data.data)
-      }).then((songList) => {
-        const htmlContainer = document.getElementById("songs")
-        //const songsGroup = document.createDocumentFragment()
-
-        songList.forEach(function (song) {
-
-
-
-            fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/songs/${song.id}`, options)
-            .then((response) => {
-            if (response.status === 200) {
-              return response.json()
-            }
-            else {
-              throw response.text()
-            }
-          }).catch((data) => {
-            console.log("rip")
-          }).then((YTSong) => {
-            let container = document.createElement('div')
-            container.className = "nextSongs"
-            container.style.border = "1px solid rgb(80, 80, 80)"
-            container.style.borderRadius = "15px"
-            container.style.padding = "5px"
-            container.style.margin = "5px"
-            container.style.fontSize = "12px"
-
-            let title = document.createElement('p')
-            container.style.padding = "0px 12px"
-
-            //let id = document.createElement('p')
-            let creator = document.createElement('p')
-            container.style.padding = "0px 12px"
-            let icon = document.createElement('img')
-            icon.height = "0%"
-            container.id = YTSong.youtubeId
-            creator.innerHTML = YTSong.artists[0].name
-            title.innerHTML = YTSong.title
-            icon.src = YTSong.thumbnailUrl
-
-            //
-            /*
-            }
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-
-            container.style.flex = ''
-            container.style.flexDirection = 'row'*/
-            container.appendChild(title)
-            //container.appendChild(id)
-            container.appendChild(creator)
-            container.appendChild(icon)
-
-            htmlContainer.appendChild(container)
-            //console.log(songsGroup)
-            //musicPlayer.src = `https://www.youtube-nocookie.com/embed/${song.youtubeId}`
-          })
-            
-      })
-        //htmlContainer.appendChild(songsGroup)
-        //https://www.npmjs.com/package/youtube-music-api
-
-    
-        
-
-        
-      });
-
+    console.log(document.getElementById("prevButton").onclick)
+    console.log(document.getElementById("nextButton").onclick)
   }, [])
   
 
@@ -123,22 +36,11 @@ export default function Playlists() {
             <p id='emailDisplay'>Email</p>
           </div>
         </a>
+        <div>
 
-        <div className = "flex-container">
-          <div id="music-container">
-            <ReactPlayer videoId={firstId}></ReactPlayer>
-          </div>
-          <div>
-            <p className={styles.description}>
-              Available Songs:
-            </p>
-
-            <div id="songs"></div>
-          </div>
+        <ReactPlayer videoId="_flKbsZoAHg"></ReactPlayer>
+        <p id="nextSong">ctkpsRAxUSE</p>
         </div>
-
-
-
       </main>
 
       <footer>
@@ -216,7 +118,6 @@ export default function Playlists() {
           padding: 20px;
           font-size: 12px;
         }
-
         footer {
           width: 100%;
           height: 100px;
