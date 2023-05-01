@@ -10,6 +10,7 @@ Value Proposition:
 
 LilyPad is a website/app that provides avid music listeners with an easy way to link all their favorite songs and playlists, across multiple platforms, ensuring you never need to go to more than one place for your favorite music ever again.  
 Consumer Segment:  
+
 People who stream digital music and use more than one platform regularly.
 
 
