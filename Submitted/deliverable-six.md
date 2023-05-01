@@ -12,7 +12,9 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 3.1.2: https://github.com/gannonrowlan/Lilypad/tree/main/cypress/e2e
 
-### 3.1.3:
+3.1.3: 
+
+3.1.4: 
 
 ## 4: Demo
 
