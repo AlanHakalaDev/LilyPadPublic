@@ -21,6 +21,8 @@ Issue: https://github.com/CS386Team6/LilyPad/issues/17 <br>
 Pull request: https://github.com/CS386Team6/LilyPad/pull/52 <br>
 Implemented by: Nathan Seitz <br>
 Approved by: Nathan Seitz <br>
+<img src="../images/SearchSongPage.jpg">
+<img src="../images/SearchResultPage.jpg">
 
 ----
 Requirement: As a music lover, I want to be able to create playlists so that I can organize my favorite songs the way I want to. <br>
@@ -28,6 +30,7 @@ Issue: https://github.com/CS386Team6/LilyPad/issues/9 <br>
 Pull request: https://github.com/CS386Team6/LilyPad/pull/49 <br>
 Implemented by: Alan Hakala <br>
 Approved by: Nathan Seitz <br>
+<img src="../images/CreatePlaylistPage.jpg">
 
 ----
 Requirement: As a music listener, I want to be able to listen to tracks from my connected platforms so that I can enjoy my favorite music <br>
@@ -42,6 +45,8 @@ Issue: https://github.com/CS386Team6/LilyPad/issues/12 <br>
 Pull request: https://github.com/CS386Team6/LilyPad/pull/45 <br>
 Implemented by: Gannon Rowlan & Isaac Faulkner <br>
 Approved by: Nathan Seitz <br> 
+<img src="../images/HomePage.jpg">
+
 ## 3: Tests
 
 ## 4: Demo
