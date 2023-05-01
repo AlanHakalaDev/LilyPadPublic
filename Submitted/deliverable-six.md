@@ -12,7 +12,10 @@ Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi
 
 3.1.2: https://github.com/gannonrowlan/Lilypad/tree/main/cypress/e2e
 
-3.1.3: 
+3.1.3: Testing to make sure the search function works according to the infrmation provided in several fields. 
+https://github.com/CS386Team6/LilyPad/blob/main/cypress/e2e/search.cy.js  -- This is the cypress test
+https://github.com/CS386Team6/LilyPad/tree/main/pages/search -- The search folder is what is being tested
+
 
 3.1.4: 
 
