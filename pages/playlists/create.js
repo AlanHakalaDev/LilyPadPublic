@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
-import { useEffect } from 'react'
-import { setProfile } from '/functions/profile-display.js'
+import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js';
 import NavBar from '../../functions/navBar-display-create.js';
 
 
