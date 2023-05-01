@@ -20,27 +20,28 @@ Requirements: As a music lover, I want to be able to search for songs so that I 
 Issue: https://github.com/CS386Team6/LilyPad/issues/17 <br>
 Pull request: https://github.com/CS386Team6/LilyPad/pull/52 <br>
 Implemented by: Nathan Seitz <br>
-Approved by: Gannon Rowlan <br>
+Approved by: Nathan Seitz <br>
 
 ----
-Requirement: As a music lover, I want to be able to create playlists so that I can organize my favorite songs the way I want to.
-Issue: https://github.com/CS386Team6/LilyPad/issues/9
-Pull request: https://github.com/CS386Team6/LilyPad/pull/49
-Implemented by: Alan Hakala
-Approved by: Gannon Rowlan
-----
-Requirement: As a music listener, I want to be able to listen to tracks from my connected platforms so that I can enjoy my favorite music
-Issue: https://github.com/CS386Team6/LilyPad/issues/63
-Pull request: https://github.com/CS386Team6/LilyPad/pull/62
-Implemented by: Rino De Guzman & Nathan Seitz
-Approved by: Gannon Rowlan
-----
-Requirement: As an app user, I want to easily be able to navigate throughout the website so that it can be easier for me to listen to my favorite music
-Issue: https://github.com/CS386Team6/LilyPad/issues/12
-Pull request: https://github.com/CS386Team6/LilyPad/pull/45
-Implemented by: Gannon Rowlan & Isaac Faulkner
-Approved by: Ada Lovelace
+Requirement: As a music lover, I want to be able to create playlists so that I can organize my favorite songs the way I want to. <br>
+Issue: https://github.com/CS386Team6/LilyPad/issues/9 <br>
+Pull request: https://github.com/CS386Team6/LilyPad/pull/49 <br>
+Implemented by: Alan Hakala <br>
+Approved by: Nathan Seitz <br>
 
+----
+Requirement: As a music listener, I want to be able to listen to tracks from my connected platforms so that I can enjoy my favorite music <br>
+Issue: https://github.com/CS386Team6/LilyPad/issues/63 <br>
+Pull request: https://github.com/CS386Team6/LilyPad/pull/62 <br>
+Implemented by: Rino De Guzman & Nathan Seitz <br>
+Approved by: Nathan Seitz <br>
+
+----
+Requirement: As an app user, I want to easily be able to navigate throughout the website so that it can be easier for me to listen to my favorite music <br>
+Issue: https://github.com/CS386Team6/LilyPad/issues/12 <br>
+Pull request: https://github.com/CS386Team6/LilyPad/pull/45 <br>
+Implemented by: Gannon Rowlan & Isaac Faulkner <br>
+Approved by: Nathan Seitz <br> 
 ## 3: Tests
 
 ## 4: Demo
