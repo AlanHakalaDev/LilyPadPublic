@@ -45,7 +45,7 @@ export default function Playlists() {
           if ((playlist.isPublic) || (playlist.creatorId === loggedInUserId)) {
             let container = document.createElement('div')
             let title = document.createElement('p')
-            let creator = document.createElement('p')
+            let listener = document.createElement('button')
             let description = document.createElement('p')
             let ispublic = document.createElement('p')
             let opener = document.createElement("button")
@@ -55,13 +55,19 @@ export default function Playlists() {
             opener.id = "openPlaylist"
             document.querySelector("#openPlaylist")
 
+            listener.innerHTML = "Listen to Playlist"
+            document.querySelector("#openPlaylist")
+            listener.addEventListener('click', () =>{
+              window.location.href = `${process.env.NEXT_PUBLIC_HOST}/music-player/${playlist.id}`
+            })
+
             opener.addEventListener('click', () =>{
               window.location.href = "/playlists/" + container.id
             })
             container.style.border = '1px solid gray'
             container.style.borderRadius = '15px'
             title.innerHTML = `${playlist.playlistTitle}`
-            creator.innerHTML = `${playlist.creatorId}`
+
             description.innerHTML = `${playlist.description}`
             if (playlist.isPublic) {
               ispublic.innerHTML = '(Visible to everyone on LilyPad)'
@@ -71,7 +77,7 @@ export default function Playlists() {
             }
 
             container.appendChild(title)
-            container.appendChild(creator)
+            container.appendChild(listener)
             container.appendChild(description)
             container.appendChild(ispublic)
             container.appendChild(opener)

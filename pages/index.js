@@ -21,7 +21,7 @@ export default function Home() {
             <ul className="list">
               <li><a href ="../">Home</a></li>
               <li><a href ="playlists">Playlists</a></li>
-              <li><a href ="account-creation">creat an account</a></li>
+              <li><a href ="account-creation">create an account</a></li>
               <li><a href ="profile">profile</a></li>
               <li><a href ="login">login</a></li>
               <li><a href ="search">search</a></li>

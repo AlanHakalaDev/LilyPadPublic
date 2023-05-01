@@ -73,7 +73,6 @@ export default class ReactPlayer extends React.Component {
           },
         }
         var {videoId} = this.props
-        console.log(videoId)
     
         return <div id="music-player">
                     <YouTube
@@ -86,7 +85,7 @@ export default class ReactPlayer extends React.Component {
                     onEnd={this.videoOnEnd} />
                     <h2>Playing Now</h2>
                 <div>
-                  <img style={{borderRadius:15+'px', width:256+'px'}} id="songArt" src='https://i.pinimg.com/originals/9a/ec/45/9aec450f7aea7d4abf02b7950dc35bfb.png'/>
+                  <img style={{borderRadius:15+'px', width:180+'px'}} id="songArt" src='https://i.pinimg.com/originals/9a/ec/45/9aec450f7aea7d4abf02b7950dc35bfb.png'/>
                   <h3 id="songTitle">Song Name</h3>
                   <p id="songArtist">Song Artist</p>
                 </div>

@@ -20,7 +20,6 @@ export default function saveTrack() {
 
     const img = new Image();
     img.src = url;
-    img.width = 200;
     img.height = 200;
     img.id = "cover-art";
 

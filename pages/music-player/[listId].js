@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import ReactPlayer from '../../components/player';
 
 var firstId = "1VXMLuZkq1g"
+//var workingPlaylist = null
 
 export default function Playlists() {
     const router = useRouter()
@@ -16,6 +17,9 @@ export default function Playlists() {
         'Content-Type': 'application/json',
     }}
 
+//workingPlaylist = playlist
+
+
     useEffect(() => {
         setProfile()
     
@@ -25,22 +29,20 @@ export default function Playlists() {
         if (!loggedInUserId) {
           alert('You need to create an account to listen to songs.')
         }
-    
         fetch(`${process.env.NEXT_PUBLIC_HOST}` + `/api/playlists/${listId}`, options)
-          .then((response) => {
-            if (response.status === 200) {
-              return response.json()
-            }
-            else {
-              throw response.text()
-            }
-          }).catch((data) => {
-            alert(data)
-          }).then((playlist) => {
-            console.log(playlist)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json()
+          }
+          else {
+            throw response.text()
+          }
+        }).catch((data) => {
+          alert(data)
+        }).then((playlist) => {
             const htmlContainer = document.getElementById("songs")
             //const songsGroup = document.createDocumentFragment()
-    
+            if (playlist != null) {
             playlist.songs.forEach(function (song) {
     
     
@@ -99,14 +101,8 @@ export default function Playlists() {
           })
             //htmlContainer.appendChild(songsGroup)
             //https://www.npmjs.com/package/youtube-music-api
-    
-        
-            
-    
-            
-          });
-    
-      }, [])
+        }})
+      }, [router.isReady])
 
 
 return (
