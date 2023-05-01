@@ -62,6 +62,11 @@ https://github.com/CS386Team6/LilyPad/tree/main/pages/search -- The search folde
 <img src="../images/search_test.jpg" width=800px>
 
 ## 4: Demo
+A short video demonstrating a user adding a song to one playlist, viewing the contents of their playlist, and listening to the playlist through the music player.
+
+[Video Link](https://github.com/CS386Team6/LilyPad/blob/main/videos/demo2.mp4)
+
+[Youtube Link](https://youtu.be/YQlR31LJTDg)
 
 ## 5: Code Quality
    Our team decided early on that we would mostly build our app using javascript, utilizing Next.js over react. This was our first decision we made in an effort to manage code quality. Next.js simply requires less code than react, and many of us were new to javascript, making the decision to use Next.js over the base react library made our code more compact, and lessened the learning curve.  
