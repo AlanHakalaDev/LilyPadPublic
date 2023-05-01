@@ -57,6 +57,7 @@ https://github.com/CS386Team6/LilyPad/blob/main/cypress/e2e/search.cy.js  -- Thi
 https://github.com/CS386Team6/LilyPad/tree/main/pages/search -- The search folder is what is being tested
 
 3.1.4: 
+
 <img src="../images/search_test.jpg" width=800px>
 
 ## 4: Demo
