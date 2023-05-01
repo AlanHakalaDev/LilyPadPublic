@@ -2,17 +2,11 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
 import { setProfile } from '/functions/profile-display.js';
-import React, { useState } from 'react';
+import NavBar from '../functions/navBar-display.js';
 
 
 
 export default function Search() {
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  function toggleVisibility() {
-    setIsVisible(!isVisible);
-  }
 
   useEffect(() => {
     setProfile()
@@ -23,6 +17,8 @@ export default function Search() {
         <title>LilyPad</title>
         <link rel="icon" href="/icon.png" />
       </Head>
+
+      <NavBar/>
 
       <div className="tab-container">
         <button className="toggle-button" onClick={toggleVisibility}>
