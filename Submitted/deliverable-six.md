@@ -31,7 +31,7 @@ Pull request: https://github.com/CS386Team6/LilyPad/pull/49 <br>
 Implemented by: Alan Hakala <br>
 Approved by: Nathan Seitz <br>
 <img src="../images/CreatePlaylistPage2.jpg">
-
+<img src="../images/ExistingPlaylistsPage.jpg">
 ----
 Requirement: As a music listener, I want to be able to listen to tracks from my connected platforms so that I can enjoy my favorite music <br>
 Issue: https://github.com/CS386Team6/LilyPad/issues/63 <br>
