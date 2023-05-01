@@ -18,6 +18,7 @@ https://github.com/CS386Team6/LilyPad/tree/main/pages/search -- The search folde
 
 
 3.1.4: 
+<img src="../images/search_test.jpg" width=800px>
 
 ## 4: Demo
 
