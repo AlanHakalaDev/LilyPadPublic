@@ -1,4 +1,4 @@
-# CS386 Team 6 Deliverable 6
+# CS386 Team 6 Deliverable 7
 
 ### Team Members:
 Alan Hakala, Gannon Rowlan, Isaac Faulkner, Nathan Seitz, Rino De Guzman, Vamshi Vavilla
