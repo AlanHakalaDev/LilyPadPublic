@@ -8,6 +8,11 @@ LilyPad is a website that provides listeners with a single place to link togethe
 
 ## 2: Verification (tests)
 ### 2.1: Unit Test
+  2.2.1: Cypress JS <br />
+  2.2.2: https://github.com/CS386Team6/LilyPad/tree/main/pages <br />
+  2.2.3: In this test case, we're mounting the AccountCreation component using cy.mount, and then using Cypress selectors to ensure that the form and its inputs are              present in the DOM. Once mounted, we check to make sure the form itself and the input fields, such as the email and password, actually exist.
+         https://github.com/CS386Team6/LilyPad/blob/main/pages/loginAccountCreation.cy.js <br />
+  2.2.4: <img src="../images/accountCreation_test.jpg">
 
 ### 2.2: Acceptance Test
   2.2.1: Cypress JS <br />
@@ -16,5 +21,4 @@ LilyPad is a website that provides listeners with a single place to link togethe
          https://github.com/CS386Team6/LilyPad/blob/main/cypress/e2e/playlist.cy.js <br />
   2.2.4: <img src="../images/playlist_test.jpg">
          
-
 ## 3: Validation (user evaluation)
