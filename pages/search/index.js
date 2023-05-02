@@ -1,10 +1,13 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
-import { setProfile } from '/functions/profile-display.js'
+import { setProfile } from '/functions/profile-display.js';
+import NavBar from '../../functions/navBar-display.js';
+
 
 
 export default function Search() {
+
   useEffect(() => {
     setProfile()
     }, [])
@@ -14,6 +17,8 @@ export default function Search() {
         <title>LilyPad</title>
         <link rel="icon" href="/icon.png" />
       </Head>
+
+      <NavBar/>
 
       <main>
       <a id="userBox" hidden href="/profile" className={styles.userBox}>
@@ -56,7 +61,8 @@ export default function Search() {
       </footer>
 
       <style jsx>{`
-        main {
+
+          main {
           padding: 5rem 0;
           flex: 1;
           display: flex;
@@ -90,6 +96,55 @@ export default function Search() {
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
+
+        form {
+          margin: auto;
+          width: 50%;
+          padding: 20px;	
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        label {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+          margin-bottom: 20px;
+          width: 100%;
+        }
+    
+        input[type="submit"],
+        input[type="reset"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          margin-top: 20px;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+
       `}</style>
 
       <style jsx global>{`

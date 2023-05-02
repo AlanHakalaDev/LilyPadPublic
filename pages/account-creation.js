@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import NavBar from '../functions/navBar-display.js';
 //const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
+
+
     const handleSubmit = async (event) => {
       event.preventDefault()
       const name = document.querySelector('#username').value
@@ -72,6 +75,13 @@ export default function AccountCreation() {
 
   return (
     <div className={styles.container}>
+      
+      <NavBar/>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
       <Head>
         <title>LilyPad</title>
         <link rel="icon" href="/icon.png" />
@@ -106,6 +116,8 @@ export default function AccountCreation() {
       </footer>
 
       <style jsx>{`
+
+  
         main {
           padding: 5rem 0;
           flex: 1;

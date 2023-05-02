@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
-import { useEffect } from 'react'
-import { setProfile } from '/functions/profile-display.js'
+import { useEffect } from 'react';
+import { setProfile } from '/functions/profile-display.js';
+import NavBar from '../../functions/navBar-display';
+
 
 export default function LinkAccount() {
   useEffect(() => {
@@ -21,6 +23,8 @@ export default function LinkAccount() {
         <title>LilyPad</title>
         <link rel="icon" href="/icon.png" />
       </Head>
+
+      <NavBar/>
 
       <main>
         <a id="userBox" hidden href="/profile" className={styles.userBox}>

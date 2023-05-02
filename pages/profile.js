@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useEffect } from 'react';
-import { setProfile } from '/functions/profile-display.js'
+import { setProfile } from '/functions/profile-display.js';
+import NavBar from '../functions/navBar-display.js';
 
 export default function Profile() {
+
   useEffect(() => {
   setProfile()
   }, [])
@@ -14,6 +16,8 @@ export default function Profile() {
         <title>LilyPad</title>
         <link rel="icon" href="/icon.png" />
       </Head>
+
+      <NavBar/>
 
       <main>
       <a id="userBox" hidden href="/profile" className={styles.userBox}>
@@ -57,6 +61,7 @@ export default function Profile() {
       </footer>
 
       <style jsx>{`
+
         main {
           padding: 5rem 0;
           flex: 1;

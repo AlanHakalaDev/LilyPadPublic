@@ -18,7 +18,7 @@ export default function TrackSearch() {
         sources.push("spotify")
       }
       if (urlParams.get("YoutubeMusic") === "true") {
-        sources.push("youtube-music")
+        sources.push("youtube")
       }
       if (urlParams.get("AppleMusic") === "true") {
         sources.push("apple-music")

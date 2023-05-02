@@ -24,9 +24,9 @@ export function setProfile () {
       document.getElementById("profilePic").src = `${data.picture}`
       document.getElementById("userBox").hidden = false
     }).catch(() => {
-      /*document.getElementById("usernameDisplay").innerHTML = 'Guest User'
+      document.getElementById("usernameDisplay").innerHTML = 'Guest User'
       document.getElementById("emailDisplay").innerHTML = 'guest@gmail.com'
-      document.getElementById("profilePic").src = '/public/icon.png'*/
-      document.getElementById("userBox").remove()
+      document.getElementById("profilePic").src = '/public/icon.png'
+      //document.getElementById("userBox").
     })
 }
