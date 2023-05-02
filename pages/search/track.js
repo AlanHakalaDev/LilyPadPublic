@@ -58,6 +58,7 @@ export default function TrackSearch() {
             return false
           }
           let artist = document.createElement('h3')
+          artist.id = "artist"
           let platform = document.createElement('p')
           let coverArt = document.createElement('img')
           let saveButton = document.createElement('button')
@@ -67,12 +68,27 @@ export default function TrackSearch() {
           saveButton.innerHTML = "Save"
           saveButton.addEventListener("click", function(e) {
             console.log("You saved song: " + `${result.data.name}` + " from: " + `${result.source}`);
-            localStorage.setItem('song-title', `${result.data.name}`);
-            localStorage.setItem('song-artist', `${result.data.artistNames}`);
-            localStorage.setItem('source-platform', `${result.source}`);
-            localStorage.setItem('cover-art', `${result.data.imageUrl}`);
-            localStorage.setItem('song-id', `${result.data.externalId}`)
-            window.location.href = "saveTrack";
+            let inputUrl = new URL(`${process.env.NEXT_PUBLIC_HOST}/search/saveTrack?`);
+            let inputParams = new URLSearchParams(inputUrl.search);
+
+            inputParams.set('song-title', `${result.data.name}`)
+            if (result.data.artistNames == null) {
+              let otherArtist = document.getElementById("artist")
+              if (otherArtist) {
+                inputParams.set('song-artist', otherArtist.innerHTML)
+              }
+              else {
+                inputParams.set('song-artist', `${result.data.artistNames}`)
+              }
+            }
+            else {
+            inputParams.set('song-artist', `${result.data.artistNames}`)
+            }
+            inputParams.set('source-platform', `${result.source}`)
+            inputParams.set('cover-art', `${result.data.imageUrl}`);
+            inputParams.set('song-id', `${result.data.externalId}`);
+
+            window.location.href = inputUrl + inputParams;
           })
 
           link.innerHTML = "Check it out on " + `${result.source}` + '!'
@@ -117,7 +133,7 @@ export default function TrackSearch() {
               icon.width = 160
               coverArt.height = 80
               coverArt.width = 190
-              platform.innerHTML = "YouTube"
+              platform.innerHTML = "YouTube_Music"
               break
             }
             default: {

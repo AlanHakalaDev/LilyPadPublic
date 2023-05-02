@@ -12,11 +12,15 @@ export default function saveTrack() {
 
   useEffect(() => {
     setProfile()
-    const songTitle = localStorage.getItem('song-title');
-    const sourcePlatform = localStorage.getItem('source-platform').toUpperCase();
-    const songArtist = localStorage.getItem('song-artist');
-    const url = localStorage.getItem('cover-art');
-    const platformId = localStorage.getItem('song-id')
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const songTitle = urlParams.get('song-title');
+    const sourcePlatform = urlParams.get('source-platform').toUpperCase();
+    const songArtist = urlParams.get('song-artist');
+    const url = urlParams.get('cover-art');
+    const platformId = urlParams.get('song-id')
+
+
 
     const img = new Image();
     img.src = url;
@@ -29,7 +33,7 @@ export default function saveTrack() {
 
     const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
 
-    const options = {
+    let options = {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json',
@@ -50,10 +54,6 @@ export default function saveTrack() {
         const playlistsGroup = document.createDocumentFragment()
         playlistList.forEach(function(playlist) {
             if (playlist.creatorId === loggedInUserId) {
-/*        <label for="playlist1">
-          <input type="checkbox" name="playlist" value="Playlist 1" id="playlist1"></input>
-          Playlist 1
-        </label>*/
 
                 let container = document.createElement('div')
                 container.style.border = '1px solid gray'
@@ -87,11 +87,7 @@ export default function saveTrack() {
       checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
       })
-      const loggedInUserId = JSON.parse(sessionStorage.getItem("userId"))
-
-      if (!loggedInUserId) {
-          alert ('You need to create an account to create playlists.')
-      }
+    
       const requestBody = {
         song: {
           platformId: platformId,
@@ -104,13 +100,14 @@ export default function saveTrack() {
         }
       }
 
-      const options = {
+      options = {
           method: 'POST',
           headers: {
           'Content-Type': 'application/json',
           },
           body: JSON.stringify(requestBody)
       }
+
       //const JSONBody = JSON.stringify(options)
       fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/songs', options)
       .then((response) => {
@@ -120,13 +117,13 @@ export default function saveTrack() {
           else {
             throw response.text()
           }
-        })/*.catch((data) => {
-            alert(data.data)
-        })*/
-      alert("Saved the song to: " + values);
-      window.location = `${process.env.NEXT_PUBLIC_HOST}`+'/search'
-    })
-  })
+        }).catch((data) => {
+            alert(data)
+        }).then(() => {alert("Saved the song to: " + values);
+        window.location = `${process.env.NEXT_PUBLIC_HOST}/search` })
+      })
+      }, [])
+
 
   return (
     <div className={styles.container}>
@@ -222,4 +219,4 @@ export default function saveTrack() {
       `}</style>
     </div>
   )
-};
+}

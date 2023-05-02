@@ -10,6 +10,10 @@ import { PrismaClient, Song } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export async function createSong(song) {
+  if (song.platform == "YOUTUBE") {
+    song.platform = "YOUTUBE_MUSIC"
+    
+  }
   const newSong = prisma.song.create({
     data: {
         id: song.platformId,
