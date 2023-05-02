@@ -1,25 +1,3 @@
-describe('Normal', () => {
-    it('Tests the search feature when all fields are filled out', () => {
-      cy.visit('http://localhost:3000')
-      cy.url().should('include', '/')
-  
-      // navigte to search page
-      cy.get('#startSearch').click()
-      cy.url().should('include', '/search')
-  
-      // Fill out form 
-      cy.get('#title').type('never gonna give you up')
-      cy.get('#title').should('have.value', 'never gonna give you up')
-      cy.get('#creator').type('Rick Astley')
-      cy.get('#creator').should('have.value', 'Rick Astley')
-      cy.get('#track').click()
-      cy.get('#Spotify').click()
-      cy.get('#YoutubeMusic').click()
-      cy.get('#submit').click()
-  
-    })
-  })
-
 describe('Missing Artist', () => {
   it('Tests the search feature when missing the artist field', () => {
     cy.visit('http://localhost:3000')
@@ -117,5 +95,27 @@ describe('Missing Track Name', () => {
       cy.get('#creator').should('have.value', 'Rick Astley')
       cy.get('#track').click()
       cy.get('#submit').click()
+    })
+  })
+
+  describe('Normal', () => {
+    it('Tests the search feature when all fields are filled out', () => {
+      cy.visit('http://localhost:3000')
+      cy.url().should('include', '/')
+  
+      // navigte to search page
+      cy.get('#startSearch').click()
+      cy.url().should('include', '/search')
+  
+      // Fill out form 
+      cy.get('#title').type('never gonna give you up')
+      cy.get('#title').should('have.value', 'never gonna give you up')
+      cy.get('#creator').type('Rick Astley')
+      cy.get('#creator').should('have.value', 'Rick Astley')
+      cy.get('#track').click()
+      cy.get('#Spotify').click()
+      cy.get('#YoutubeMusic').click()
+      cy.get('#submit').click()
+  
     })
   })
