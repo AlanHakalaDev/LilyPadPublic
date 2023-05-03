@@ -12,25 +12,25 @@ export default async function handler(req, res) {
             users.forEach(element => {
               if (element.email === body.email ) {
                 if ( element.password === body.pass ) {
-                  return res.status(200).json(element.id).end()
+                  return res.status(200).json(element.id)
                 }
                 else {
                   console.log( element.password, body.pass )
-                  return res.status(401).json({data: "That password does not match the provided email."}).end()
+                  return res.status(401).json({data: "That password does not match the provided email."})
                 }
               }
             });
           }
           else {
-          return res.status(424).json({data: "There are no accounts found. Try again later, or create an account first."}).end()
+          return res.status(424).json({data: "There are no accounts found. Try again later, or create an account first."})
           }
       }
       catch(error) {
-        return res.status(500).json({data: error}).end()
+        return res.status(500).json({data: error})
       }
     }
     else {
-      return res.status(405).json({ data: 'METHOD NOT ALLOWED' }).end()
+      return res.status(405).json({ data: 'METHOD NOT ALLOWED' })
     }
     
   }
