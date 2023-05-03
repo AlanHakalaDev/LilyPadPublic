@@ -50,6 +50,7 @@ export default function TrackSearch() {
         body.tracks.map(function(result) {
 
           // TODO: Apply universal style to div element and parent element for cleaner results
+          
           let container = document.createElement('div')
           let title = document.createElement('h2')
           if (result.status === "error") {
@@ -58,6 +59,7 @@ export default function TrackSearch() {
             trackList.appendChild(container)
             return false
           }
+          container.id = result.data.externalId
           let artist = document.createElement('h3')
           artist.id = "artist"
           let platform = document.createElement('p')
@@ -135,6 +137,24 @@ export default function TrackSearch() {
               coverArt.height = 80
               coverArt.width = 110
               platform.innerHTML = "YouTube_Music"
+              const YTBody = {
+                "url": `https://music.youtube.com/watch?v=${result.data.externalId}`
+              }
+              fetch('https://musicapi13.p.rapidapi.com/inspect/url', {
+                method: "POST",
+                headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_RAPID_API_KEY}`,
+                'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
+              },
+              body: JSON.stringify(YTBody),
+              }).then((response) => {return response.json().then(body => {
+                if (body.status === "success") {
+                  coverArt.src = body.data.imageUrl
+                  title.innerHTML = body.data.name
+                  artist.innerHTML = body.data.artistNames[0]
+                }
+              })})
               break
             }
             default: {
