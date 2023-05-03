@@ -110,7 +110,7 @@ export default function Playlists() {
 
       .toggle-button {
       position: fixed;
-      top: 10px;
+      top: 400px;
       left: 0;
       margin: 10px;
       cursor: pointer;
