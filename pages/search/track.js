@@ -75,18 +75,7 @@ export default function TrackSearch() {
             let inputParams = new URLSearchParams(inputUrl.search);
 
             inputParams.set('song-title', `${result.data.name}`)
-            if (result.data.artistNames == null) {
-              let otherArtist = document.getElementById("artist")
-              if (otherArtist) {
-                inputParams.set('song-artist', otherArtist.innerHTML)
-              }
-              else {
-                inputParams.set('song-artist', `${result.data.artistNames}`)
-              }
-            }
-            else {
-            inputParams.set('song-artist', `${result.data.artistNames}`)
-            }
+            inputParams.set('song-artist', result.data.name)
             inputParams.set('source-platform', `${result.source}`)
             inputParams.set('cover-art', `${result.data.imageUrl}`);
             inputParams.set('song-id', `${result.data.externalId}`);
@@ -153,6 +142,7 @@ export default function TrackSearch() {
                   coverArt.src = body.data.imageUrl
                   title.innerHTML = body.data.name
                   artist.innerHTML = body.data.artistNames[0]
+                  inputParams.set('song-artist', body.data.name)
                 }
               })})
               break
