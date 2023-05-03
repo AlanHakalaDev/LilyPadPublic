@@ -26,7 +26,7 @@ export function setProfile () {
     }).catch(() => {
       document.getElementById("usernameDisplay").innerHTML = 'Guest User'
       document.getElementById("emailDisplay").innerHTML = 'guest@gmail.com'
-      document.getElementById("profilePic").src = '/public/icon.png'
+      //document.getElementById("profilePic").src = '/public/icon.png'
       //document.getElementById("userBox").
     })
 }

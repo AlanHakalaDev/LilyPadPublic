@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
+import NavBar from '/functions/navBar-display.js';
 import { setProfile } from '/functions/profile-display.js'
 import { useRouter } from 'next/router'
 
@@ -30,6 +31,7 @@ export default function Playlists() {
       const htmlContainer = document.getElementById("songs")
       const songsGroup = document.createDocumentFragment()
       playlistDesired.songs.forEach(function(song){
+        console.log(song)
         let container = document.createElement('div')
         let title = document.createElement('p')
         let platform = document.createElement('p')
@@ -58,6 +60,7 @@ return (
       </Head>
 
       <main>
+        <NavBar/>
         <a id="userBox" href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture" />
           <div>

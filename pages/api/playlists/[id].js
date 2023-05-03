@@ -5,7 +5,6 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
             const playlistDesired = await getPlaylist(id)
-            console.log(playlistDesired)
             res.status(200).json(playlistDesired)
         }
         catch(error) {

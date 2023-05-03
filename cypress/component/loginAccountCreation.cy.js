@@ -1,5 +1,5 @@
 import React from 'react'
-import AccountCreation from './login'
+import AccountCreation from '../../pages/login'
 
 describe('<AccountCreation />', () => {
   it('displays account creation form', () => {

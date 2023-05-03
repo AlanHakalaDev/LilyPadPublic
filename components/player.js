@@ -46,7 +46,7 @@ export default class ReactPlayer extends React.Component {
 
     videoOnPlay(event) {
       document.getElementById("timeline").max = Math.round(event.target.getDuration())
-      document.getElementById("endTime").innerHTML = Math.round(event.target.getDuration())
+      document.getElementById("endTime").innerHTML = Math.round(event.target.getDuration() / 60)  + ":" + String(Math.round(event.target.getDuration() % 60)).padStart(2,'0')
         var elem = document.getElementById("timeline");
         var time = event.target.getCurrentTime() * 10
         var end = event.target.getDuration() * 10

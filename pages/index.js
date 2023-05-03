@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import NavBar from '../functions/navBar-display.js';
+import NavBar from '/functions/navBar-display.js';
 
 export default function Home() {
 
@@ -8,14 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
 
-      <NavBar/>
-        
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
+      
 
       <Head>
         <title>LilyPad</title>
@@ -23,6 +16,7 @@ export default function Home() {
       </Head>
 
       <main>
+      <NavBar/>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>

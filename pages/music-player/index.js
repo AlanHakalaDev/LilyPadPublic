@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
 import { setProfile } from '/functions/profile-display.js'
+import NavBar from '/functions/navBar-display.js';
 import ReactPlayer from '../../components/player';
 
 const options = {
@@ -116,6 +117,7 @@ export default function Playlists() {
       </Head>
 
       <main>
+        <NavBar/>
         <a id="userBox" hidden href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture" />
           <div>

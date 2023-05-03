@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
-import { useEffect } from 'react';
-import { setProfile } from '/functions/profile-display.js';
-import NavBar from '../../functions/navBar-display.js';
+import { useEffect } from 'react'
+import { setProfile } from '/functions/profile-display.js'
+import NavBar from '/functions/navBar-display.js';
+import React, { useState } from 'react';
 
 export default function Playlists() {
-
 
   useEffect(() => {
     setProfile()
@@ -44,11 +44,20 @@ export default function Playlists() {
             let description = document.createElement('p')
             let ispublic = document.createElement('p')
             let opener = document.createElement("button")
+            let searcher = document.createElement("button")
             container.id = `${playlist.id}`
 
-            opener.innerHTML = "Open Playlist"
+            opener.innerHTML = "Open/View Playlist"
             opener.id = "openPlaylist"
             document.querySelector("#openPlaylist")
+
+            searcher.innerHTML = "Add Songs"
+            searcher.id = "addToPlaylist"
+            document.querySelector("#addToPlaylist")
+
+            searcher.addEventListener('click', () =>{
+              window.location.href = `${process.env.NEXT_PUBLIC_HOST}/search`
+            })
 
             listener.innerHTML = "Listen to Playlist"
             document.querySelector("#openPlaylist")
@@ -72,10 +81,11 @@ export default function Playlists() {
             }
 
             container.appendChild(title)
-            container.appendChild(listener)
             container.appendChild(description)
             container.appendChild(ispublic)
+            container.appendChild(listener)
             container.appendChild(opener)
+            container.appendChild(searcher)
             playlistsGroup.appendChild(container)
           }
         })
@@ -91,9 +101,8 @@ export default function Playlists() {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <NavBar/>
-
       <main>
+        <NavBar/>
         <a id="userBox" hidden href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture" />
           <div>

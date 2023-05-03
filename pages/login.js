@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import NavBar from '../functions/navBar-display.js';
+import React, { useState } from 'react';
+import NavBar from '/functions/navBar-display.js';
 //const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
 
-    
     const handleSubmit = async (event) => {
       event.preventDefault()
       const email = document.querySelector('#email').value
@@ -33,7 +33,7 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/auth', options)
+      fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/auth', options)
       .then((response) => {
         if (response.status === 200) {
           return response.text()
@@ -74,9 +74,8 @@ export default function AccountCreation() {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <NavBar/>
-      
       <main>
+        <NavBar/>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>

@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import NavBar from '../functions/navBar-display.js';
+import React, { useState } from 'react';
+import NavBar from '/functions/navBar-display.js';
 //const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
-
 
     const handleSubmit = async (event) => {
       event.preventDefault()
@@ -75,12 +75,6 @@ export default function AccountCreation() {
 
   return (
     <div className={styles.container}>
-      
-      <NavBar/>
-
-      <br></br>
-      <br></br>
-      <br></br>
 
       <Head>
         <title>LilyPad</title>
@@ -88,6 +82,7 @@ export default function AccountCreation() {
       </Head>
 
       <main>
+        <NavBar/>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>
