@@ -15,7 +15,6 @@ export default async function handler(req, res) {
                   return res.status(200).json(element.id)
                 }
                 else {
-                  console.log( element.password, body.pass )
                   return res.status(401).json({data: "That password does not match the provided email."})
                 }
               }

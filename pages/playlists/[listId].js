@@ -31,6 +31,7 @@ export default function Playlists() {
       const htmlContainer = document.getElementById("songs")
       const songsGroup = document.createDocumentFragment()
       playlistDesired.songs.forEach(function(song){
+        console.log(song)
         let container = document.createElement('div')
         let title = document.createElement('p')
         let platform = document.createElement('p')

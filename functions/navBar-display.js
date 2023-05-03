@@ -16,13 +16,13 @@ const NavBar = () => {
                     </button>
                     <nav className={`navbar ${isVisible ? 'visible' : ''}`}>
                         <ul className="list">
-                            <li><a href="../">Home</a></li>
-                            <li><a href="playlists">Playlists</a></li>
-                            <li><a href="account-creation">Create an account</a></li>
-                            <li><a href="profile">Profile</a></li>
-                            <li><a href="login">Login</a></li>
-                            <li><a href="search">Search</a></li>
-                            <li><a href="link-account">Link Your Account</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/playlists">Playlists</a></li>
+                            <li><a href="/account-creation">Create an account</a></li>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/search">Search</a></li>
+                            <li><a href="/link-account">Link Your Account</a></li>
                             <img className='icon' src="/icon.png" alt='icon' />
                         </ul>
                     </nav>
