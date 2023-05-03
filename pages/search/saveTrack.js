@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
 import { setProfile } from '/functions/profile-display.js'
+import NavBar from '/functions/navBar-display.js';
 // TODO (DONE): Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 // TODO: Implement the user playlist database into the javascript and html
@@ -133,6 +134,7 @@ export default function saveTrack() {
       </Head>
 
       <main>
+        <NavBar/>
         <a id="userBox" hidden href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
           <div>
@@ -150,7 +152,7 @@ export default function saveTrack() {
         </p>
         <div id="playlists">
         </div>
-        <p>
+        <p className={styles.button}>
           <button id="saveSongToSelectedPlaylist">Save Song</button>
         </p>
         <a

@@ -10,7 +10,7 @@ const NavBar = () => {
 
         return (
             
-            <><div className="tab-container">
+            <div className="tab-container">
                     <button className="toggle-button" onClick={toggleVisibility}>
                         {isVisible ? '| | |' : '| | |'}
                     </button>
@@ -18,14 +18,16 @@ const NavBar = () => {
                         <ul className="list">
                             <li><a href="../">Home</a></li>
                             <li><a href="playlists">Playlists</a></li>
-                            <li><a href="account-creation">creat an account</a></li>
-                            <li><a href="profile">profile</a></li>
-                            <li><a href="login">login</a></li>
-                            <li><a href="search">search</a></li>
+                            <li><a href="account-creation">Create an Account</a></li>
+                            <li><a href="profile">Profile</a></li>
+                            <li><a href="login">Login</a></li>
+                            <li><a href="search">Search</a></li>
                             <img className='icon' src="/icon.png" alt='icon' />
                         </ul>
                     </nav>
-                </div>
+                    
+
+
             <style jsx>{`
                     .tab-container {
                     position: fixed;
@@ -120,16 +122,16 @@ const NavBar = () => {
                         
                     }
                     25% {
-                        opacity: 0;
-                        transform: translateY(-10px);
+                        opacity: 0.1;
+                        transform: translateY(-2px);
                     }
                     50% {
                         opacity: 1;
                         transform: translateY(0px);
                     }
                     75% {
-                        opacity: 0;
-                        transform: translateY(10px);
+                        opacity: 0.1;
+                        transform: translateY(2px);
                     }
                     100% {
                         opacity: 1;
@@ -165,7 +167,8 @@ const NavBar = () => {
                     margin: 50px auto;
                     width: 80%;
                     }
-                `}</style></>
+                `}</style>
+                </div>
 
         );
 

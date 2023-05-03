@@ -1,16 +1,10 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
+import NavBar from '/functions/navBar-display.js';
 //const endpoint = `localhost:3000/api/user`
 
 export default function AccountCreation() {
-
-    const [isVisible, setIsVisible] = useState(false);
-
-    function toggleVisibility() {
-      setIsVisible(!isVisible);
-    }
-
 
     const handleSubmit = async (event) => {
       event.preventDefault()
@@ -39,7 +33,7 @@ export default function AccountCreation() {
         body: JSONdata,
       }
 
-      await fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/auth', options)
+      fetch(`${process.env.NEXT_PUBLIC_HOST}`+'/api/auth', options)
       .then((response) => {
         if (response.status === 200) {
           return response.text()
@@ -80,25 +74,8 @@ export default function AccountCreation() {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-
-      <div className="tab-container">
-        <button className="toggle-button" onClick={toggleVisibility}>
-          {isVisible ? '| | |' : '| | |'}
-        </button>
-        <nav className={`navbar ${isVisible ? 'visible' : ''}`}>
-          <ul className="list">
-            <li><a href ="../">Home</a></li>
-            <li><a href ="playlists">Playlists</a></li>
-            <li><a href ="account-creation">creat an account</a></li>
-            <li><a href ="profile">profile</a></li>
-            <li><a href ="login">login</a></li>
-            <li><a href ="search">search</a></li>
-            <img className='icon' src="/icon.png" alt='icon'/>
-          </ul>
-        </nav>
-      </div>
-
       <main>
+        <NavBar/>
         <h1 className={styles.title}>
           Welcome to <a href="https://github.com/CS386Team6/CS386_Team_6_Project">LilyPad!</a>
         </h1>

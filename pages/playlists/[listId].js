@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '/styles/Home.module.css';
 import { useEffect } from 'react'
+import NavBar from '/functions/navBar-display.js';
 import { setProfile } from '/functions/profile-display.js'
 import { useRouter } from 'next/router'
 
@@ -58,6 +59,7 @@ return (
       </Head>
 
       <main>
+        <NavBar/>
         <a id="userBox" href="/profile" className={styles.userBox}>
           <img id="profilePic" src='/icon.png' alt="Profile Picture" />
           <div>

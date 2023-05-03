@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
 import { setProfile } from '/functions/profile-display.js'
+import NavBar from '/functions/navBar-display.js';
 // TODO: Add a "new search" button to get back to search options page
 // TODO: Add functionality for additional details to be rendered.
 
@@ -102,37 +103,37 @@ export default function TrackSearch() {
 
           coverArt.src = `${result.data.imageUrl}`
           // TODO: render separate icons based on platform
-          icon.width = 100
-          icon.height = 100
+          icon.width = 80
+          icon.height = 80
           
           switch ( result.source ) {
             case "apple-music": {
               icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png"
-              coverArt.height = 100
-              coverArt.width = 100
+              coverArt.height = 80
+              coverArt.width = 80
               platform.innerHTML = "Apple Music"
               break
             }
             case "youtubeMusic": {
               icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/768px-Youtube_Music_icon.svg.png"
-              coverArt.height = 100
-              coverArt.width = 100
+              coverArt.height = 80
+              coverArt.width = 80
               platform.innerHTML = "YouTube Music"
               break
             }
             case "spotify": {
               icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
-              coverArt.height = 100
-              coverArt.width = 100
+              coverArt.height = 80
+              coverArt.width = 80
               platform.innerHTML = "Spotify"
               break
             }
             case "youtube": {
               icon.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
-              icon.height = 110
-              icon.width = 160
+              icon.height = 80
+              icon.width = 110
               coverArt.height = 80
-              coverArt.width = 190
+              coverArt.width = 110
               platform.innerHTML = "YouTube_Music"
               break
             }
@@ -175,6 +176,7 @@ export default function TrackSearch() {
       </Head>
 
       <main>
+        <NavBar/>
       <a id="userBox" hidden href="/profile" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>

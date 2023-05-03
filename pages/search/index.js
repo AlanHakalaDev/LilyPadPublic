@@ -2,17 +2,12 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { useEffect } from 'react';
 import { setProfile } from '/functions/profile-display.js';
+import NavBar from '/functions/navBar-display.js';
 import React, { useState } from 'react';
 
 
 
 export default function Search() {
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  function toggleVisibility() {
-    setIsVisible(!isVisible);
-  }
 
   useEffect(() => {
     setProfile()
@@ -24,24 +19,8 @@ export default function Search() {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <div className="tab-container">
-        <button className="toggle-button" onClick={toggleVisibility}>
-          {isVisible ? '| | |' : '| | |'}
-        </button>
-        <nav className={`navbar ${isVisible ? 'visible' : ''}`}>
-          <ul className="list">
-            <li><a href ="../">Home</a></li>
-            <li><a href ="playlists">Playlists</a></li>
-            <li><a href ="account-creation">creat an account</a></li>
-            <li><a href ="profile">profile</a></li>
-            <li><a href ="login">login</a></li>
-            <li><a href ="search">search</a></li>
-            <img className='icon' src="/icon.png" alt='icon'/>
-          </ul>
-        </nav>
-     </div>
-
       <main>
+        <NavBar/>
       <a id="userBox" hidden href="/profile" className={styles.userBox}>
         <img id="profilePic" src='/icon.png' alt="Profile Picture"/>
         <div>
