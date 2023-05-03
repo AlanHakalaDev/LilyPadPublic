@@ -41,9 +41,9 @@ export default function Search() {
           <label htmlFor="artist">Name of Creator or Artist:</label><br/>
           <input type="text" autoComplete="off" id="creator" name="creator" placeholder="Maker..." />
           <p>Type of Search:</p>
-          <input type="radio" id="playlist" name="type" value="playlist" onClick={() => {var form = document.getElementById('searchForm'); form.action = 'search/playlist'}}/>
+          <input type="radio" id="playlist" name="type" required value="playlist" onClick={() => {var form = document.getElementById('searchForm'); form.action = 'search/playlist'}}/>
           <label htmlFor="playlist">Playlist</label><br/>
-          <input type="radio" id="track" name="type" value="track" onClick={() => {var form = document.getElementById('searchForm'); form.action = 'search/track'}}/>
+          <input type="radio" id="track" name="type" required value="track" onClick={() => {var form = document.getElementById('searchForm'); form.action = 'search/track'}}/>
           <label htmlFor="track">Track</label>
           <p>Platorms to Search:</p>
           <input type="checkbox" id="Spotify" name="Spotify" value="true"/>
