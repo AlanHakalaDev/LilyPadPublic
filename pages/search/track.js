@@ -40,7 +40,6 @@ export default function TrackSearch() {
             },
             body: JSON.stringify(requestBody),
       }).then((response) => {return response.json().then(body => {
-        console.log(body)
       if (response.status === 200) {
         let searchTitle = document.getElementById("searchTitle")
 
@@ -75,7 +74,7 @@ export default function TrackSearch() {
             let inputParams = new URLSearchParams(inputUrl.search);
 
             inputParams.set('song-title', `${result.data.name}`)
-            inputParams.set('song-artist', result.data.name)
+            inputParams.set('song-artist', document.getElementById("artist").innerHTML)
             inputParams.set('source-platform', `${result.source}`)
             inputParams.set('cover-art', `${result.data.imageUrl}`);
             inputParams.set('song-id', `${result.data.externalId}`);
@@ -142,7 +141,6 @@ export default function TrackSearch() {
                   coverArt.src = body.data.imageUrl
                   title.innerHTML = body.data.name
                   artist.innerHTML = body.data.artistNames[0]
-                  inputParams.set('song-artist', body.data.name)
                 }
               })})
               break
